@@ -30,6 +30,12 @@ module.exports = {
       'gray-bg':'#F5F5F5',
       'dark3':'#636466',
       'dark2':'#111111',
+      'gray2':'#A9A9A9',
+      'darkBlue':'#002B43',
+      'mainBlue':'#194A96',
+      'yallow':'#FFCB05',
+      'pink':'#ED2289'
+        
       'gray2':'#A9A9A9'
     },
     fontFamily: {
