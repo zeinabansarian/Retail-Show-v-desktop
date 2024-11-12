@@ -137,3 +137,17 @@ const supporter = new Swiper('.supporter', {
    slidesPerView:5,
    freeMode:true,
   });
+
+  let slidders=document.querySelectorAll(".section5 .swiper-slide")
+
+  slidders.forEach((element,i) => {
+    let number = element.querySelector(".number span")
+    let newI = i+1
+    if (newI>9) {
+        number.innerHTML=newI
+    }
+    else{
+        number.innerHTML=`0${newI}`
+
+    }
+  });

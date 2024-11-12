@@ -36,7 +36,6 @@ module.exports = {
       'yallow':'#FFCB05',
       'pink':'#ED2289'
         
-      'gray2':'#A9A9A9'
     },
     fontFamily: {
       'IRANSansWeb(FaNum)700': ['IRANSansWeb(FaNum)700', 'IRANSansWeb(FaNum)700'],
