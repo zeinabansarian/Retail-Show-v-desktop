@@ -42,6 +42,7 @@ module.exports = {
       'IRANSansWeb(FaNum)700': ['"IRANSansWeb(FaNum)700"'],
       'IRANSansWeb(FaNum)400': ['"IRANSansWeb(FaNum)400"'],
       'Anton400': ['"Anton400"'],
+      'TeluguMN700':['TeluguMN700']
 
     },
     extend: {

@@ -1,3 +1,5 @@
+let header = document.querySelector('header')
+header.classList.add('light')
 let titleMain = document.querySelectorAll('.Title-main')
 titleMain.forEach(t=>{
     gsap.to(t.querySelector('h1'),{
@@ -9,59 +11,48 @@ titleMain.forEach(t=>{
 
     })
 })
-gsap.to('.Form-container p',{
+gsap.to('.Boss-Container h1',{
     y:0,
-
-  })
-  gsap.to('h2',{
-    y:0,
-    scrollTriggers:{
-      trigger:'.Section-2 ',
-    start:'top 90%',
-      end:'bottom bottom'
-    }
-  })
-  
-  gsap.to('h3',{
-    y:0,
-    scrollTriggers:{
-      trigger:'.Section-2 ',
-    start:'top 90%',
-      end:'bottom bottom'
-    }
-  })
-  gsap.to('h4',{
-    y:0,
+    stagger:'.2',
     scrollTrigger:{
-      trigger:'.Section-2 ',
+      trigger:'.Boss-Container ',
+      start:'top 90%',
+      end:'bottom bottom'
+    }
+  })
+  gsap.to('.Boss-Container h2',{
+    y:0,
+    stagger:'.2',
+    scrollTrigger:{
+      trigger:'.Boss-Container ',
+      start:'top 90%',
+      end:'bottom bottom'
+    }
+  })
+  gsap.to('.Boss-Container .RightSec p',{
+    y:0,
+    stagger:'.2',
+    scrollTrigger:{
+      trigger:'.Boss-Container ',
       start:'top 90%',
       end:'bottom bottom'
     }
   })
 
-  gsap.to('p',{
+  gsap.to('.section-3 h2',{
     y:0,
     stagger:'.2',
     scrollTrigger:{
-      trigger:'.Section-2 ',
+      trigger:'.section-3 ',
       start:'top 90%',
       end:'bottom bottom'
     }
   })
-  gsap.to('span',{
+  gsap.to('.section-3 p',{
     y:0,
     stagger:'.2',
     scrollTrigger:{
-      trigger:'.Section-2 ',
-      start:'top 90%',
-      end:'bottom bottom'
-    }
-  })
-  gsap.to('a',{
-    y:0,
-    stagger:'.2',
-    scrollTrigger:{
-      trigger:'.Section-2 ',
+      trigger:'.section-3 ',
       start:'top 90%',
       end:'bottom bottom'
     }

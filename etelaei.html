@@ -11,9 +11,10 @@
 </head>
 <body>
     <main class="Etelaei-C w-full overflow-hidden" dir="rtl">
-        <header class="DesktopHeader group/header  w-full  flex flex-col " dir="rtl">
+        <header class="DesktopHeader fixed top-0 left-0 z-[99] group/header duration-100  w-full  flex flex-col " dir="rtl">
             <div class="Inner-header w-full flex flex-col ">
-                <div class="Top-header py-[.5em] bg-darkBlue w-full flex ">
+                <div class="Top-header group-[&.goTop]/header:translate-y-[-100%] duration-100
+                py-[.5em] bg-darkBlue w-full flex ">
                     <div class="inner w-90p mx-auto flex justify-start items-start gap-4">
                         <div class="Menu-top w-max flex justify-start items-start gap-[3rem]">
                             <a href="" class="menu-link w-auto flex justify-start items-start leading-18.78 text-mainYellow
@@ -32,7 +33,8 @@
                     </div>
                    
                 </div>
-                <div class="Bottom-header py-[1em] bg-mainBlue w-full flex justify-between items-end">
+                <div class="Bottom-header  group-[&.goTop]/header:!bg-mainBlue group-[&.goTop]/header:translate-y-[-29%]
+                group-[&.light]/header:bg-[transparent] duration-100 py-[1em] bg-mainBlue w-full flex justify-between items-end">
                     <div class="innerBottom  w-90p mx-auto flex justify-between items-end">
                         <nav class="Menu-bottom w-auto flex justify-start gap-[3rem] items-start pb-5 border-b  border-[#ffffff90]">
                             <ul class="w-full flex justify-start items-start gap-[3rem] ">
