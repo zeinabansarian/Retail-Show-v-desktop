@@ -64,6 +64,30 @@
   font-family: "IRANSansWeb300";
 }
 @font-face {
+  font-family: "BaiJamjuree700";
+  src: url("../../_fonts/BaiJamjuree-Bold.eot");
+  src: url("../../_fonts/BaiJamjuree-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../_fonts/BaiJamjuree-Bold.woff") format("woff"),
+    url("../../_fonts/BaiJamjuree-Bold.woff2") format("woff2"),
+    url("../../_fonts/BaiJamjuree-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Battambang700";
+  src: url("../../_fonts/Battambang-Bold.eot");
+  src: url("../../_fonts/Battambang-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../_fonts/Battambang-Bold.woff") format("woff"),
+    url("../../_fonts/Battambang-Bold.woff2") format("woff2"),
+    url("../../_fonts/Battambang-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
   font-family: "Anton400";
   src: url("../../_fonts/AntonSC-Regular.eot");
   src: url("../../_fonts/AntonSC-Regular.eot?#iefix")
@@ -371,7 +395,7 @@
 }
 
 .homePage .section1 .progressCat .swiper-scrollbar-drag {
-  background-color: #febe1b;
+  background-color: white;
 }
 .homePage .section1 .progressCat {
   width: 108px;
@@ -399,7 +423,7 @@
   line-height: 21.91px;
   display: inline-block;
   text-align: left;
-  color: #febe1b;
+  color: white;
 }
 .homePage .section1 .swiper-button-disabled {
   opacity: 0.5;
@@ -521,3 +545,15 @@ transition: all .5s ease;
 filter: grayscale(0);
 -webkit-filter: grayscale(0);
 }
+
+
+
+.pause {
+    opacity: 1;
+  }
+  
+  .play {
+    opacity: 0;
+    display: none;
+  }
+  
