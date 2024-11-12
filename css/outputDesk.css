@@ -832,6 +832,10 @@ video {
   margin-bottom: 3rem;
 }
 
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
 .mb-20 {
   margin-bottom: 5rem;
 }
@@ -880,8 +884,16 @@ video {
   margin-right: auto;
 }
 
+.mt-16 {
+  margin-top: 4rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.mt-2\.5 {
+  margin-top: 0.625rem;
 }
 
 .mt-20 {
@@ -914,10 +926,6 @@ video {
 
 .mt-\[2em\] {
   margin-top: 2em;
-}
-
-.mt-2\.5 {
-  margin-top: 0.625rem;
 }
 
 .box-border {
@@ -1057,6 +1065,15 @@ video {
 
 .h-svh {
   height: 100svh;
+}
+
+.\!w-fit {
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+
+.\!w-full {
+  width: 100% !important;
 }
 
 .w-0 {
@@ -1525,6 +1542,10 @@ video {
   grid-auto-flow: column dense;
 }
 
+.grid-cols-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
 .grid-cols-\[1fr\2c 1fr\2c 1fr\2c 1fr\] {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
@@ -1743,6 +1764,10 @@ video {
 
 .gap-6 {
   gap: 1.5rem;
+}
+
+.gap-8 {
+  gap: 2rem;
 }
 
 .gap-9 {
@@ -2467,12 +2492,12 @@ video {
   padding: 0.25rem;
 }
 
-.p-8 {
-  padding: 2rem;
-}
-
 .p-5 {
   padding: 1.25rem;
+}
+
+.p-8 {
+  padding: 2rem;
 }
 
 .px-1 {
@@ -2535,6 +2560,11 @@ video {
   padding-bottom: 1.25rem;
 }
 
+.py-7 {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
+
 .py-\[\.5em\] {
   padding-top: .5em;
   padding-bottom: .5em;
@@ -2574,6 +2604,10 @@ video {
 
 .pb-\[133px\] {
   padding-bottom: 133px;
+}
+
+.pb-\[30px\] {
+  padding-bottom: 30px;
 }
 
 .pl-24 {
@@ -3128,6 +3162,11 @@ video {
 
 .grayscale {
   --tw-grayscale: grayscale(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.grayscale-0 {
+  --tw-grayscale: grayscale(0);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
@@ -4189,6 +4228,21 @@ main.Etelaei-C .section h2,
   left: -0.75rem;
 }
 
+.after\:bottom-0::after {
+  content: var(--tw-content);
+  bottom: 0px;
+}
+
+.after\:left-0::after {
+  content: var(--tw-content);
+  left: 0px;
+}
+
+.after\:right-0::after {
+  content: var(--tw-content);
+  right: 0px;
+}
+
 .after\:top-\[40\%\]::after {
   content: var(--tw-content);
   top: 40%;
@@ -4219,14 +4273,31 @@ main.Etelaei-C .section h2,
   width: 71px;
 }
 
+.after\:w-full::after {
+  content: var(--tw-content);
+  width: 100%;
+}
+
 .after\:origin-right::after {
   content: var(--tw-content);
   transform-origin: right;
 }
 
+.after\:scale-x-0::after {
+  content: var(--tw-content);
+  --tw-scale-x: 0;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .after\:rounded-full::after {
   content: var(--tw-content);
   border-radius: 9999px;
+}
+
+.after\:bg-black::after {
+  content: var(--tw-content);
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .after\:bg-white::after {
@@ -4238,6 +4309,11 @@ main.Etelaei-C .section h2,
 .after\:duration-300::after {
   content: var(--tw-content);
   transition-duration: 300ms;
+}
+
+.after\:duration-500::after {
+  content: var(--tw-content);
+  transition-duration: 500ms;
 }
 
 .hover\:cursor-pointer:hover {
@@ -4253,6 +4329,11 @@ main.Etelaei-C .section h2,
   font-weight: 700;
 }
 
+.hover\:text-black:hover {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -4263,6 +4344,12 @@ main.Etelaei-C .section h2,
   color: rgb(255 203 5 / var(--tw-text-opacity));
 }
 
+.hover\:shadow-\[0px_4px_12px_0px_rgba\(0\2c _0\2c _0\2c _0\.3\)\]:hover {
+  --tw-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.3);
+  --tw-shadow-colored: 0px 4px 12px 0px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .before\:hover\:text-center:hover::before {
   content: var(--tw-content);
   text-align: center;
@@ -4271,6 +4358,12 @@ main.Etelaei-C .section h2,
 .hover\:before\:text-center:hover::before {
   content: var(--tw-content);
   text-align: center;
+}
+
+.hover\:after\:scale-x-100:hover::after {
+  content: var(--tw-content);
+  --tw-scale-x: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .focus\:hover\:text-center:hover:focus {
@@ -4293,6 +4386,11 @@ main.Etelaei-C .section h2,
 
 .group:hover .group-hover\:opacity-100 {
   opacity: 1;
+}
+
+.group:hover .group-hover\:grayscale-0 {
+  --tw-grayscale: grayscale(0);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .group:hover .group-hover\:before\:scale-x-125::before {
