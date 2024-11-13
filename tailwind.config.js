@@ -34,7 +34,17 @@ module.exports = {
       'darkBlue':'#002B43',
       'mainBlue':'#194A96',
       'yallow':'#FFCB05',
-      'pink':'#ED2289'
+      'mainYellow':'FFCB05',
+      'pink':'#ED2289',
+      'mainYellow':'#FEBE1B',
+      'white':'#FFFFFF',
+      'black':'#000000',
+      'gray-middle':'#828282',
+      'light-gray':'#F5F5F5',
+      'dark-gray':'#171717',
+      'dark3':'#636466',
+      'dark2':'#111111',
+      'gray2':'#A9A9A9',
         
     },
     fontFamily: {

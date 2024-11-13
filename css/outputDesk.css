@@ -946,8 +946,20 @@ video {
   margin-top: 10em;
 }
 
+.mt-\[15em\] {
+  margin-top: 15em;
+}
+
+.mt-\[1em\] {
+  margin-top: 1em;
+}
+
 .mt-\[2em\] {
   margin-top: 2em;
+}
+
+.mt-\[5em\] {
+  margin-top: 5em;
 }
 
 .mt-auto {
@@ -1069,6 +1081,10 @@ video {
   height: 20px;
 }
 
+.h-\[300px\] {
+  height: 300px;
+}
+
 .h-\[30px\] {
   height: 30px;
 }
@@ -1079,6 +1095,10 @@ video {
 
 .h-\[50px\] {
   height: 50px;
+}
+
+.h-\[598px\] {
+  height: 598px;
 }
 
 .h-\[5px\] {
@@ -1170,6 +1190,10 @@ video {
   width: 60%;
 }
 
+.w-\[65\%\] {
+  width: 65%;
+}
+
 .w-\[8\%\] {
   width: 8%;
 }
@@ -1188,6 +1212,10 @@ video {
 
 .w-\[95\%\] {
   width: 95%;
+}
+
+.w-\[96\%\] {
+  width: 96%;
 }
 
 .w-\[this-is\\\\\] {
@@ -1271,6 +1299,11 @@ video {
 
 .translate-x-\[-50\%\] {
   --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-x-\[4px\] {
+  --tw-translate-x: 4px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1845,6 +1878,10 @@ video {
   gap: 10px;
 }
 
+.gap-\[1em\] {
+  gap: 1em;
+}
+
 .gap-\[2em\] {
   gap: 2em;
 }
@@ -2358,6 +2395,11 @@ video {
   border-color: rgb(0 43 67 / var(--tw-border-opacity));
 }
 
+.border-gray-middle {
+  --tw-border-opacity: 1;
+  border-color: rgb(130 130 130 / var(--tw-border-opacity));
+}
+
 .border-gray2 {
   --tw-border-opacity: 1;
   border-color: rgb(169 169 169 / var(--tw-border-opacity));
@@ -2407,12 +2449,18 @@ video {
   background-color: rgb(245 245 245 / var(--tw-bg-opacity));
 }
 
+.bg-gray-middle {
+  --tw-bg-opacity: 1;
+  background-color: rgb(130 130 130 / var(--tw-bg-opacity));
+}
+
 .bg-light-gray {
-  background-color: #F2F2F2BD;
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 245 245 / var(--tw-bg-opacity));
 }
 
 .bg-light-gray\/\[0\.5\] {
-  background-color: rgb(242 242 242 / 0.5);
+  background-color: rgb(245 245 245 / 0.5);
 }
 
 .bg-lightbg {
@@ -2646,6 +2694,11 @@ video {
   padding-bottom: 1.75rem;
 }
 
+.py-\[\.4em\] {
+  padding-top: .4em;
+  padding-bottom: .4em;
+}
+
 .py-\[\.5em\] {
   padding-top: .5em;
   padding-bottom: .5em;
@@ -2713,6 +2766,10 @@ video {
 
 .pt-\[122px\] {
   padding-top: 122px;
+}
+
+.pt-\[13em\] {
+  padding-top: 13em;
 }
 
 .pt-\[1em\] {
@@ -3015,6 +3072,11 @@ video {
   color: rgb(0 43 67 / var(--tw-text-opacity));
 }
 
+.text-gray-middle {
+  --tw-text-opacity: 1;
+  color: rgb(130 130 130 / var(--tw-text-opacity));
+}
+
 .text-gray2 {
   --tw-text-opacity: 1;
   color: rgb(169 169 169 / var(--tw-text-opacity));
@@ -3023,6 +3085,11 @@ video {
 .text-main-blue {
   --tw-text-opacity: 1;
   color: rgb(25 74 150 / var(--tw-text-opacity));
+}
+
+.text-mainYellow {
+  --tw-text-opacity: 1;
+  color: rgb(254 190 27 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -3461,13 +3528,13 @@ video {
 @font-face {
   font-family: "IRANSansWeb400";
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Medium.eot");
+  src: url("../_fonts/IRANSansWeb(FaNum)_Medium.eot");
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Medium.eot?#iefix")
+  src: url("../_fonts/IRANSansWeb(FaNum)_Medium.eot?#iefix")
       format("embedded-opentype"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Medium.woff") format("woff"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Light.woff2") format("woff2"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Medium.ttf") format("truetype");
+    url("../_fonts/IRANSansWeb(FaNum)_Medium.woff") format("woff"),
+    url("../_fonts/IRANSansWeb(FaNum)_Light.woff2") format("woff2"),
+    url("../_fonts/IRANSansWeb(FaNum)_Medium.ttf") format("truetype");
 
   font-weight: 400;
 
@@ -3479,13 +3546,13 @@ video {
 @font-face {
   font-family: "IRANSansWeb500";
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Medium.eot");
+  src: url("../_fonts/IRANSansWeb(FaNum)_Medium.eot");
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Medium.eot?#iefix")
+  src: url("../_fonts/IRANSansWeb(FaNum)_Medium.eot?#iefix")
       format("embedded-opentype"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Medium.woff") format("woff"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Light.woff2") format("woff2"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Medium.ttf") format("truetype");
+    url("../_fonts/IRANSansWeb(FaNum)_Medium.woff") format("woff"),
+    url("../_fonts/IRANSansWeb(FaNum)_Light.woff2") format("woff2"),
+    url("../_fonts/IRANSansWeb(FaNum)_Medium.ttf") format("truetype");
 
   font-weight: 500;
 
@@ -3499,13 +3566,13 @@ video {
 
   font-family: "IRANSansWeb(FaNum)700";
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Bold.eot");
+  src: url("../_fonts/IRANSansWeb(FaNum)_Bold.eot");
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Bold.eot?#iefix")
+  src: url("../_fonts/IRANSansWeb(FaNum)_Bold.eot?#iefix")
       format("embedded-opentype"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Bold.woff") format("woff"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Bold.woff2") format("woff2"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Bold.ttf") format("truetype");
+    url("../_fonts/IRANSansWeb(FaNum)_Bold.woff") format("woff"),
+    url("../_fonts/IRANSansWeb(FaNum)_Bold.woff2") format("woff2"),
+    url("../_fonts/IRANSansWeb(FaNum)_Bold.ttf") format("truetype");
 
   font-weight: 700;
 
@@ -3517,13 +3584,13 @@ video {
 @font-face {
   font-family: "IRANSansWeb(FaNum)700";
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Bold.eot");
+  src: url("../_fonts/IRANSansWeb(FaNum)_Bold.eot");
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Bold.eot?#iefix")
+  src: url("../_fonts/IRANSansWeb(FaNum)_Bold.eot?#iefix")
       format("embedded-opentype"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Bold.woff") format("woff"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Bold.woff2") format("woff2"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Bold.ttf") format("truetype");
+    url("../_fonts/IRANSansWeb(FaNum)_Bold.woff") format("woff"),
+    url("../_fonts/IRANSansWeb(FaNum)_Bold.woff2") format("woff2"),
+    url("../_fonts/IRANSansWeb(FaNum)_Bold.ttf") format("truetype");
 
   font-weight: 700;
 
@@ -3539,13 +3606,13 @@ video {
 @font-face {
   font-family: "BaiJamjuree700";
 
-  src: url("../../_fonts/BaiJamjuree-Bold.eot");
+  src: url("../_fonts/BaiJamjuree-Bold.eot");
 
-  src: url("../../_fonts/BaiJamjuree-Bold.eot?#iefix")
+  src: url("../_fonts/BaiJamjuree-Bold.eot?#iefix")
       format("embedded-opentype"),
-    url("../../_fonts/BaiJamjuree-Bold.woff") format("woff"),
-    url("../../_fonts/BaiJamjuree-Bold.woff2") format("woff2"),
-    url("../../_fonts/BaiJamjuree-Bold.ttf") format("truetype");
+    url("../_fonts/BaiJamjuree-Bold.woff") format("woff"),
+    url("../_fonts/BaiJamjuree-Bold.woff2") format("woff2"),
+    url("../_fonts/BaiJamjuree-Bold.ttf") format("truetype");
 
   font-weight: 700;
 
@@ -3557,13 +3624,13 @@ video {
 @font-face {
   font-family: "Battambang700";
 
-  src: url("../../_fonts/Battambang-Bold.eot");
+  src: url("../_fonts/Battambang-Bold.eot");
 
-  src: url("../../_fonts/Battambang-Bold.eot?#iefix")
+  src: url("../_fonts/Battambang-Bold.eot?#iefix")
       format("embedded-opentype"),
-    url("../../_fonts/Battambang-Bold.woff") format("woff"),
-    url("../../_fonts/Battambang-Bold.woff2") format("woff2"),
-    url("../../_fonts/Battambang-Bold.ttf") format("truetype");
+    url("../_fonts/Battambang-Bold.woff") format("woff"),
+    url("../_fonts/Battambang-Bold.woff2") format("woff2"),
+    url("../_fonts/Battambang-Bold.ttf") format("truetype");
 
   font-weight: 700;
 
@@ -3575,13 +3642,13 @@ video {
 @font-face {
   font-family: "Anton400";
 
-  src: url("../../_fonts/AntonSC-Regular.eot");
+  src: url("../_fonts/AntonSC-Regular.eot");
 
-  src: url("../../_fonts/AntonSC-Regular.eot?#iefix")
+  src: url("../_fonts/AntonSC-Regular.eot?#iefix")
       format("embedded-opentype"),
-    url("../../_fonts/AntonSC-Regular.woff") format("woff"),
-    url("../../_fonts/AntonSC-Regular.woff2") format("woff2"),
-    url("../../_fonts/AntonSC-Regular.ttf") format("truetype");
+    url("../_fonts/AntonSC-Regular.woff") format("woff"),
+    url("../_fonts/AntonSC-Regular.woff2") format("woff2"),
+    url("../_fonts/AntonSC-Regular.ttf") format("truetype");
 
   font-weight: 400;
 
@@ -3593,13 +3660,13 @@ video {
 @font-face {
   font-family: "IRANSansWeb500";
 
-  src: url("../../_fonts/IRANSansWeb_Medium.eot");
+  src: url("../_fonts/IRANSansWeb_Medium.eot");
 
-  src: url("../../_fonts/IRANSansWeb_Medium.eot?#iefix")
+  src: url("../_fonts/IRANSansWeb_Medium.eot?#iefix")
       format("embedded-opentype"),
-    url("../../_fonts/IRANSansWeb_Medium.woff") format("woff"),
-    url("../../_fonts/IRANSansWeb_Medium.woff2") format("woff2"),
-    url("../../_fonts/IRANSansWeb_Medium.ttf") format("truetype");
+    url("../_fonts/IRANSansWeb_Medium.woff") format("woff"),
+    url("../_fonts/IRANSansWeb_Medium.woff2") format("woff2"),
+    url("../_fonts/IRANSansWeb_Medium.ttf") format("truetype");
 
   font-weight: 500;
 
@@ -3611,13 +3678,13 @@ video {
 @font-face {
   font-family: "IRANSansWeb400";
 
-  src: url("../../_fonts/IRANSansWebRegular.eot");
+  src: url("../_fonts/IRANSansWebRegular.eot");
 
-  src: url("../../_fonts/IRANSansWebRegular.eot?#iefix")
+  src: url("../_fonts/IRANSansWebRegular.eot?#iefix")
       format("embedded-opentype"),
-    url("../../_fonts/IRANSansWebRegular.woff") format("woff"),
-    url("../../_fonts/IRANSansWebRegular.woff2") format("woff2"),
-    url("../../_fonts/IRANSansWebRegular.ttf") format("truetype");
+    url("../_fonts/IRANSansWebRegular.woff") format("woff"),
+    url("../_fonts/IRANSansWebRegular.woff2") format("woff2"),
+    url("../_fonts/IRANSansWebRegular.ttf") format("truetype");
 
   font-weight: 400;
 
@@ -3629,13 +3696,31 @@ video {
 @font-face {
   font-family: "IRANSansWeb300";
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Light.eot");
+  src: url("../_fonts/IRANSansWeb(FaNum)_Light.eot");
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Light.eot?#iefix")
+  src: url("../_fonts/IRANSansWeb(FaNum)_Light.eot?#iefix")
       format("embedded-opentype"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Light.woff") format("woff"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Light.woff2") format("woff2"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Light.ttf") format("truetype");
+    url("../_fonts/IRANSansWeb(FaNum)_Light.woff") format("woff"),
+    url("../_fonts/IRANSansWeb(FaNum)_Light.woff2") format("woff2"),
+    url("../_fonts/IRANSansWeb(FaNum)_Light.ttf") format("truetype");
+
+  font-weight: 300;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANSansWeb200";
+
+  src: url("../_fonts/IRANSansWeb(FaNum)_Light.eot");
+
+  src: url("../_fonts/IRANSansWeb(FaNum)_Light.eot?#iefix")
+      format("embedded-opentype"),
+    url("../_fonts/IRANSansWeb(FaNum)_Light.woff") format("woff"),
+    url("../_fonts/IRANSansWeb(FaNum)_Light.woff2") format("woff2"),
+    url("../_fonts/IRANSansWeb(FaNum)_Light.ttf") format("truetype");
 
   font-weight: 300;
 
@@ -3647,13 +3732,13 @@ video {
 @font-face {
   font-family: "IRANSansWeb700";
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Bold.eot");
+  src: url("../_fonts/IRANSansWeb(FaNum)_Bold.eot");
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Bold.eot?#iefix")
+  src: url("../_fonts/IRANSansWeb(FaNum)_Bold.eot?#iefix")
       format("embedded-opentype"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Bold.woff") format("woff"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Bold.woff2") format("woff2"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Bold.ttf") format("truetype");
+    url("../_fonts/IRANSansWeb(FaNum)_Bold.woff") format("woff"),
+    url("../_fonts/IRANSansWeb(FaNum)_Bold.woff2") format("woff2"),
+    url("../_fonts/IRANSansWeb(FaNum)_Bold.ttf") format("truetype");
 
   font-weight: 700;
 
@@ -3665,13 +3750,13 @@ video {
 @font-face {
   font-family: "IRANSansWeb400";
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Medium.eot");
+  src: url("../_fonts/IRANSansWeb(FaNum)_Medium.eot");
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Medium.eot?#iefix")
+  src: url("../_fonts/IRANSansWeb(FaNum)_Medium.eot?#iefix")
       format("embedded-opentype"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Medium.woff") format("woff"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Light.woff2") format("woff2"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Medium.ttf") format("truetype");
+    url("../_fonts/IRANSansWeb(FaNum)_Medium.woff") format("woff"),
+    url("../_fonts/IRANSansWeb(FaNum)_Light.woff2") format("woff2"),
+    url("../_fonts/IRANSansWeb(FaNum)_Medium.ttf") format("truetype");
 
   font-weight: 400;
 
@@ -3683,13 +3768,13 @@ video {
 @font-face {
   font-family: "IRANSansWeb500";
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Medium.eot");
+  src: url("../_fonts/IRANSansWeb(FaNum)_Medium.eot");
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Medium.eot?#iefix")
+  src: url("../_fonts/IRANSansWeb(FaNum)_Medium.eot?#iefix")
       format("embedded-opentype"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Medium.woff") format("woff"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Light.woff2") format("woff2"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Medium.ttf") format("truetype");
+    url("../_fonts/IRANSansWeb(FaNum)_Medium.woff") format("woff"),
+    url("../_fonts/IRANSansWeb(FaNum)_Light.woff2") format("woff2"),
+    url("../_fonts/IRANSansWeb(FaNum)_Medium.ttf") format("truetype");
 
   font-weight: 500;
 
@@ -3703,13 +3788,13 @@ video {
 
   font-family: "IRANSansWeb(FaNum)700";
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Bold.eot");
+  src: url("../_fonts/IRANSansWeb(FaNum)_Bold.eot");
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Bold.eot?#iefix")
+  src: url("../_fonts/IRANSansWeb(FaNum)_Bold.eot?#iefix")
       format("embedded-opentype"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Bold.woff") format("woff"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Bold.woff2") format("woff2"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Bold.ttf") format("truetype");
+    url("../_fonts/IRANSansWeb(FaNum)_Bold.woff") format("woff"),
+    url("../_fonts/IRANSansWeb(FaNum)_Bold.woff2") format("woff2"),
+    url("../_fonts/IRANSansWeb(FaNum)_Bold.ttf") format("truetype");
 
   font-weight: 700;
 
@@ -3721,13 +3806,13 @@ video {
 @font-face {
   font-family: "IRANSansWeb(FaNum)700";
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Bold.eot");
+  src: url("../_fonts/IRANSansWeb(FaNum)_Bold.eot");
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Bold.eot?#iefix")
+  src: url("../_fonts/IRANSansWeb(FaNum)_Bold.eot?#iefix")
       format("embedded-opentype"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Bold.woff") format("woff"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Bold.woff2") format("woff2"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Bold.ttf") format("truetype");
+    url("../_fonts/IRANSansWeb(FaNum)_Bold.woff") format("woff"),
+    url("../_fonts/IRANSansWeb(FaNum)_Bold.woff2") format("woff2"),
+    url("../_fonts/IRANSansWeb(FaNum)_Bold.ttf") format("truetype");
 
   font-weight: 700;
 
@@ -4164,6 +4249,236 @@ main.Etelaei-C .section h2,
   display: none;
 }
 
+.AboutUs-C .section-2 .Text  p{
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 21.91px;
+  color: #000000 ;
+  font-family: "IRANSansWeb200";
+  transform: translateY(100%);
+  transition: all 700ms ease;
+}
+
+.AboutUs-C .section-3 .Text  p{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21.91px;
+  color: #000000 ;
+  font-family: "IRANSansWeb400";
+  transform: translateY(100%);
+  transition: all 700ms ease;
+}
+
+.ContactUs-C fieldset [data-bc-section-title],
+.ContactUs-C [data-bc-title-container]{
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+[data-bc-part-container], [data-bc-btn-container]{
+  width: 100% !important;
+}
+
+[data-bc-question],
+[data-bc-answer-container],[data-bc-schema-info-part="1"] [data-bc-part-related-cell]{
+  width: 100% !important;
+  margin: 0;
+}
+
+[data-bc-section]{
+  margin: 0;
+  padding: 0;
+}
+
+[data-bc-answer-container] input[type="text"], [data-bc-answer-container] input[type="password"],
+ [data-bc-answer-container] input[type="time"],
+  [data-bc-answer-container] input[type="file"], 
+  [data-bc-answer-container] select, [data-bc-answer-container] textarea
+  {
+  width: 100% !important;
+  background-color: transparent !important;
+  border: 1px solid #D7D7D7;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 21.91px;
+  color: #194A968F !important;
+  font-family: "IRANSansWeb400" !important;
+  height: 40px;
+  padding: 0 .5em !important;
+  resize: none !important;
+  border-radius:0 !important     ;
+  -webkit-border-radius:0 !important     ;
+  -moz-border-radius:0 !important     ;
+  -ms-border-radius:0 !important     ;
+  -o-border-radius:0 !important     ;
+}
+
+input[type="text"]:focus,
+  [data-bc-answer-container]
+   input[type="file"]:focus,
+    [data-bc-answer-container] select:focus, 
+    [data-bc-answer-container] textarea:focus{
+  border-color:transparent !important;
+  box-shadow:none;
+  outline: 0 none;
+  background-color:transparent;
+}
+
+.ContactUs-C [data-bc-schema-column]{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+}
+
+.ContactUs-C .col,
+.ContactUs-C .captchaBox{
+  width: 100%;
+  display: flex;
+}
+
+.ContactUs-C .captchaBox{
+  border: 1px solid #D7D7D7;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.ContactUs-C .captchaBox input{
+  width: 100% !important;
+  background-color: transparent !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 21.91px;
+  color: #194A968F !important;
+  font-family: "IRANSansWeb400" !important;
+  height: 40px;
+  padding: 0 .5em !important;
+}
+
+.ContactUs-C .captchaBox input::-moz-placeholder, [data-bc-answer-container] input[type="text"]::-moz-placeholder{
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 21.91px;
+  color: #194A968F !important;
+  font-family: "IRANSansWeb400" !important;
+}
+
+.ContactUs-C .captchaBox input::placeholder,
+[data-bc-answer-container] input[type="text"]::placeholder{
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 21.91px;
+  color: #194A968F !important;
+  font-family: "IRANSansWeb400" !important;
+}
+
+.ContactUs-C .captchaBox img {
+  height: 40px;
+}
+
+[data-bc-section]{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.ContactUs-C .Box{
+  margin-left: auto;
+  width: 93%;
+}
+
+.ContactUs-C .Form-container{
+  gap: 1em;
+}
+
+.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom{
+  z-index: 1 !important;
+}
+
+.main-container {
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 300px;
+  padding: 1.5em;
+  height: 100px;
+  transition: all 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#194A96;
+  color: #fff;
+  font-size: 14px;
+  font-family: "IRANSansWeb700";
+  position: fixed;
+  left: -100vw;
+  top: 50%;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  z-index: 999;
+}
+
+.main-container span {
+  color: #fff;
+  font-size: 14px;
+  font-family: "IRANSansWeb700";
+}
+
+.main-container.SEND {
+  left: 50%;
+}
+
+.ContactUs-C .Section-2 .Col:nth-child(1) .Answer  p{
+  color: #002B43;
+  font-size: 14px;
+  font-family: "IRANSansWeb500";
+  line-height: 21.91px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.ContactUs-C .Section-2 h2,
+.ContactUs-C .Section-2 h3,
+.ContactUs-C .Section-2 h4,
+.ContactUs-C .Section-2 span,
+.ContactUs-C .Section-2 p{
+  transform: translateY(100%);
+  transition: all 700ms ease;
+  opacity: 0;
+}
+
+header,footer,.SearchBox-popup {
+  direction: rtl !important;
+}
+
+.ResultSearch .ItemR[hidden='true']{
+  display: none;
+}
+
+.ResultSearch .ItemR[open='true']{
+  display: flex;
+}
+
+.ResultSearch .ItemR{
+  display: none;
+}
+
+.loaded .Nores[hidden='true']{
+  display: none;
+}
+
+.loaded .Nores[hidden='false']{
+  display: flex;
+}
+
+mark {
+  background: #194a9652 !important
+}
+
 @media (min-width: 480px) {
   .sm\:container {
     width: 100%;
@@ -4587,6 +4902,10 @@ main.Etelaei-C .section h2,
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.\[\&\.goDown\]\:top-\[-100vh\].goDown {
+  top: -100vh;
+}
+
 .\[\&\.hide\]\:pointer-events-none.hide {
   pointer-events: none;
 }
@@ -4594,4 +4913,3 @@ main.Etelaei-C .section h2,
 .\[\&\.hide\]\:opacity-0.hide {
   opacity: 0;
 }
-  

@@ -11,7 +11,7 @@
 </head>
 <body>
     <main class="Etelaei-C w-full overflow-hidden" dir="rtl">
-        <header class="DesktopHeader fixed top-0 left-0 z-[99] group/header duration-100  w-full  flex flex-col " dir="rtl">
+        <header class="DesktopHeader [&.goDown]:top-[-100vh] fixed top-0 left-0 z-[99] group/header duration-100  w-full  flex flex-col " dir="rtl">
             <div class="Inner-header w-full flex flex-col ">
                 <div class="Top-header group-[&.goTop]/header:translate-y-[-100%] duration-100
                 py-[.5em] bg-darkBlue w-full flex ">
@@ -113,9 +113,9 @@
                 </div>
             </div>
         </header>
-        <div class="SearchBox-popup w-90p  px-[1em] duration-200 top-[11em] 
+        <div class="SearchBox-popup fixed w-90p  px-[1em] duration-200 top-[11em] 
         z-20 left-0 right-0 mx-auto translate-y-[-100vh] [&.OpenSearch]:translate-y-[0]
-        flex justify-center flex-col items-center py-[1em] absolute rounded-[15px]">
+        flex justify-center flex-col items-center py-[1em]  rounded-[15px]">
             <div class="inputBox w-full flex justify-center items-center relative">
                 <span class="CloseSearch hover:cursor-pointer w-auto absolute right-[.5em] top-[.5em]">
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
