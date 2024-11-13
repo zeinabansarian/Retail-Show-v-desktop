@@ -17,6 +17,25 @@ module.exports = {
       xl: '1440px',
     },
     colors: {
+      'main-pink':'#ED2289',
+      'white':'#FFFFFF',
+      'black':'#000000',
+      'main-blue':'#194A96',
+      'dark-blue':'#002B43',
+      'new-gray':'#F2F2F2',
+      'light-gray':'#F2F2F2BD',
+      'too-light':'#FAFAFABD',
+      'lightbg':'#FAFAFA',
+      'dark-gray':'#171717',
+      'gray-bg':'#F5F5F5',
+      'dark3':'#636466',
+      'dark2':'#111111',
+      'gray2':'#A9A9A9',
+      'darkBlue':'#002B43',
+      'mainBlue':'#194A96',
+      'yallow':'#FFCB05',
+      'mainYellow':'FFCB05',
+      'pink':'#ED2289',
       'mainYellow':'#FEBE1B',
       'white':'#FFFFFF',
       'black':'#000000',
@@ -26,10 +45,6 @@ module.exports = {
       'dark3':'#636466',
       'dark2':'#111111',
       'gray2':'#A9A9A9',
-      'darkBlue':'#002B43',
-      'mainBlue':'#194A96',
-      'yallow':'#FFCB05',
-      'pink':'#ED2289'
         
     },
     fontFamily: {
@@ -42,7 +57,9 @@ module.exports = {
       'IRANSansWeb(FaNum)700': ['"IRANSansWeb(FaNum)700"'],
       'IRANSansWeb(FaNum)400': ['"IRANSansWeb(FaNum)400"'],
       'Anton400': ['"Anton400"'],
-      'TeluguMN700':['TeluguMN700']
+      'TeluguMN700':['TeluguMN700'],
+      'Battambang700': ['"Battambang700"'],
+      'BaiJamjuree700': ['"BaiJamjuree700"'],
 
     },
     extend: {
