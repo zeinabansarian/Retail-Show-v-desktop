@@ -1,4 +1,5 @@
 
+$("header").addClass("light");
 var lastScrollTop = 0;
 window.addEventListener("scroll", function(){ 
    var st = window.pageYOffset || document.documentElement.scrollTop; 

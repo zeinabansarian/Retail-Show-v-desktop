@@ -8,13 +8,13 @@
                      font-IRANSansWeb400 font-normal text-xs">
                         هلدینگ تجارت طلایی
                     </a>
-                    <a href="http://a112tl.undertest.ir" class="menu-link w-auto flex justify-start items-start leading-18.78 text-mainYellow
+                    <a href="http://www.ZpPs.UnderTest.ir" class="menu-link w-auto flex justify-start items-start leading-18.78 text-mainYellow
                     font-IRANSansWeb400 font-normal text-xs">
-                        پایگاه خبری
+                         ایران ریتل اواردز
                     </a>
-                    <a href="http://zpps.undertest.ir/" class="menu-link w-auto flex justify-start items-start leading-18.78 text-mainYellow
+                    <a href="http://A112Tl.UnderTest.ir" class="menu-link w-auto flex justify-start items-start leading-18.78 text-mainYellow
                     font-IRANSansWeb400 font-normal text-xs">
-                        ایران ریتیل شو
+                          پایگاه خبری
                     </a>
                 </div>
             </div>
@@ -101,45 +101,82 @@ flex justify-center flex-col items-center py-[1em]  rounded-[15px]">
     <div class="inputBox w-full flex justify-center items-center relative">
         <span class="CloseSearch hover:cursor-pointer w-auto absolute right-[.5em] top-[.5em]">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12.4 14L7 8.6L1.6 14L0 12.4L5.4 7L0 1.6L1.6 0L7 5.4L12.4 0L14 1.6L8.6 7L14 12.4L12.4 14Z" fill="#FEBE1B"/>
+                <path d="M12.4 14L7 8.6L1.6 14L0 12.4L5.4 7L0 1.6L1.6 0L7 5.4L12.4 0L14 1.6L8.6 7L14 12.4L12.4 14Z" fill="#ED2289"/>
                 </svg>
                 
         </span>
         <div class="Input w-[60%] flex justify-center items-center relative z-20">
-            <input type="text" id="search" placeholder="جستجو کنید..." class="w-full
+            <input type="text" id="search" placeholder="جستجو کنید..." class="w-full 
             px-[1em] font-IRANSansWeb400 font-normal leading-21.91 text-gray2 text-sm bg-white h-[40px] placeholder:font-IRANSansWeb400 placeholder:font-normal
-            placeholder:leading-21.91 placeholder:text-gray2">
-            <span class="searchinnerIcon absolute left-[.5em] top-[.5em]">
-                <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            placeholder:leading-21.91 placeholder:text-gray2" search="input">
+            <span class="searchinnerIcon absolute left-[.5em] top-[.5em]" search="clear" >
+                <!-- <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M19.2817 19L15.7269 15.5M15.2191 8C15.2191 8.91925 15.0352 9.82951 14.6779 10.6788C14.3206 11.5281 13.797 12.2997 13.1368 12.9497C12.4766 13.5998 11.6928 14.1154 10.8303 14.4672C9.96769 14.8189 9.0432 15 8.10956 15C7.17592 15 6.25142 14.8189 5.38885 14.4672C4.52628 14.1154 3.74252 13.5998 3.08234 12.9497C2.42216 12.2997 1.89847 11.5281 1.54118 10.6788C1.18389 9.82951 1 8.91925 1 8C1 6.14348 1.74904 4.36301 3.08234 3.05025C4.41564 1.7375 6.22398 1 8.10956 1C9.99513 1 11.8035 1.7375 13.1368 3.05025C14.4701 4.36301 15.2191 6.14348 15.2191 8Z" stroke="#9A9A9A" stroke-width="2" stroke-linecap="round"/>
                     </svg>
-                    
+                     -->
             </span>
         </div>
     </div>
-    <div class="loaded w-full flex flex-col">
-        <div class="Nores w-full flex justify-center items-end py-[2em]">
+    <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="210854"> 
+        <member name="list-etelaeyie" size="268x268" propertyid="7249" type="list"/> 
+    </basis>
+    <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="210836">
+        <member name="posterList" type="list" size="279x395" />
+    </basis />
+
+
+    <div class="loaded w-full h-[300px] flex flex-col live-search-list" id="searchContainer">
+        <div class="Nores w-full  justify-center items-end py-[2em]" search="noResults">
             <p class="w-[13%] text-center mx-auto font-IRANSansWeb400 font-normal text-[13px] leading-[22.45px] text-black">
                 باعرض پوزش مطلبی پیدا نشد.
              واژه دیگری را جست و جو نمایید.
             </p>
         </div>
-        <div class="ResultSearch w-[60%] mx-auto flex flex-col">
-            <div class="ItemR w-full py-[1em] flex flex-col justify-between gap-6 border-b border-gray2">
-                <div class="Title w-full flex justify-start items-start">
-                    <p class="font-IRANSansWeb400 font-normal text-sm leading-21.91 text-black text-right">
-                        از برندهای برتر صنعت خرده‌فروشی ایران تقدیر و تجلیل به عمل می‌آید و جایزه‌ای که از سوی شرکت تجارت طلایی به این مجموعه‌ها داده می‌شود
-                    </p>
+        <div class="ResultSearch  overflow-hidden w-[60%] mx-auto flex flex-col">
+            <basis core="print" datamembername="db.list-etelaeyie">
+                <layout>
+                    @child
+                </layout>
+                <face>
+                    <div class="ItemR w-full py-[1em] flex flex-col justify-between gap-6 border-b border-gray2" search="item">
+                        <div class="Title w-full flex justify-start items-start">
+                            <p class="font-IRANSansWeb400 font-normal text-sm leading-21.91 text-black text-right">
+                            @title
+                            </p>
+                        </div>
+                        <a href="@link" alt="@title" title="@title" class="ShowMore mr-auto w-auto flex gap-[10px] overflow-hidden justify-center">
+                            <p class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-gray-middle">مشاهده </p>
+                            <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-gray-middle relative 
+                            ">
+                            <div class="dot w-[5px] h-[5px] rounded-full translate-y-[-50%]
+                             bg-gray-middle absolute top-[70%] translate-x-[-50%]"></div>
+                            </div>
+                        </a>
                 </div>
-                <a href="" class="ShowMore mr-auto w-auto flex gap-[10px] overflow-hidden justify-center">
-                    <p class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-gray-middle">مشاهده </p>
-                    <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-gray-middle relative 
-                    ">
-                    <div class="dot w-[5px] h-[5px] rounded-full translate-y-[-50%]
-                     bg-gray-middle absolute top-[70%] translate-x-[-50%]"></div>
-                    </div>
-                </a>
-        </div>
+                </face>
+            </basis>
+            <basis core="print" datamembername="db.posterList">
+                <layout>
+                    @child
+                </layout>
+                <face>
+                    <div class="ItemR w-full py-[1em] flex flex-col justify-between gap-6 border-b border-gray2" search="item">
+                        <div class="Title w-full flex justify-start items-start">
+                            <p class="font-IRANSansWeb400 font-normal text-sm leading-21.91 text-black text-right">
+                            @title
+                            </p>
+                        </div>
+                        <a href="@link" alt="@title" title="@title" class="ShowMore mr-auto w-auto flex gap-[10px] overflow-hidden justify-center">
+                            <p class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-gray-middle">مشاهده </p>
+                            <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-gray-middle relative 
+                            ">
+                            <div class="dot w-[5px] h-[5px] rounded-full translate-y-[-50%]
+                             bg-gray-middle absolute top-[70%] translate-x-[-50%]"></div>
+                            </div>
+                        </a>
+                </div>
+                </face>
+            </basis>
     </div>
 </div>
 </div>

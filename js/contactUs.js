@@ -113,10 +113,12 @@ const json = await response.json();
 console.log(json);
 if (json.errorid == 6) {
             console.log('با موفقیت ثبت شذ');
-            document.querySelector('.main-container').querySelector('span').innerHTML='پیام شما با موفقیت ثبت شد'
+            document.querySelector('.main-container').querySelector('span.text').innerHTML='پیام شما با موفقیت ثبت شد'
+            document.querySelector('.main-container .icon').classList.add('show')
             document.querySelector('.main-container').classList.add('SEND')
   setTimeout(()=>{
     document.querySelector('.main-container').classList.remove('SEND')
+    document.querySelector('.main-container .icon').classList.remove('show')
   },2000)
           
 
@@ -124,10 +126,12 @@ if (json.errorid == 6) {
 
 if (json.errorid == 4) {
    console.log(json);
-   document.querySelector('.main-container').querySelector('span').innerHTML='  کپچا اشتباه وارد شده  '
+   document.querySelector('.main-container').querySelector('span.text').innerHTML='  کپچا اشتباه وارد شده  '
    document.querySelector('.main-container').classList.add('SEND')
+   document.querySelector('.main-container .icon').classList.remove('show')
 setTimeout(()=>{
 document.querySelector('.main-container').classList.remove('SEND')
+document.querySelector('.main-container .icon').classList.remove('show')
 },2000)
 }
 
@@ -159,10 +163,13 @@ buttons.addEventListener('click',()=>{
     })
   if(isEmpty){
     isEmpty = false
-    document.querySelector('.main-container').querySelector('span').innerHTML='  فیلدها را پرکنید '
+    document.querySelector('.main-container').querySelector('span.text').innerHTML='  فیلدها را پرکنید '
     document.querySelector('.main-container').classList.add('SEND')
+    document.querySelector('.main-container .icon').classList.remove('show')
+
 setTimeout(()=>{
 document.querySelector('.main-container').classList.remove('SEND')
+document.querySelector('.main-container .icon').classList.remove('show')
 },2000)
   }
 })
