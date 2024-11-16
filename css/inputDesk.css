@@ -701,14 +701,17 @@ margin: 0;
 .main-container {
   width: -moz-max-content;
   width: max-content;
-  max-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .3em;
   padding: 1.5em;
   height: 100px;
   transition: all 0.4s;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:#194A96;
+  background-color:#FEBE1B;
   color: #fff;
   font-size: 14px;
   font-family: "IRANSansWeb700";
@@ -722,12 +725,15 @@ margin: 0;
   z-index: 999;
 }
 .main-container span {
-  color: #fff;
-  font-size: 14px;
-  font-family: "IRANSansWeb700";
+  color: #000000;
+  font-size: 18px;
+  font-family: "IRANSansWeb500";
+  line-height: 28.17px;
 }
 .main-container.SEND {
-  left: 50%;
+  left: 0;
+    right: 0;
+    margin: auto;
 }
 .ContactUs-C .Section-2 .Col:nth-child(1) .Answer  p{
 color: #002B43;
