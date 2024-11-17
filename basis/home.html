@@ -1,15 +1,18 @@
 <basis core="dbsource" source="media" name="db" lid="1" catid="2120"> <member type="list" name="banner-def" perpage="10" pageno="1" /> </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2363552"> <member name="about-def" type="view"/> </basis>	
- <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2363552"> <member name="video" type="list"/> </basis>	
-<basis core="dbsource" source="media" name="db" lid="1" catid="2122"> <member type="list" name="banner-sec4" perpage="10" pageno="1"/> </basis>
+ <basis core="dbsource" source="media" name="db" lid="1" catid="2122"> <member type="list" name="banner-sec4" perpage="10" pageno="1"/> </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2363587"> <member name="def-sec5" type="view"/> </basis> 
 <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2363587"> <member name="image-sec5" type="list" format="4"/> </basis> 
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="210836"> <member name="list" size="279x395" type="list"/> </basis>
 <basis core="dbsource" source="media" name="db" lid="1" catid="2124"> <member type="list" name="banner-sec8" perpage="10" pageno="1" /> </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2363592"> <member name="def-sec7" type="view"/> </basis> 
-
 <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2363592"> <member name="def-sec7img" type="list"/> </basis>	
-
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2363552"> 
+    <member name="video" type="list" format="3"/> 
+</basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2363552">
+     <member name="cover" type="list" format="4" postsql="select * from [db.cover] where ord=10"/> 
+</basis>
 <!DOCTYPE html>
 <html lang="fa">
 <head>
@@ -98,22 +101,16 @@
                 </a>
             </div>
             <div class="lSide w-[45%] pl-[5%]">
-                <div class="inVideo relative flex items-center justify-center -mr-16">
+                <div class="inVideo w-full relative flex items-center justify-center -mr-16">
 
                     <basis core="print" datamembername="db.video">
-                      
-                        <face filter="ord=10">
-                            
-                            <video class="w-full object-cover" poster="/@largeIMG" loop>
-                            </face>
-                        </basis>
-                    <basis core="print" datamembername="db.video">
-                      
-                        <face filter="format=4 and ord=1000">
-                            
-                            <source src="/@largeIMG">
-                            </face>
-                        </basis>
+                        <layout>
+                            @child
+                        </layout>
+                        <face filter="ord=1000">
+                         <video src="@largeIMG" class="w-full object-cover" id="player" loop poster="[##db.cover.largeIMG##]">
+                        </face>
+                    </basis>
                     </video>
                     <div class="ov overlay [&.hide]:opacity-0 [&.hide]:pointer-events-none duration-1000
                     absolute w-full h-full bg-[#0000004D] pointer-events-none"></div>

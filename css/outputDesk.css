@@ -2950,6 +2950,10 @@ video {
   padding-bottom: 2.5rem;
 }
 
+.pb-16 {
+  padding-bottom: 4rem;
+}
+
 .pb-20 {
   padding-bottom: 5rem;
 }
@@ -3010,6 +3014,10 @@ video {
   padding-top: 13em;
 }
 
+.pt-\[172px\] {
+  padding-top: 172px;
+}
+
 .pt-\[1em\] {
   padding-top: 1em;
 }
@@ -3020,14 +3028,6 @@ video {
 
 .pt-\[5em\] {
   padding-top: 5em;
-}
-
-.pb-16 {
-  padding-bottom: 4rem;
-}
-
-.pt-\[172px\] {
-  padding-top: 172px;
 }
 
 .text-left {
