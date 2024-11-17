@@ -1,18 +1,22 @@
 let closePop = document.querySelector(".closePop")
+let closeShowPop = document.querySelector(".closeShowPop")
 let closeImgPop = document.querySelector(".closeImgPop")
 let popUpVideoGalleryContainer = document.querySelector(".popUpVideoGalleryContainer")
+let popUpVideoShowGalleryContainer = document.querySelector(".popUpVideoShowGalleryContainer")
 let popUpImgGalleryContainer = document.querySelector(".popUpImgGalleryContainer")
 let openGallery = document.querySelectorAll(".openGallery")
 let openPopGallery = document.querySelectorAll(".openPopGallery")
 let openGalleryPop = document.querySelectorAll(".openGalleryPop")
 let openImgGallery = document.querySelectorAll(".openImgGallery")
 let sGallery = document.querySelector(".sGallery")
+let sShowGallery = document.querySelector(".sShowGallery")
 let popUpVideo = document.querySelector(".popUpVideo")
 let closepopUpVideo = document.querySelector(".closepopUpVideo")
 let popUpimg = document.querySelector(".popUpimg")
 let closeSlider = document.querySelector(".closeSlider")
 let closeImgSlider = document.querySelector(".closeImgSlider")
 let fThumb = document.querySelector(".fThumb")
+let fShowThumb = document.querySelector(".fShowThumb")
 let sImgGallery = document.querySelector(".sImgGallery")
 let fImgThumb = document.querySelector(".fImgThumb")
 let closepopUpImg = document.querySelector(".closepopUpImg")
@@ -36,6 +40,7 @@ let sGalleryFlag = true;
 let thumbBox = document.querySelectorAll(".thumbBox")
 let thumbImgBox = document.querySelectorAll(".thumbImgBox")
 let openVideoGallery = document.querySelectorAll(".openVideoGallery")
+let openShowVideoGallery = document.querySelectorAll(".openShowVideoGallery")
 const popSlider = new Swiper('.popSlider', {
     // Optional parameters
 
@@ -124,6 +129,50 @@ const popImgSlider = new Swiper('.popImgSlider', {
         }
       },
   });
+const popShowSlider = new Swiper('.popImgSlider', {
+    // Optional parameters
+
+    loop: true,
+    slidesPerView:1,
+    speed:1000,
+
+    centeredSlides:true,
+    navigation: {
+        nextEl: '.nextShowPop',
+        prevEl: '.prevShowPop',
+      },
+
+    pagination: {
+        el: '.popSliderFraction',
+        type: 'custom',
+        renderCustom: function (swiper, current, total) {
+            if (total>10) {
+                if (current>9) {
+                    
+                    return `<span class="current">${current}</span>` + '<i>/</i>' + `<span class="total">${(total)}</span>`; 
+                }
+                else{
+
+                    return `<span class="current">0${current}</span>` + '<i>/</i>' + `<span class="total">${(total)}</span>`; 
+
+                }
+            }
+            else{
+                if (current>9) {
+
+                    return `<span class="current">${current}</span>` + '<i>/</i>' + `<span class="total">0${(total)}</span>`; 
+                }
+                else{
+
+                    return `<span class="current">0${current}</span>` + '<i>/</i>' + `<span class="total">0${(total)}</span>`; 
+    
+                }
+
+            }
+          
+        }
+      },
+  });
 
 
 
@@ -169,6 +218,14 @@ openPopGallery.forEach(element => {
 closePop.addEventListener("click",function (params) {
     if (!galleryFlag) {
                     popUpVideoGalleryContainer.classList.remove("popOpen")
+                    galleryFlag=!galleryFlag
+                    body.style.overflow="auto"
+
+    }
+})
+closeShowPop.addEventListener("click",function (params) {
+    if (!galleryFlag) {
+                    popUpVideoShowGalleryContainer.classList.remove("popOpen")
                     galleryFlag=!galleryFlag
                     body.style.overflow="auto"
 
@@ -221,6 +278,11 @@ for (let i = 0; i < thumbImgBox.length; i++) {
         sGalleryFlag=!sGalleryFlag
         popUpVideoGalleryContainer.style.overflow="auto"
     })
+    closeShowPop.addEventListener("click",function(params) {
+        sGallery.classList.remove("popOpen")
+        sGalleryFlag=!sGalleryFlag
+        popUpVideoShowGalleryContainer.style.overflow="auto"
+    })
     closeImgSlider.addEventListener("click",function(params) {
         sImgGallery.classList.remove("popOpen")
         sGalleryFlag=!sGalleryFlag
@@ -249,6 +311,32 @@ for (let i = 0; i < thumbImgBox.length; i++) {
                     sGalleryFlag=!sGalleryFlag
                     popUpVideoGalleryContainer.scrollTo(0,0)
                     popUpVideoGalleryContainer.style.overflow="hidden"
+                
+            }
+            
+        })
+    });
+    openShowVideoGallery.forEach((element,i) => {
+
+        let newElem =  element.querySelector(".playbtn");
+        
+        
+       newElem.addEventListener("click",function(params) {
+        let newI = element.getAttribute("data-swiper-slide-index")
+        console.log(newI);
+        
+            if (galleryFlag && sGalleryFlag) {
+                
+                fShowThumb.classList.add("popOpen")
+                popUpVideoShowGalleryContainer.classList.add("popOpen")
+                sShowGallery.classList.add("popOpen")
+                galleryFlag=!galleryFlag
+                body.style.overflow="hidden"
+                
+                popShowSlider.slideTo(newI+1,0)
+                    sGalleryFlag=!sGalleryFlag
+                    popUpVideoShowGalleryContainer.scrollTo(0,0)
+                    popUpVideoShowGalleryContainer.style.overflow="hidden"
                 
             }
             
