@@ -8,23 +8,30 @@ let openGalleryPop = document.querySelectorAll(".openGalleryPop")
 let openImgGallery = document.querySelectorAll(".openImgGallery")
 let sGallery = document.querySelector(".sGallery")
 let popUpVideo = document.querySelector(".popUpVideo")
+let closepopUpVideo = document.querySelector(".closepopUpVideo")
+let popUpimg = document.querySelector(".popUpimg")
 let closeSlider = document.querySelector(".closeSlider")
 let closeImgSlider = document.querySelector(".closeImgSlider")
 let fThumb = document.querySelector(".fThumb")
 let sImgGallery = document.querySelector(".sImgGallery")
 let fImgThumb = document.querySelector(".fImgThumb")
-let closepopUpVideo = document.querySelector(".closepopUpVideo")
-let playVideoOpen = document.querySelector(".playVideoOpen")
+let closepopUpImg = document.querySelector(".closepopUpImg")
+let playVideoOpen = document.querySelectorAll(".playVideoOpen")
+let planSlides = document.querySelectorAll(".planSlider .swiper-slide")
 let body = document.querySelector("body")
 let galleryFlag=true;
 let zoomMin =0.5;
 let zoomMax =1.7;
 let currZoom = 1;
 let curRotate = 0;
-let zoomIn = document.querySelector(".zoomIn")
-let rotateRight = document.querySelector(".rotateRight")
-let rotateLeft = document.querySelector(".rotateLeft")
-let zoomOut = document.querySelector(".zoomOut")
+let zoomIn = document.querySelector(".popUpImgGalleryContainer .zoomIn")
+let rotateRight = document.querySelector(".popUpImgGalleryContainer .rotateRight")
+let rotateLeft = document.querySelector(".popUpImgGalleryContainer .rotateLeft")
+let zoomOut = document.querySelector(".popUpImgGalleryContainer .zoomOut")
+let popUpimgzoomIn = document.querySelector(".popUpimg .zoomIn")
+let popUpimgrotateRight = document.querySelector(".popUpimg .rotateRight")
+let popUpimgrotateLeft = document.querySelector(".popUpimg .rotateLeft")
+let popUpimgzoomOut = document.querySelector(".popUpimg .zoomOut")
 let sGalleryFlag = true;
 let thumbBox = document.querySelectorAll(".thumbBox")
 let thumbImgBox = document.querySelectorAll(".thumbImgBox")
@@ -277,15 +284,35 @@ for (let i = 0; i < thumbImgBox.length; i++) {
 
 
 
-
-    playVideoOpen.addEventListener("click" , function (params) {
-        popUpVideo.classList.add("popOpen")
-        let vodUrl = playVideoOpen.getAttribute("data-videoUrl")
-        let videoPop = document.querySelector(".popUpVideo video")
-        videoPop.setAttribute("src" , vodUrl)
-    })
+    playVideoOpen.forEach(element => {
+        element.addEventListener("click" , function (params) {
+            popUpVideo.classList.add("popOpen")
+            let vodUrl = playVideoOpen.getAttribute("data-videoUrl")
+            let videoPop = document.querySelector(".popUpVideo video")
+            videoPop.setAttribute("src" , vodUrl)
+        })
+        
+    });
     closepopUpVideo.addEventListener("click" , function (params) {
         popUpVideo.classList.remove("popOpen")
+
+    })
+
+
+    planSlides.forEach(element => {
+        element.addEventListener("click" , function (params) {
+            popUpimg.classList.add("popOpen")
+            
+            let vodUrl = element.querySelector("img").getAttribute("src")
+            let videoPop = document.querySelector(".popUpimg img")
+            videoPop.setAttribute("src" , vodUrl)
+            let popUpimgNAme = document.querySelector(".popUpimg .name span")
+            popUpimgNAme.innerHTML = element.getAttribute("data-name")
+        })
+        
+    });
+    closepopUpImg.addEventListener("click" , function (params) {
+        popUpimg.classList.remove("popOpen")
 
     })
 
@@ -319,6 +346,33 @@ rotateLeft.addEventListener("click" , function (params) {
 })
 rotateRight.addEventListener("click" , function (params) {
     let currImg = document.querySelector(".popImgSlider .swiper-slide-active img");
+    curRotate+=90
+    currImg.style.rotate = `${curRotate}deg`
+})
+    
+popUpimgzoomIn.addEventListener("click" , function (params) {
+    let currImg = document.querySelector(".popUpimg img");
+    console.log("zoomin");
+    if (currZoom<zoomMax) {
+        currZoom+=0.1
+        currImg.style.scale = currZoom
+    }
+})
+popUpimgzoomOut.addEventListener("click" , function (params) {
+    let currImg = document.querySelector(".popUpimg img");
+    console.log("zoomout");
+    if (currZoom>zoomMin) {
+        currZoom-=0.1;
+        currImg.style.scale = currZoom
+    }
+})
+popUpimgrotateLeft.addEventListener("click" , function (params) {
+    let currImg = document.querySelector(".popUpimg img");
+    curRotate+=90
+    currImg.style.rotate = `${-curRotate}deg`
+})
+popUpimgrotateRight.addEventListener("click" , function (params) {
+    let currImg = document.querySelector(".popUpimg img");
     curRotate+=90
     currImg.style.rotate = `${curRotate}deg`
 })
