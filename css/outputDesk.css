@@ -4893,6 +4893,25 @@ mark {
   transform: translateY(0) !important;
 }
 
+.Etelaei-C section .Text p{
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 25.02px;
+  color: #000000;
+  font-family: "IRANSansWeb300";
+  text-align: justify;
+}
+
+.Etelaei-C .Section-1 h2,
+.Etelaei-C .Section-2 h3{
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28.17px;
+  color: #000000;
+  font-family: "IRANSansWeb400";
+  text-align: justify;
+}
+
 @media (min-width: 480px) {
   .sm\:container {
     width: 100%;
