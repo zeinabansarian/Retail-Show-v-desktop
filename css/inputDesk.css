@@ -1,8 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-:root{
-  --plyr-color-main:#FEBE1B
+:root {
+  --plyr-color-main: #febe1b;
 }
 @font-face {
   font-family: "TeluguMN700";
@@ -66,8 +66,7 @@
 @font-face {
   font-family: "BaiJamjuree700";
   src: url("../_fonts/BaiJamjuree-Bold.eot");
-  src: url("../_fonts/BaiJamjuree-Bold.eot?#iefix")
-      format("embedded-opentype"),
+  src: url("../_fonts/BaiJamjuree-Bold.eot?#iefix") format("embedded-opentype"),
     url("../_fonts/BaiJamjuree-Bold.woff") format("woff"),
     url("../_fonts/BaiJamjuree-Bold.woff2") format("woff2"),
     url("../_fonts/BaiJamjuree-Bold.ttf") format("truetype");
@@ -78,8 +77,7 @@
 @font-face {
   font-family: "Battambang700";
   src: url("../_fonts/Battambang-Bold.eot");
-  src: url("../_fonts/Battambang-Bold.eot?#iefix")
-      format("embedded-opentype"),
+  src: url("../_fonts/Battambang-Bold.eot?#iefix") format("embedded-opentype"),
     url("../_fonts/Battambang-Bold.woff") format("woff"),
     url("../_fonts/Battambang-Bold.woff2") format("woff2"),
     url("../_fonts/Battambang-Bold.ttf") format("truetype");
@@ -90,8 +88,7 @@
 @font-face {
   font-family: "Anton400";
   src: url("../_fonts/AntonSC-Regular.eot");
-  src: url("../_fonts/AntonSC-Regular.eot?#iefix")
-      format("embedded-opentype"),
+  src: url("../_fonts/AntonSC-Regular.eot?#iefix") format("embedded-opentype"),
     url("../_fonts/AntonSC-Regular.woff") format("woff"),
     url("../_fonts/AntonSC-Regular.woff2") format("woff2"),
     url("../_fonts/AntonSC-Regular.ttf") format("truetype");
@@ -491,12 +488,12 @@
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 ::-webkit-scrollbar {
   width: 2px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -504,11 +501,11 @@
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #555;
 }
-.SearchBox-popup  input{
-  box-shadow: 0px 4px 4px 0px #C2C2C240;
+.SearchBox-popup input {
+  box-shadow: 0px 4px 4px 0px #c2c2c240;
 }
-.SearchBox-popup{
-  background-color:   white;
+.SearchBox-popup {
+  background-color: white;
 }
 @keyframes rotateAndFade {
   0% {
@@ -520,181 +517,180 @@
     border-color: white; /* Final border color */
   }
 }
-.ShowMore:hover .circle{
+.ShowMore:hover .circle {
   animation: rotateAndFade 1s forwards;
 }
 .About-container .line.line-1 {
-background: linear-gradient(90deg, #FEBE1B 51%, #000000 100%);
-
+  background: linear-gradient(90deg, #febe1b 51%, #000000 100%);
 }
 .About-container .line.line-2 {
-background: linear-gradient(90deg, #000000 0%, #FEBE1B 100%);
+  background: linear-gradient(90deg, #000000 0%, #febe1b 100%);
 }
-main.Etelaei-C .section p,main.Etelaei-C .section h1,
+main.Etelaei-C .section p,
+main.Etelaei-C .section h1,
 main.Etelaei-C .section h2,
-.aboutUs-C .Text p{
-transform: translateY(100%);
--webkit-transform: translateY(100%);
--moz-transform: translateY(100%);
--ms-transform: translateY(100%);
--o-transform: translateY(100%);
-transition: all 700ms;
--webkit-transition: all 700ms;
--moz-transition: all 700ms;
--ms-transition: all 700ms;
--o-transition: all 700ms;
+.aboutUs-C .Text p {
+  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transition: all 700ms;
+  -webkit-transition: all 700ms;
+  -moz-transition: all 700ms;
+  -ms-transition: all 700ms;
+  -o-transition: all 700ms;
 }
-.EtalaeiItem img{
-filter: grayscale(1);
--webkit-filter: grayscale(1);
-transition: all .5s ease;
--webkit-transition: all .5s ease;
--moz-transition: all .5s ease;
--ms-transition: all .5s ease;
--o-transition: all .5s ease;
+.EtalaeiItem img {
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
 }
-.EtalaeiItem:hover img{
-filter: grayscale(0);
--webkit-filter: grayscale(0);
+.EtalaeiItem:hover img {
+  filter: grayscale(0);
+  -webkit-filter: grayscale(0);
 }
-
-
 
 .pause {
-    opacity: 1;
-  }
-  
-  .play {
-    opacity: 0;
-    display: none;
-  }
-  
-  .AboutUs-C .section-2 .Text  p{
-font-size: 14px;
-font-weight: 200;
-line-height: 21.91px;
-color: #000000 ;
-font-family: "IRANSansWeb200";
-transform: translateY(100%);
-transition: all 700ms ease;
-  }
-  .AboutUs-C .section-3 .Text  p{
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 21.91px;
-    color: #000000 ;
-    font-family: "IRANSansWeb400";
-    transform: translateY(100%);
-    transition: all 700ms ease;
-  }
+  opacity: 1;
+}
+
+.play {
+  opacity: 0;
+  display: none;
+}
+
+.AboutUs-C .section-2 .Text p {
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 21.91px;
+  color: #000000;
+  font-family: "IRANSansWeb200";
+  transform: translateY(100%);
+  transition: all 700ms ease;
+}
+.AboutUs-C .section-3 .Text p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21.91px;
+  color: #000000;
+  font-family: "IRANSansWeb400";
+  transform: translateY(100%);
+  transition: all 700ms ease;
+}
 
 .ContactUs-C fieldset [data-bc-section-title],
-.ContactUs-C [data-bc-title-container]{
+.ContactUs-C [data-bc-title-container] {
   display: none;
   margin: 0;
   padding: 0;
 }
 
-[data-bc-part-container], [data-bc-btn-container]{
-width: 100% !important;
+[data-bc-part-container],
+[data-bc-btn-container] {
+  width: 100% !important;
 }
 [data-bc-question],
-[data-bc-answer-container],[data-bc-schema-info-part="1"] [data-bc-part-related-cell]{
-width: 100% !important;
-margin: 0;
+[data-bc-answer-container],
+[data-bc-schema-info-part="1"] [data-bc-part-related-cell] {
+  width: 100% !important;
+  margin: 0;
 }
-[data-bc-section]{
+[data-bc-section] {
   margin: 0;
   padding: 0;
 }
-[data-bc-answer-container] input[type="text"], [data-bc-answer-container] input[type="password"],
- [data-bc-answer-container] input[type="time"],
-  [data-bc-answer-container] input[type="file"], 
-  [data-bc-answer-container] select, [data-bc-answer-container] textarea
-  {
-        width: 100% !important;
-        background-color: transparent !important;
-        border: 1px solid #D7D7D7;
-        font-size: 14px !important;
-        font-weight: 400 !important;
-        line-height: 21.91px;
-        color: #194A968F !important;
-        font-family: "IRANSansWeb400" !important;
-        height: 40px;
-        padding: 0 .5em !important;
-        resize: none !important;
-        border-radius:0 !important     ;
-        -webkit-border-radius:0 !important     ;
-        -moz-border-radius:0 !important     ;
-        -ms-border-radius:0 !important     ;
-        -o-border-radius:0 !important     ;
+[data-bc-answer-container] input[type="text"],
+[data-bc-answer-container] input[type="password"],
+[data-bc-answer-container] input[type="time"],
+[data-bc-answer-container] input[type="file"],
+[data-bc-answer-container] select,
+[data-bc-answer-container] textarea {
+  width: 100% !important;
+  background-color: transparent !important;
+  border: 1px solid #d7d7d7;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 21.91px;
+  color: #194a968f !important;
+  font-family: "IRANSansWeb400" !important;
+  height: 40px;
+  padding: 0 0.5em !important;
+  resize: none !important;
+  border-radius: 0 !important     ;
+  -webkit-border-radius: 0 !important     ;
+  -moz-border-radius: 0 !important     ;
+  -ms-border-radius: 0 !important     ;
+  -o-border-radius: 0 !important     ;
 }
- input[type="text"]:focus,
-  [data-bc-answer-container]
-   input[type="file"]:focus,
-    [data-bc-answer-container] select:focus, 
-    [data-bc-answer-container] textarea:focus{
-      border-color:transparent !important;
-      box-shadow:none;
-      outline: 0 none;
-      background-color:transparent;
+input[type="text"]:focus,
+[data-bc-answer-container] input[type="file"]:focus,
+[data-bc-answer-container] select:focus,
+[data-bc-answer-container] textarea:focus {
+  border-color: transparent !important;
+  box-shadow: none;
+  outline: 0 none;
+  background-color: transparent;
 }
-.ContactUs-C [data-bc-schema-column]{
+.ContactUs-C [data-bc-schema-column] {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: .5em;
-
+  gap: 0.5em;
 }
 
 .ContactUs-C .col,
-.ContactUs-C .captchaBox{
+.ContactUs-C .captchaBox {
   width: 100%;
   display: flex;
 }
-.ContactUs-C .captchaBox{
-  border: 1px solid #D7D7D7;
+.ContactUs-C .captchaBox {
+  border: 1px solid #d7d7d7;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1em;
 }
-.ContactUs-C .captchaBox input{
+.ContactUs-C .captchaBox input {
   width: 100% !important;
-        background-color: transparent !important;
-      
-        font-size: 14px !important;
-        font-weight: 400 !important;
-        line-height: 21.91px;
-        color: #194A968F !important;
-        font-family: "IRANSansWeb400" !important;
-        height: 40px;
-        padding: 0 .5em !important;
-}
-.ContactUs-C .captchaBox input::placeholder,
-[data-bc-answer-container] input[type="text"]::placeholder{
+  background-color: transparent !important;
+
   font-size: 14px !important;
   font-weight: 400 !important;
   line-height: 21.91px;
-  color: #194A968F !important;
+  color: #194a968f !important;
+  font-family: "IRANSansWeb400" !important;
+  height: 40px;
+  padding: 0 0.5em !important;
+}
+.ContactUs-C .captchaBox input::placeholder,
+[data-bc-answer-container] input[type="text"]::placeholder {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 21.91px;
+  color: #194a968f !important;
   font-family: "IRANSansWeb400" !important;
 }
 .ContactUs-C .captchaBox img {
   height: 40px;
 }
-[data-bc-section]{
+[data-bc-section] {
   padding: 0 !important;
   margin: 0 !important;
 }
-.ContactUs-C .Box{
+.ContactUs-C .Box {
   margin-left: auto;
   width: 93%;
 }
-.ContactUs-C .Form-container{
+.ContactUs-C .Form-container {
   gap: 1em;
 }
-.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom{
+.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom {
   z-index: 1 !important;
 }
 
@@ -704,14 +700,14 @@ margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: .3em;
+  gap: 0.3em;
   padding: 1.5em;
   height: 100px;
   transition: all 0.4s;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:#FEBE1B;
+  background-color: #febe1b;
   color: #fff;
   font-size: 14px;
   font-family: "IRANSansWeb700";
@@ -732,42 +728,153 @@ margin: 0;
 }
 .main-container.SEND {
   left: 0;
-    right: 0;
-    margin: auto;
+  right: 0;
+  margin: auto;
 }
-.ContactUs-C .Section-2 .Col:nth-child(1) .Answer  p{
-color: #002B43;
-font-size: 14px;
-font-family: "IRANSansWeb500";
-line-height: 21.91px;
-font-weight: 500;
-text-align: center;
+.ContactUs-C .Section-2 .Col:nth-child(1) .Answer p {
+  color: #002b43;
+  font-size: 14px;
+  font-family: "IRANSansWeb500";
+  line-height: 21.91px;
+  font-weight: 500;
+  text-align: center;
 }
 .ContactUs-C .Section-2 h2,
 .ContactUs-C .Section-2 h3,
 .ContactUs-C .Section-2 h4,
 .ContactUs-C .Section-2 span,
-.ContactUs-C .Section-2 p{
+.ContactUs-C .Section-2 p {
   transform: translateY(100%);
-transition: all 700ms ease;
-opacity: 0;
+  transition: all 700ms ease;
+  opacity: 0;
 }
-header,footer,.SearchBox-popup {
+header,
+footer,
+.SearchBox-popup {
   direction: rtl !important;
 }
-.ResultSearch .ItemR[hidden='true']{
-display: none;
+.ResultSearch .ItemR[hidden="true"] {
+  display: none;
 }
-.ResultSearch .ItemR[open='true']{
+.ResultSearch .ItemR[open="true"] {
   display: flex;
-  }
-  .ResultSearch .ItemR{
-    display: none;
-  }
-.loaded .Nores[hidden='true']{
-    display: none;
 }
-.loaded .Nores[hidden='false']{
-     display: flex;
-   }
-mark {background: #194a9652 !important}
+.ResultSearch .ItemR {
+  display: none;
+}
+.loaded .Nores[hidden="true"] {
+  display: none;
+}
+.loaded .Nores[hidden="false"] {
+  display: flex;
+}
+mark {
+  background: #194a9652 !important;
+}
+
+.posterShow .pagination1 i {
+  font-family: "IRANSansWeb700";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 25.04px;
+  color: #ed2289;
+  margin: 0 5px;
+}
+.posterShow .pagination1 .current {
+  font-family: "IRANSansWeb400";
+  font-size: 25px;
+  line-height: 39.13px;
+}
+.posterShow .pagination1 .total {
+  font-family: "IRANSansWeb300";
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 21.91px;
+}
+.posterShow .section5 i {
+  font-family: "IRANSansWeb400";
+  font-size: 16px;
+}
+.posterShow .section5 .current {
+  font-family: "IRANSansWeb400";
+  font-size: 16px;
+}
+.posterShow .section5 .total {
+  font-family: "IRANSansWeb300";
+  font-size: 14px;
+}
+.posterShow .btns .swiper-button-disabled {
+  opacity: 0.5;
+}
+
+.posterShow .readMoreBtn {
+  font-family: "IRANSansWeb300";
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 18.78px;
+  color: #194a96;
+}
+
+.posterShow .leftSlider .swiper-slide-active .inVideo {
+  filter: grayscale(0) !important;
+  transform: scale(1) !important;
+}
+
+.posterShow .videoSliderpagination .swiper-pagination-bullet{
+width: 7px;
+height: 7px;
+border-radius: 50%;
+opacity: 1;
+background-color: transparent;
+border: 1px solid #002B43;
+transition: 0.5s ease;
+}
+.posterShow .videoSliderpagination .swiper-pagination-bullet-active{
+background-color: #002B43;
+}
+
+.timeline-item__line {
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  background: #195549;
+  height: 100%;
+  transform: translate(-50%);
+}
+.timeline-item__line:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 11px solid #195549;
+  top: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.timeline-item__indicator {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #195549;
+  border-radius: 50%;
+  transform: translate(-50%, -10px);
+  background: #fff;
+  z-index: 1;
+}
+.timeline-item__media-wrapper {
+  width: 50%;
+}
+.timeline-item__content-wrapper{
+  width: 50%;
+}
+.timeline-item:last-of-type .timeline-item__line{
+  display: none;
+}
+
+.timeline-item:nth-child(even){
+  direction: ltr;
+}

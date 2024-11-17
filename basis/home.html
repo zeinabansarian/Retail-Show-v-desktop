@@ -1,40 +1,44 @@
+<basis core="dbsource" source="media" name="db" lid="1" catid="2120"> <member type="list" name="banner-def" perpage="10" pageno="1" /> </basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2363552"> <member name="about-def" type="view"/> </basis>	
+ <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2363552"> <member name="video" type="list"/> </basis>	
+<basis core="dbsource" source="media" name="db" lid="1" catid="2122"> <member type="list" name="banner-sec4" perpage="10" pageno="1"/> </basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2363587"> <member name="def-sec5" type="view"/> </basis> 
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2363587"> <member name="image-sec5" type="list" format="4"/> </basis> 
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="210836"> <member name="list" size="279x395" type="list"/> </basis>
+<basis core="dbsource" source="media" name="db" lid="1" catid="2124"> <member type="list" name="banner-sec8" perpage="10" pageno="1" /> </basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2363592"> <member name="def-sec7" type="view"/> </basis> 
+
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2363592"> <member name="def-sec7img" type="list"/> </basis>	
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="css/outputDesk.css">
+    <title>ریتیل شو</title>
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/outputDesk.css">
 </head>
 <body>
     <div class="homePage overflow-hidden">
+        <basis core="call" file="header1.inc" />
         <section class="section1 relative h-svh">
             <div id="js-cta-slider" class="cta__slider-wrapper swiper-container">
                 <div class="swiper-wrapper cta__slider">
-                    <!-- SLIDER ITEM -->
-                    <div class="cta__slider-item swiper-slide">
-                        <div class="media-wrapper slide-inner">
-                            <video src="" muted autoplay playsinline loop></video>
-                        </div>
-                    </div>
-                    <!-- SLIDER ITEM -->
-
-                    <!-- SLIDER ITEM -->
-                    <div class="cta__slider-item swiper-slide">
-                        <picture class="media-wrapper slide-inner">
-                            <img src="https://picsum.photos/id/600/1200" alt="" />
-                        </picture>
-                    </div>
-                    <!-- SLIDER ITEM -->
-
-                    <!-- SLIDER ITEM -->
-                    <div class="cta__slider-item swiper-slide">
-                        <picture class="media-wrapper slide-inner">
-                            <img src="https://picsum.photos/id/700/1400" alt="" />
-                        </picture>
-                    </div>
-                    <!-- SLIDER ITEM -->
+                 
+                    <basis core="print" datamembername="db.banner-def">
+                    
+                        <face>
+                            <!-- SLIDER ITEM -->
+                            <div class="cta__slider-item swiper-slide">
+                                <picture class="media-wrapper slide-inner">
+                                    <img src="/@largeIMG" alt="@name" />
+                                </picture>
+                            </div>
+                            <!-- SLIDER ITEM -->
+                            
+                        </face>
+                    </basis>
                 </div>
             </div>
 
@@ -70,22 +74,47 @@
 
         <section class="section2 flex items-center mt-20 mb-6" dir="rtl">
             <div class="rSide pr-[5%] bg-lightbg w-[55%] pt-[122px] pb-[133px] pl-24">
-                <h1 class="font-IRANSansWeb500 text-2xl text-dark-blue pr-4 py-2.5 before:h-full before:block flex relative items-center before:absolute before:right-0 before:top-0 before:bg-dark-blue before:w-[2px]">
-                    درباره ی ایران ریتیل شو
-                </h1>
-                <div class="para font-IRANSansWeb(FaNum)400 mt-6 mb-8">
-                    <p>
-                        “ایران ریتیل شو” برنامه ایست که توسط اتاق فکر مجموعه تجارت_طلایی و در جهت حمایت از تولید م لی و معرفی ظرفیت های پنهان تولیدکنندگان و عرضه کنندگان کالا و خدمات تولید شده است. در این برنامه سعی خواهیم کرد در فضایی صمیمی و به دور از تعارفات مرسوم یا محدودیتهای تبلیغاتی به معرفی صحیح مراکز خرید،
-                    </p>
-                </div>
+
+                <basis core="print" datamembername="db.about-def">
+                  
+                    <face filter="TypeID=250">
+                        <h1 class="font-IRANSansWeb500 scrollTop text-2xl text-dark-blue pr-4 py-2.5 before:h-full before:block flex relative items-center before:absolute before:right-0 before:top-0 before:bg-dark-blue before:w-[2px]">
+                         @text
+                        </h1>
+                        <div class="para scrollTop font-IRANSansWeb(FaNum)400 mt-6 mb-8">
+                           @largetext
+                        </div>
+                        
+                    </face>
+                </basis>
+                <a href="/درباره-ما" class="ShowMore self-baseline mt-2.5 w-auto flex gap-[10px] overflow-hidden justify-center">
+                    <p class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-white">مشاهده </p>
+                    <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-white text-white relative 
+                    ">
+                    <div class="dot w-[5px] h-[5px] rounded-full translate-y-[-50%]
+                     bg-white text-white absolute top-[70%] translate-x-[-50%]"></div>
+                    </div>
+                </a>
             </div>
             <div class="lSide w-[45%] pl-[5%]">
                 <div class="inVideo flex items-center justify-center -mr-16">
-                    <video src="" poster="images/Frame 143726719.png">
 
+                    <basis core="print" datamembername="db.video">
+                      
+                        <face filter="ord=10">
+                            
+                            <video poster="/@largeIMG" loop>
+                            </face>
+                        </basis>
+                    <basis core="print" datamembername="db.video">
+                      
+                        <face filter="format=4 and ord=1000">
+                            
+                            <source src="/@largeIMG">
+                            </face>
+                        </basis>
                     </video>
-                    <div
-                    class="play-popup-container playbtn openVideoGallery w-[126px] h-[126px] absolute cursor-pointer">
+                    <div class="play-popup-container playbtn openVideoGallery w-[126px] h-[126px] absolute cursor-pointer">
                     <div class="play-popup-btn relative flex items-center justify-center"
                         data-video="https://player.vimeo.com/video/619757568?dnt=1&amp;amp;app_id=122963">
                         <svg xmlns="http://www.w3.org/2000/svg" width="153.417" height="153.417"
@@ -122,36 +151,56 @@
                 </div>
             </div>
         </section>
-        <section class="section3 relative flex items-center justify-center">
-            <div class="imgS w-full">
-                <img class="w-full" src="images/Frame 143726482.png" alt="">
-            </div>
-            <a class="absolute py-5 px-16 font-IRANSansWeb500 text-lg rounded-md text-dark-blue bg-white duration-500 hover:bg-dark-blue  hover:text-white" href="">
-                ثبت‌نام برای مشارکت در دوره ی جدید نمایشگاه      
-            </a>
-        </section>
+        <basis core="print" datamembername="db.banner-sec4">
+         
+            <face>
+                <section class="section3 relative flex items-center justify-center">
+                    <div class="imgS w-full">
+                        <img class="w-full" src="/@largeIMG" alt="@name">
+                    </div>
+                    <a class="absolute py-5 px-16 font-IRANSansWeb500 text-lg rounded-md text-dark-blue bg-white duration-500 hover:bg-dark-blue  hover:text-white" href="">
+                       @name
+                    </a>
+                </section>
+                
+            </face>
+        </basis>
         <section class="section4 relative my-32" dir="rtl">
             <div class="imgS">
-                <img class="w-full" src="images/Mask group.png" alt="">
+                <img class="w-full" src="[##cms.cms.cdn##]/images/def-sec5.jpg" alt="  آخرین دوره ی برگزار شده">
             </div>
             <div class="btmS absolute w-90p bg-gradient-to-l to-dark-blue from-main-pink h-[30px] rounded-[28px] bottom-0 mx-auto left-0 translate-y-[50%] right-0"></div>
             <div class="lastImg absolute bottom-0 left-[10%]">
-                <img src="images/2022 2.png" alt="">
+                <basis core="print" datamembername="db.image-sec5">
+                    <face filter="ord=1">
+                        <img src="/@largeIMG" alt="@name">
+                    </face>
+                </basis>
             </div>
             <div class="infoOver absolute right-[5%] top-16 w-[47%]">
-                <h2 class="font-IRANSansWeb500 text-2xl text-dark-blue pr-4 py-2.5 before:h-full before:block flex relative items-center before:absolute before:right-0 before:top-0 before:bg-dark-blue before:w-[2px]">
-                    آخرین دوره ی برگزار شده
-                </h2>
+                <basis core="print" datamembername="db.def-sec5">
+                  
+                    <face filter="TypeID=150">
+                        <h2 class="font-IRANSansWeb500 scrollTop text-2xl text-dark-blue pr-4 py-2.5 before:h-full before:block flex relative items-center before:absolute before:right-0 before:top-0 before:bg-dark-blue before:w-[2px]">
+                           @Answer
+                        </h2>
+                        
+                    </face>
+                </basis>
 
-                <h3 class="mt-5 font-IRANSansWeb500 text-xl">
-                    ایران ریتیل شو دوره ی هشتم 
-                </h3>
-                <div class="para my-4 font-IRANSansWeb400 text-sm text-justify">
-                    <p>
-                        “ایران ریتیل شو” برنامه ایست که توسط اتاق فکر مجموعه تجارت طلایی و در جهت حمایت از تولید ملی و معرفی ظرفیت های پنهان تولیدکنندگان و عرضه کنندگان کالا و خدمات تولید شده است. در این برنامه سعی خواهیم کرد در فضایی صمیمی و به دور از تعارفات مرسوم یا محدودیتهای تبلیغاتی به معرفی صحیح مراکز  
-                    </p>
-                </div>
-                <a class="block py-3 px-16 font-IRANSansWeb400 text-sm text-black bg-gray-bg rounded-md w-fit duration-500 hover:bg-dark-blue hover:text-white" href="">
+                <basis core="print" datamembername="db.def-sec5">
+                  
+                    <face filter="TypeID=250">
+                        <h3 class="mt-5 scrollTop font-IRANSansWeb500 text-xl">
+                           @text
+                        </h3>
+                        <div class="para scrollTop my-4 font-IRANSansWeb400 text-sm text-justify">
+                           @largetext
+                        </div>
+                        
+                    </face>
+                </basis>
+                <a class="block py-3 scrollTop px-16 font-IRANSansWeb400 text-sm text-black bg-gray-bg rounded-md w-fit duration-500 hover:bg-dark-blue hover:text-white" href="">
                     مشاهده اطلاعیه
                 </a>
             </div>
@@ -159,7 +208,7 @@
         <section class="section5 mb-20">
             <div class="flex items-center w-90p mb-12 mx-auto justify-between" dir="rtl">
 
-                <h2 class="font-IRANSansWeb500 text-2xl text-dark-blue pr-4 py-2.5 before:h-full before:block flex relative items-center before:absolute before:right-0 before:top-0 before:bg-dark-blue before:w-[2px]">
+                <h2 class="font-IRANSansWeb500 scrollTop text-2xl text-dark-blue pr-4 py-2.5 before:h-full before:block flex relative items-center before:absolute before:right-0 before:top-0 before:bg-dark-blue before:w-[2px]">
                     دوره های گذشته
                 </h2>
                 <a class="block py-3 px-16 font-IRANSansWeb400 text-sm text-black bg-gray-bg rounded-md w-fit duration-500 hover:bg-dark-blue hover:text-white" href="">
@@ -172,33 +221,40 @@
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
                       <!-- Slides -->
-                      <div class="swiper-slide group">
-                        <a class="relative h-full flex items-center justify-center " href="" title="@title">
-                            <div class="imgS relative z-2">
-                                <img class="w-full duration-500 opacity-0 group-hover:opacity-100" src="images/2022 2.png" alt="">
-                            </div>
-                            <div class="over absolute p-5 flex-col w-full h-full bg-main-blue flex items-center justify-center">
-                                <div class="number">
-                                    <span class="font-Battambang700 text-[85px] text-main-blue" style="-webkit-text-stroke: 1px white;line-height: 153px;">
-                                        08
-                                    </span>
-                                </div>
-                                <div class="para uppercase font-BaiJamjuree700 text-main-blue text-xl">
-                                    <p style="-webkit-text-stroke: 0.25px rgba(255, 255, 255, 0.37);">
-                                        IRAN RETAIL SHOW 2021
-                                    </p>
-                                </div>
-                                <div class="ShowMore self-baseline mt-2.5 w-auto flex gap-[10px] overflow-hidden justify-center">
-                                    <p class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-white">مشاهده </p>
-                                    <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-white text-white relative 
-                                    ">
-                                    <div class="dot w-[5px] h-[5px] rounded-full translate-y-[-50%]
-                                     bg-white text-white absolute top-[70%] translate-x-[-50%]"></div>
+
+                      <basis core="print" datamembername="db.list">
+                          
+                          <face>
+                              <div class="swiper-slide group">
+                                <a class="relative h-full flex items-center justify-center " href="/@link" title="@title">
+                                    <div class="imgS relative z-2">
+                                        <img class="w-full duration-500 opacity-0 group-hover:opacity-100" src="/@00279X00395prp" alt="@title">
                                     </div>
-                                </div>
-                            </div>
-                        </a>
-                      </div>
+                                    <div class="over absolute p-5 flex-col w-full h-full bg-main-blue flex items-center justify-center">
+                                        <div class="number">
+                                            <span class="font-Battambang700 text-[85px] text-main-blue" style="-webkit-text-stroke: 1px white;line-height: 153px;">
+                                                08
+                                            </span>
+                                        </div>
+                                        <div class="para uppercase font-BaiJamjuree700 text-main-blue text-xl">
+                                            <p style="-webkit-text-stroke: 0.25px rgba(255, 255, 255, 0.37);">
+                                             @title
+                                            </p>
+                                        </div>
+                                        <div class="ShowMore self-baseline mt-2.5 w-auto flex gap-[10px] overflow-hidden justify-center">
+                                            <p class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-white">مشاهده </p>
+                                            <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-white text-white relative 
+                                            ">
+                                            <div class="dot w-[5px] h-[5px] rounded-full translate-y-[-50%]
+                                             bg-white text-white absolute top-[70%] translate-x-[-50%]"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                              </div>
+                              
+                          </face>
+                      </basis>
                     </div>
                   </div>
             </div>
@@ -206,25 +262,38 @@
         <section class="section6 mb-20">
             <div class="flex items-center w-90p mb-12 mx-auto justify-between" dir="rtl">
 
-                <h2 class="font-IRANSansWeb500 text-2xl text-dark-blue pr-4 py-2.5 before:h-full before:block flex relative items-center before:absolute before:right-0 before:top-0 before:bg-dark-blue before:w-[2px]">
-                    حامیان ما در دوره های گذشته نمایشگاه Iran Retail Show 
-                </h2>
+                <basis core="print" datamembername="db.def-sec7">
+                  
+                    <face filter="TypeID=250">
+                        <h2 class="font-IRANSansWeb500 scrollTop text-2xl text-dark-blue pr-4 py-2.5 before:h-full before:block flex relative items-center before:absolute before:right-0 before:top-0 before:bg-dark-blue before:w-[2px]">
+                            @text
+                        </h2>
+                        
+                    </face>
+                </basis>
                 <a class="block py-3 px-16 font-IRANSansWeb400 text-sm text-black bg-gray-bg rounded-md w-fit duration-500 hover:bg-dark-blue hover:text-white" href="">
                     مشاهده حامیان
                 </a>
             </div>
 
             <div class="sliderSection" dir="rtl">
-                <div class="swiper lastCourse px-[5%]">
+                <div class="swiper supporter px-[5%]">
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
                       <!-- Slides -->
-                      <div class="swiper-slide">
-                            <div class="imgS p-8 bg-new-gray aspect-square overflow-hidden flex items-center justify-center">
-                                <img class="w-full h-full object-cover" src="images/2022 2.png" alt="">
-                            </div>
+
+                      <basis core="print" datamembername="db.def-sec7img">
                           
-                      </div>
+                          <face filter="ord=1000">
+                              <div class="swiper-slide">
+                                    <div class="imgS p-8 bg-new-gray aspect-square overflow-hidden flex items-center justify-center">
+                                        <img class="w-full h-full object-cover" src="/@largeIMG" alt="@name">
+                                    </div>
+                                  
+                              </div>
+                              
+                          </face>
+                      </basis>
                     
                     </div>
                   
@@ -232,23 +301,30 @@
             </div>
         </section>
         <section class="section7 mb-20 relative flex items-center justify-center">
-            <div class="imgS w-full">
-                <img class="w-full" src="images/Frame 143726482.png" alt="">
-            </div>
-            <a class="absolute py-5 px-28 font-IRANSansWeb500 text-lg rounded-md text-dark-blue bg-white duration-500 hover:bg-dark-blue  hover:text-white" href="">
-                ثبت‌نام برای مشارکت در دوره ی جدید نمایشگاه      
-            </a>
+            <basis core="print" datamembername="db.banner-sec8">
+              
+                <face>
+                    <div class="imgS w-full">
+                        <img class="w-full" src="/@largeIMG" alt="@name">
+                    </div>
+                    <a class="absolute py-5 px-28 font-IRANSansWeb500 text-lg rounded-md text-dark-blue bg-white duration-500 hover:bg-dark-blue  hover:text-white" href="">
+                       @name
+                                </a>
+                    
+                </face>
+            </basis>
         </section>
+
+        <basis core="call" file="footer.inc" />
     </div>
 
+<basis core="call" file="script.inc" />
 
 
-    <script src="js/jQuery.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
-    <script src="js/gsap.js"></script>
-    <script src="js/popUpgallery.js"></script>
-    <script src="js/scrollTrigger.js"></script>
-    <script src="js/home.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/TweenMax.min.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/swiper4.7.js"></script>
+    <script src="[##cms.cms.cdn##]/js/headerLight.js"></script>
+    <script src="[##cms.cms.cdn##]/js/playVideo.js"></script>
+    <script src="[##cms.cms.cdn##]/js/home.js"></script>
 </body>
 </html>

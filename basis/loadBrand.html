@@ -1,0 +1,26 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="[##cms.query.catid##]">
+     <member name="list" type="list" request="catname"/> </basis> 
+
+
+<basis core="repeater" name="rep" datamembername="db.list">
+    <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="[##rep.current.id##]">
+         <member name="logo" type="list" format="4"/> </basis>	
+
+
+    <basis core="print" datamembername="db.logo">
+      
+      
+        <face>
+            
+            <div class="brandBox p-5 bg-light-gray aspect-square group hover:shadow-[0px_4px_12px_0px_rgba(0,_0,_0,_0.3)] rounded-md overflow-hidden duration-500">
+                <div class="w-full h-full flex items-center justify-center">
+                    <div class="imgS">
+                        <img class="w-full object-cover h-full grayscale group-hover:grayscale-0 duration-500 " src="/@largeIMG" alt="@name">
+                    </div>
+                </div>
+            </div>
+        </face>
+    </basis>
+
+
+</basis>
