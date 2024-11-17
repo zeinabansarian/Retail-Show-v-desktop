@@ -1,6 +1,9 @@
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2363537"> 
     <member name="aboutus" type="view"/> 
 </basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2363537"> 
+    <member name="text" type="view" postsql="select * from [db.text] where TypeID=250"/> 
+</basis>
 <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2363537">
      <member name="aboutGallery" type="list" format="4"/> 
 </basis>
@@ -62,10 +65,18 @@
                   
                   </div>
                     <div class="Title min-h-[50px] w-full flex justify-start items-start overflow-hidden">
-                        <h2  class="font-IRANSansWeb700 relative duration-700 translate-y-[100%] 
-                        font-bold text-[25px] leading-[30.36px] text-darkBlue">
-                            جناب مهندس شاهرخ کشاورز
-                        </h2>
+                        <basis core="print" datamembername="db.text">
+                            <layout>
+                                @child
+                            </layout>
+                            <face filter="Rownumber=1">
+                                <h2  class="font-IRANSansWeb700 relative duration-700 translate-y-[100%] 
+                                font-bold text-[25px] leading-[30.36px] text-darkBlue">
+                                   @text
+                                </h2>
+                            </face>
+                        </basis>
+                  
                     </div>
                    <div class="Text w-full flex justify-start items-start overflow-hidden flex-col">
                     <basis core="print" datamembername="db.aboutus">
@@ -119,7 +130,7 @@
                 <layout>
                     @child
                 </layout>
-                <face filter="TypeID=150">
+                <face filter="TypeID=128">
                     <h2 class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] mr-[.5em]
                     font-medium text-2xl leading-37.57 text-darkBlue">
                    @text
