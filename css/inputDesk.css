@@ -472,6 +472,21 @@
   font-size: 15px;
   color: #febe1b;
 }
+.popSliderFraction .current,
+.popSliderFraction i {
+  font-family: "IRANSansWeb400";
+  font-size: 20px;
+  line-height: 31.3px;
+  color: white;
+}
+.popSliderFraction i {
+  margin: 0 5px;
+}
+.popSliderFraction span {
+  font-family: "IRANSansWeb400";
+  font-size: 15px;
+  color: white;
+}
 
 .awardsSliderpagination .swiper-pagination-bullet {
   width: 9px;
@@ -877,4 +892,9 @@ background-color: #002B43;
 
 .timeline-item:nth-child(even){
   direction: ltr;
+}
+
+
+.popOpen {
+  transform: translateY(0) !important;
 }

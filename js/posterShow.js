@@ -55,7 +55,7 @@ const mainPosterSlider = new Swiper('.mainPosterSlider', {
 
 jQuery('.openPara').readmore({
     speed: 100,
-    collapsedHeight:45,
+    collapsedHeight:100,
     moreLink: '<button class="readMoreBtn"> <span>+</span> بیشتر</button>',
     lessLink: '<button class="readMoreBtn"> <span>-</span> کمتر</button>',
     heightMargin: 16,
@@ -158,4 +158,19 @@ const leftSlider = new Swiper('.leftSlider', {
   
     });
 
-
+let hoverIcon = document.querySelectorAll(".timeline-item")
+hoverIcon.forEach(element => {
+    gsap.from(element.querySelector(".timeline-item__indicator img"),{
+        scrollTrigger:{
+            trigger:element,
+            start:"top 65%",
+            end:"bottom 50%",
+            // markers:true,
+            onEnter: () => element.querySelector(".timeline-item__indicator img").style.opacity="1",
+            onLeave: () => element.querySelector(".timeline-item__indicator img").style.opacity="0",
+            onEnterBack: () => element.querySelector(".timeline-item__indicator img").style.opacity="1",
+            onLeaveBack: () => element.querySelector(".timeline-item__indicator img").style.opacity="0",
+        },
+    })
+    
+});

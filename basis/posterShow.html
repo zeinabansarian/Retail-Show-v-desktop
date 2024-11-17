@@ -4,7 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <basis core="print" datamembername="db.seolist">
+        <face>
+            <title>[##cms.seo.title|db.seolist.title##]</title>
+            <meta name="description" content="[##cms.seo.description|db.seolist.description##]" />
+        </face>
+    </basis>
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/outputDesk.css">
 </head>
@@ -12,70 +17,81 @@
 <body>
 
     <main class="posterShow">
-        <section class="section1">
-            <!-- Slider main container -->
-            <div class="swiper mainPosterSlider relative h-svh">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide">
-                        <div class="imgS">
-                            <img class="w-full" src="images/Frame 143726482.png" alt="">
+        <basis core="call" file="header1.inc" />
+
+        <basis core="print" datamembername="db.posterGallery">
+            <layout>
+                <section class="section1">
+                    <!-- Slider main container -->
+                    <div class="swiper mainPosterSlider relative h-svh">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            @child
+
+                           
+        
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="imgS">
-                            <img class="w-full" src="images/Frame 143726719.png" alt="">
+        
+                        <div class="btns flex py-3 px-4 gap-x-2.5 items-center bg-white z-1 absolute right-0 bottom-0">
+                            <div class="prevMain cursor-pointer">
+                                <span
+                                    class="font-IRANSansWeb300 text-sm after:w-[70px] after:h-px after:bg-black flex gap-x-2 items-center after:block">
+                                    PREVIEW
+        
+                                </span>
+        
+                            </div>
+                            <div class="pagination1"></div>
+                            <div class="nextMain cursor-pointer">
+                                <span
+                                    class="font-IRANSansWeb300 text-sm before:w-[70px] before:h-px before:bg-black flex gap-x-2 items-center before:block">
+                                    NEXT
+        
+                                </span>
+        
+                            </div>
                         </div>
+        
                     </div>
-
-                </div>
-
-                <div class="btns flex py-3 px-4 gap-x-2.5 items-center bg-white z-1 absolute right-0 bottom-0">
-                    <div class="prevMain cursor-pointer">
-                        <span
-                            class="font-IRANSansWeb300 text-sm after:w-[70px] after:h-px after:bg-black flex gap-x-2 items-center after:block">
-                            PREVIEW
-
-                        </span>
-
-                    </div>
-                    <div class="pagination1"></div>
-                    <div class="nextMain cursor-pointer">
-                        <span
-                            class="font-IRANSansWeb300 text-sm before:w-[70px] before:h-px before:bg-black flex gap-x-2 items-center before:block">
-                            NEXT
-
-                        </span>
-
+                </section>
+            </layout>
+        
+            <face filter="ord=1">
+                
+                <div class="swiper-slide">
+                    <div class="imgS">
+                        <img class="w-full" src="/@largeIMG" alt="@name">
                     </div>
                 </div>
-
-            </div>
-        </section>
+            </face>
+        </basis>
         <section class="section2 flex items-center mt-20 mb-16" dir="rtl">
             <div class="rSide pr-[5%] bg-lightbg w-[55%] pt-[122px] pb-[133px] pl-24">
-                <h1
-                    class="font-IRANSansWeb500 text-2xl text-dark-blue pr-4 py-2.5 before:h-full before:block flex relative items-center before:absolute before:right-0 before:top-0 before:bg-dark-blue before:w-[2px]">
-                    درباره ی ایران ریتیل شو
-                </h1>
-                <div class="para font-IRANSansWeb400 mt-6 overflow-hidden mb-8 openPara">
-                    <p>
-                        “ایران ریتیل شو” برنامه ایست که توسط اتاق فکر مجموعه تجارت_طلایی و در جهت حمایت از تولید م لی و
-                        معرفی ظرفیت های پنهان تولیدکنندگان و عرضه کنندگان کالا و خدمات تولید شده است. در این برنامه سعی
-                        خواهیم کرد در فضایی صمیمی و به دور از تعارفات مرسوم یا محدودیتهای تبلیغاتی به معرفی صحیح مراکز
-                        خرید،
-                    </p>
-                </div>
-                <a href="/درباره-ما"
-                    class="ShowMore self-baseline mt-2.5 w-auto flex gap-[10px] overflow-hidden justify-center">
-                    <p class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-white">مشاهده </p>
-                    <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-white text-white relative 
-                    ">
-                        <div class="dot w-[5px] h-[5px] rounded-full translate-y-[-50%]
-                     bg-white text-white absolute top-[70%] translate-x-[-50%]"></div>
-                    </div>
-                </a>
+                <basis core="print" datamembername="db.poster">
+                 
+                    <face filter="TypeID=150">
+                        <h1
+                            class="font-IRANSansWeb500 text-2xl text-dark-blue pr-4 py-2.5 before:h-full before:block flex relative items-center before:absolute before:right-0 before:top-0 before:bg-dark-blue before:w-[2px]">
+                           @Answer
+                        </h1>
+                        
+                    </face>
+                </basis>
+
+                <basis core="print" datamembername="db.poster">
+                    <layout>
+                        <div class="para font-IRANSansWeb400 mt-6 overflow-hidden mb-8 openPara">
+                            @child
+                          
+                        </div>
+                    </layout>
+                
+                    <face filter="TypeID=129">
+                        @Answer
+                    </face>
+                </basis>
+              
             </div>
             <div class="lSide w-[45%] pl-[5%]">
                 <div class="inVideo flex items-center justify-center -mr-16">
@@ -831,7 +847,8 @@
 
             </div>
         </section>
-    
+        <basis core="call" file="footer.inc" />
+
     </main>
 
 
@@ -1141,9 +1158,8 @@
     </div>
     
 
-    <script src="js/gsap.js"></script>
-    <script src="js/scrollTrigger.js"></script>
-    <script src="js/jQuery.js"></script>
+    <basis core="call" file="script.inc" />
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Readmore.js/2.2.0/readmore.min.js"></script>
     <script src="js/swiper-bundle7.4.1.min.js"></script>
     <script src="js/popUpgallery.js"></script>
