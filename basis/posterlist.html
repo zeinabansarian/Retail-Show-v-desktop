@@ -1,0 +1,212 @@
+<basis core="dbsource" request="seo" source="basiscore" name="db" lid="1">
+    <member name="seolist" type="list" request="cat" id="[##cms.query.catid##]"></member>
+</basis>
+
+
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="210836">
+    <member name="posterList" type="list" size="279x395" />
+</basis />
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="1">
+    <member request="cat" type="tree" name="posterCat" parentid="210836" />
+</basis />
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <basis core="print" datamembername="db.seolist">
+        <face>
+            <title>[##cms.seo.title|db.seolist.title##]</title>
+            <meta name="description" content="[##cms.seo.description|db.seolist.description##]" />
+        </face>
+    </basis>
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/leaflet.css">
+
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/outputDesk.css">
+    <style>
+        .posterList .section1{
+            margin-top: 15rem;
+
+        }
+        .font_style_Color {
+            color: #002B43;
+        }
+
+        .font_style_color_date {
+            color: #828282;
+        }
+
+
+        .font_style_Color {
+
+            border-right: 2px solid #000;
+            padding: 10px;
+
+        }
+
+        .posterList .proItem img {
+            filter: grayscale(1)
+        }
+
+
+        .posterList .proItem:hover img {
+            filter: unset
+        }
+
+.proItem{
+
+}
+        .proItem .imgS {    opacity:0;}
+
+        .absoluteHover {}
+
+        .hoverImgS{
+   
+            width: fit-content;
+    min-width: 279px;
+    opacity: 1;
+    background-color: #194A96;
+    min-height: 395px;
+    
+    padding: 80px 10px;
+    transition: all 0.5s;
+
+
+        }
+        .hoverImgS  .rownumber{
+           
+    font-size: 85px;
+    margin-bottom: 50px;
+    text-align: right;
+    padding-top: 100px;
+    padding: 30px 5px 0;
+    line-height: 70px;
+    -webkit-text-stroke: 1px white;
+    color: #194a96;
+
+        }
+     
+        .hoverImgS .more{
+            color: #fff;
+
+        }
+        .proItem:hover  .hoverImgS {
+            opacity: 0;
+
+}
+.proItem:hover  .imgS  {
+
+    opacity: 1;
+}
+.proItem  .imgS  {
+    transition: all 0.5s;
+}
+.posterList .section1{
+padding-bottom: 1.5rem;
+}
+.posterList{
+    overflow: hidden;
+}
+    </style>
+</head>
+
+<body>
+    <main class="posterList " dir="rtl" >
+        <basis core="call" file="header1.inc" />
+
+
+
+        <section class="section1 justify-start  flex flex-row flex-wrap w-90p  mt-32 mx-auto">
+
+            <div class="title pt-[172px] pb-16 w-full mx-auto">
+                <basis core="print" datamembername="db.posterCat">
+                    <face>
+
+                        <p class=" text-xl font-IRANSansWeb500 text-right  font_style_Color">
+                            @urltitle
+
+                        </p>
+
+          
+            </face>
+            </basis>
+        </div>
+
+
+
+        </section>
+
+        <section class="section2 justify-start  flex flex-row flex-wrap w-90p pb-16 mx-auto">
+            <div class="flex  w-full grid grid-cols-[1fr,1fr,1fr,1fr] gap-[3em] mb-[5em] ">
+                <basis core="print" datamembername="db.posterList">
+
+                    <else-layout>
+                        <div class="para font-IranYekan400 text-base text-OsloGray950 text-right">
+                            <p>
+                                متاسفانه پوستر ایی موجود نیست.
+                            </p>
+                        </div>
+                    </else-layout>
+
+                    <face>
+
+                        <a href="/@link" class="proItem ">
+
+                             
+                            <div class="imgS absolute absoluteHover ">
+                                <img class="" src="/@00279X00395prp" alt="@title" width="279" height="395">
+
+                            </div>
+
+                            <div class="hoverImgS title  py-2 w-full">
+
+                                 
+
+                                <div class="rownumber font-Battambang700 text-[85px] text-main-blue" style="
+                                -webkit-text-stroke: 1px white;">
+
+                                    0@rownumber
+
+
+                                </div>
+                                <div class="title text-sm para uppercase font-BaiJamjuree700 text-main-blue text-xl" style="-webkit-text-stroke: 0.25px rgba(255, 255, 255, 0.37);">
+
+                                    @title
+
+                                </div>
+                              
+                                <div class="ShowMore self-baseline mt-2.5 w-auto flex gap-[10px] overflow-hidden justify-center">
+                                    <p class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-white">مشاهده </p>
+                                    <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-white text-white relative 
+                                    ">
+                                    <div class="dot w-[5px] h-[5px] rounded-full translate-y-[-50%]
+                                    bg-white text-white absolute top-[70%] translate-x-[-50%]"></div>
+                                    </div>
+                                    </div>
+
+
+                            </div>
+
+                        </a>
+
+                    </face>
+                </basis>
+            </div>
+
+
+
+
+
+        </section>
+
+
+        <basis core="call" file="footer.inc" />
+    </main>
+
+
+    <basis core="call" file="script.inc" />
+
+</body>
+
+</html>

@@ -18,6 +18,7 @@
     <title>ریتیل شو</title>
     <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="[##cms.cms.cdn##]/css/outputDesk.css">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/plyr.css" />
 </head>
 <body>
     <div class="homePage overflow-hidden">
@@ -52,7 +53,7 @@
                     class="inner relative flex items-center gap-x-2 group-hover:after:scale-x-[1.2] after:duration-300 after:origin-right after:w-[71px] after:inline-block after:h-px after:bg-white">
                     <span
                         class="group-hover:-translate-x-[20px] duration-300 font-IRANSansWeb300 text-sm text-white">
-                        NEXT
+                        PREV
                     </span>
                 </div>
             </div>
@@ -61,7 +62,7 @@
                     class="inner relative flex items-center gap-x-2 group-hover:before:scale-x-125 before:duration-300 before:origin-left before:w-[71px] before:inline-block before:h-px before:bg-white">
                     <span
                         class="group-hover:translate-x-[20px] duration-300 font-IRANSansWeb300 text-sm text-white">
-                        PREV
+                          NEXT
                     </span>
                 </div>
             </div>
@@ -81,7 +82,7 @@
                         <h1 class="font-IRANSansWeb500 scrollTop text-2xl text-dark-blue pr-4 py-2.5 before:h-full before:block flex relative items-center before:absolute before:right-0 before:top-0 before:bg-dark-blue before:w-[2px]">
                          @text
                         </h1>
-                        <div class="para scrollTop font-IRANSansWeb(FaNum)400 mt-6 mb-8">
+                        <div class="para scrollTop font-IRANSansWeb300 mt-6 mb-8">
                            @largetext
                         </div>
                         
@@ -97,13 +98,13 @@
                 </a>
             </div>
             <div class="lSide w-[45%] pl-[5%]">
-                <div class="inVideo flex items-center justify-center -mr-16">
+                <div class="inVideo relative flex items-center justify-center -mr-16">
 
                     <basis core="print" datamembername="db.video">
                       
                         <face filter="ord=10">
                             
-                            <video poster="/@largeIMG" loop>
+                            <video class="w-full object-cover" poster="/@largeIMG" loop>
                             </face>
                         </basis>
                     <basis core="print" datamembername="db.video">
@@ -114,40 +115,34 @@
                             </face>
                         </basis>
                     </video>
-                    <div class="play-popup-container playbtn openVideoGallery w-[126px] h-[126px] absolute cursor-pointer">
-                    <div class="play-popup-btn relative flex items-center justify-center"
-                        data-video="https://player.vimeo.com/video/619757568?dnt=1&amp;amp;app_id=122963">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="153.417" height="153.417"
-                            viewBox="0 0 153.417 153.417">
-                            <g id="Group_457" data-name="Group 457"
-                                transform="translate(-1061.792 -431.792)">
-                                <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(1063 433)"
-                                    fill="none" stroke="#fff" stroke-width="1" opacity="0.3">
-                                    <circle cx="75.5" cy="75.5" r="75.5" stroke="none" />
-                                    <circle cx="75.5" cy="75.5" r="75" fill="none" />
-                                </g>
-                                <path id="Path_1" data-name="Path 1"
-                                    d="M75.708,0A75.708,75.708,0,1,1,0,75.708"
-                                    transform="translate(1062.792 432.792)" fill="none" stroke="#fff"
-                                    stroke-width="2" />
-                            </g>
-                        </svg>
-                        <div class="play-popup-btn__circle absolute">
-                            <div class="play-popup-btn__circle__bullet"></div>
-                            <span class="play-popup-btn__circle__text text-left">
-                                <p
-                                    class="font-IRANSansWeb300  text-lg text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
-                                    Play
-
-                                </p>
-                                <p class="font-IRANSansWeb500 text-lg text-white">
-
-                                    video
-                                </p>
-                            </span>
-                        </div>
-                    </div>
-                </div>
+                    <div class="ov overlay [&.hide]:opacity-0 [&.hide]:pointer-events-none duration-1000
+                    absolute w-full h-full bg-[#0000004D] pointer-events-none"></div>
+                   <div class="play-popup-container [&.hide]:opacity-0 [&.hide]:pointer-events-none duration-1000 overlay w-[126px] h-[126px] absolute z-1 cursor-pointer">
+                       <div class="play-popup-btn relative flex items-center justify-center" data-video="https://player.vimeo.com/video/619757568?dnt=1&app_id=122963">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="153.417" height="153.417" viewBox="0 0 153.417 153.417">
+                               <g id="Group_457" data-name="Group 457" transform="translate(-1061.792 -431.792)">
+                               <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(1063 433)" fill="none" stroke="#fff" stroke-width="1" opacity="0.3">
+                               <circle cx="75.5" cy="75.5" r="75.5" stroke="none"/>
+                               <circle cx="75.5" cy="75.5" r="75" fill="none"/>
+                               </g>
+                               <path id="Path_1" data-name="Path 1" d="M75.708,0A75.708,75.708,0,1,1,0,75.708" transform="translate(1062.792 432.792)" fill="none" stroke="#fff" stroke-width="2"/>
+                               </g>
+                               </svg>
+                           <div class="play-popup-btn__circle absolute">
+                               <div class="play-popup-btn__circle__bullet"></div>
+                               <span class="play-popup-btn__circle__text text-left">
+                                  <p class="font-IRANSansWeb300  text-lg text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
+                                      Play 
+       
+                                  </p>
+                               <p class="font-IRANSansWeb500 text-lg text-white">
+       
+                                   video
+                               </p>
+                           </span>
+                           </div>
+                       </div>
+                   </div>
                 </div>
             </div>
         </section>
