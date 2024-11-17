@@ -1,0 +1,292 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="5" usedforid="9623">
+    <member name="contactus" type="view"/> 
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="5" usedforid="9623">
+   <member name="tel" type="view" postsql="select * from [db.tel] where TypeID=240"/> 
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="5" usedforid="9623">
+   <member name="social" type="view" postsql="select * from [db.social] where TypeID=245"/> 
+</basis>
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تماس‌باما</title>
+    <meta name="description" content="تماس‌باما">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/outputDesk.css">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/plyr.css" />
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/leaflet.css">
+    <script src="https://cdn.basiscore.net/academy.basiscore.com/_js/basiscore-2.23.1.min.js"></script>
+<script src="https://cdn.basiscore.net/basispanel.ir/_js/alasql.min.js"></script>
+</head>
+<body>
+    <main class="ContactUs-C w-full overflow-hidden" dir="rtl">
+        <basis core="call" file="header1.inc" pageindex="[##cms.cms.pageindex##]"/>
+       <div class="contact-container w-full flex flex-col">
+        <section class="Section-1 w-full grid grid-cols-[45%,60%] mt-[15em] mb-[5em]">
+            <div class="RightSec gap-[1em] pt-[3em] w-full flex flex-col justify-start items-start">
+                <div class="Title-main mr-auto flex-col relative overflow-hidden w-[95%]
+                flex justify-start gap-4 items-start ">
+    
+                  <span class="line duration-700 absolute flex left-0 my-auto top-0 bottom-0
+                  justify-center  right-0  delay-100  w-[2px] h-0  bg-darkBlue "></span>
+    
+                
+                  <h1 class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] mr-[.5em]
+                  font-medium text-2xl leading-37.57 text-darkBlue">
+                  فرم ارسال پیام
+                  </h1>
+              
+              </div>
+              <div class="Form-container flex-col  mr-auto w-[95%] flex">
+                <div class="text w-full flex justify-start">
+                        <p class="font-IRANSansWeb300 duration-700 translate-y-[100%] font-light text-sm leading-21.91 text-darkBlue w-[46%] mt-[.5em]">
+                                لطفا پیام مورد نظر خود را برای ما ثبت و  ارسال بفرمایید.
+                           جواب مربوطه برای شما ارسال می گردد.
+                        </p>
+                </div>
+                <div class="Box">
+                    <basis core="schema" run="atclient" OnRendered="rendered"
+                    schemaUrl="/schema/domainform/1585635B-6FD2-49CA-93C5-104CBA31716D/C82FAB80-82CB-47F5-8FE3-AF292C0974B2/fa/فرم-ارسال-پیام"
+                displayMode="new" button="[data-btn-add]" resultSourceId="demo.data"> 
+                </basis> 
+                
+                <basis core="callback" run="AtClient" triggers="demo.data" method="onSource"></basis> 
+                <basis core="api" url="/schema/domainform/1585635B-6FD2-49CA-93C5-104CBA31716D/fa/editobject" method="post" 
+                run="atclient" 
+                body="object_edit={##edit.object.value##}&captcha={##edit.object.captcha##}&captchaid={##edit.object.captchaid##}" 
+                content-type="application/x-www-form-urlencoded" triggers="edit.object" if="{##edit.object|(false)##}" 
+                OnProcessed="OnProcessesEditObjectFn"> 
+                </basis>
+                <basis core="dbsource" source="trust_login" run="atclient" name="captcha" triggers="refresh.captcha">
+                    <member type="scalar" request="captcha" name="code" />
+                    </basis>
+                        <div class="col">
+                        <basis core="print" datamembername="captcha.code" run="atclient">
+                            <layout>
+                                <script type="text/template">
+                                @child
+                                </script>
+                            </layout>
+                            <face>
+                          
+                                <script type="text/template">
+                                   <div class="captchaBox">
+                                       <input type="hidden" name="captchaid" value="@captcha@" />
+                                         <!-- <input type="hidden" name="captcha" value="@captcha@" /> -->
+                                      <input type="text" class="codeinputm" name="captcha" placeholder="کد امنیتی را وارد فرمایید  "  /> 
+                        
+                                      <svg class="refresh" alt="" bc-triggers="click" 
+                                      name="refresh.captcha" bc-value="true" width="28" height="23" viewBox="0 0 28 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M14.0645 22.0212C11.2728 22.0212 8.89779 20.9742 6.93945 18.8801C4.98112 16.786 4.00195 14.2303 4.00195 11.213V10.9766L2.00195 13.1382L0.251953 11.2468L5.25195 5.84267L10.252 11.2468L8.50195 13.1382L6.50195 10.9766V11.213C6.50195 13.4647 7.23633 15.3787 8.70508 16.9549C10.1738 18.5311 11.9603 19.3192 14.0645 19.3192C14.6061 19.3192 15.1374 19.2516 15.6582 19.1165C16.179 18.9814 16.6895 18.7788 17.1895 18.5086L19.0645 20.5351C18.2728 21.0305 17.4603 21.402 16.627 21.6497C15.7936 21.8974 14.9395 22.0212 14.0645 22.0212ZM22.752 16.5833L17.752 11.1792L19.502 9.28779L21.502 11.4494V11.213C21.502 8.96129 20.7676 7.04734 19.2988 5.47114C17.8301 3.89494 16.0436 3.10684 13.9395 3.10684C13.3978 3.10684 12.8665 3.17439 12.3457 3.30949C11.8249 3.4446 11.3145 3.64725 10.8145 3.91746L8.93945 1.89092C9.73112 1.39554 10.5436 1.02401 11.377 0.776318C12.2103 0.528629 13.0645 0.404785 13.9395 0.404785C16.7311 0.404785 19.1061 1.45183 21.0645 3.54592C23.0228 5.64002 24.002 8.19571 24.002 11.213V11.4494L26.002 9.28779L27.752 11.1792L22.752 16.5833Z" fill="#194A96" fill-opacity="0.49"/>
+                                       </svg>
+                                       <img src="@captcha@" alt="captcha"  title="captcha" class="capcha"/>
+                                      
+                                   
+                                 
+                                 </div>
+                                </script>
+                            </face>
+                        </basis>
+    
+                        </div>
+                        <button type="submit" class="ShowBTN w-full group/btn rounded-[5px] mt-[1em]
+                       
+                        py-[.4em] bg-mainBlue flex justify-center items-center gap-2 schemaBtn" data-btn-add data-btn-submit="">
+                           <span class="Text font-IRANSansWeb700 font-bold text-sm text-white leading-21.91">
+                            ثبت 
+                           </span>
+                   </button>
+                   
+                </div>
+              </div>
+            </div>
+            <div class="LeftSec w-full flex justify-start items-start">
+                <div class="Map-Container w-full flex justify-start items-start relative before:content-[''] before:absolute before:left-0
+               before:w-full before:h-[80%] before:bg-mainBlue before:top-[3em] before:z-[-1]">
+               <div class="map mr-auto w-[96%]">
+                <basis core="print" datamembername="db.contactus">
+                    <face filter="TypeID =246">
+                        <div class="Map h-[598px] flex justify-start items-start ml-auto w-[80%] Map_1" id="Map_1" data-x="@text" data-y="@largetext">
+                         
+                        </div>
+                    </face>
+                   </basis>
+               </div>
+            
+                </div>
+            </div>
+        </section>
+         <section class="Section-2  w-full flex justify-center items-center mt-[5em]">
+            <div class="Contacts w-90p mx-auto grid grid-cols-[1fr,1fr,1fr] justify-start items-start">
+                <div class="Col w-full flex flex-col before:absolute before:content-[''] relative
+                before:w-[1px] before:h-[13em] before:bg-darkBlue before:left-0 before:top-0 justify-start">
+                   <div class="Title mb-[1.2em] w-full overflow-hidden flex justify-center items-center">
+                       <h2 class="font-IRANSansWeb700 duration-700 translate-y-[100%] font-bold text-sm leading-21.91 text-darkBlue text-center">
+                           دسترسی
+                       </h2>
+                   </div>
+                   <div class="box w-full flex flex-col gap-2">
+                       <div class="row w-90p mx-auto overflow-hidden flex flex-col gap-1">
+                           <span class="Address duration-700 translate-y-[100%] font-IRANSansWeb300 font-light text-sm leading-21.91 text-darkBlue text-center">
+                               آدرس
+                           </span>
+                           <span class="Answer overflow-hidden w-full flex flex-col justify-center items-center">
+                            <basis core="print" datamembername="db.contactus">
+                                <layout>
+                                    @child
+                                </layout>
+                                <face filter="TypeID=244">
+                                    <p class="duration-700 translate-y-[100%] font-IRANSansWeb500 font-medium text-sm leading-21.91 text-darkBlue text-center">
+                                        @Answer
+                                    </p>
+                                </face>
+                            </basis>
+                        
+                           </span>
+                       </div>
+                       <div class="row w-90p overflow-hidden mx-auto flex flex-col gap-1">
+                           <span class="Phone duration-700 translate-y-[100%] font-IRANSansWeb300 font-light text-sm leading-21.91 text-darkBlue text-center">
+                               فکس
+                           </span>
+                           <span class="Answer w-full overflow-hidden flex flex-col justify-center items-center">
+                            <basis core="print" datamembername="db.contactus">
+                                <layout>
+                                    @child
+                                </layout>
+                                <face filter="TypeID=241">
+                               <span class="duration-700 translate-y-[100%] font-IRANSansWeb500 font-medium text-sm leading-21.91 text-darkBlue">
+                                @Answer
+                               </span>
+                                </face>
+                            </basis>
+                           </span>
+                       </div>
+                       <div class="row w-90p mx-auto flex flex-col gap-1 overflow-hidden">
+                           <span class="Phone duration-700 translate-y-[100%] font-IRANSansWeb300 font-light text-sm leading-21.91 text-darkBlue text-center">
+                               تلفن
+                           </span>
+                           <span class="Answer overflow-hidden w-full flex flex-col justify-center items-center">
+                            <basis core="print" datamembername="db.contactus">
+                                <layout>
+                                    @child
+                                </layout>
+                                <face filter="TypeID=240">
+                               <span class="duration-700 translate-y-[100%] font-IRANSansWeb500 font-medium text-sm leading-21.91 text-darkBlue">
+                                @Answer
+                               </span>
+                                </face>
+                            </basis>
+                           </span>
+                       </div>
+                   </div>
+                </div>
+                <div class="Col w-full flex flex-col before:absolute before:content-[''] relative
+                before:w-[1px] before:h-[13em] before:bg-darkBlue before:left-0 before:top-0 justify-start">
+                   <div class="Title overflow-hidden mb-[1.2em] w-full flex justify-center items-center">
+                       <h3 class="font-IRANSansWeb700 font-bold text-sm leading-21.91 text-darkBlue text-center duration-700 translate-y-[100%]">
+                        شبکه اجتماعی
+                       </h3>
+                   </div>
+                   <div class="box w-full flex flex-col gap-2 ">
+                       <div class="row overflow-hidden w-90p mx-auto flex flex-col gap-1">
+                           <span class="Address duration-700 translate-y-[100%] font-IRANSansWeb300 font-light text-sm leading-21.91 text-darkBlue text-center">
+                            اینستاگرام
+                           </span>
+                           <span class="Answer overflow-hidden w-full flex flex-col justify-center items-center">
+                            <basis core="print" datamembername="db.social">
+                                <layout>
+                                    @child
+                                </layout>
+                
+                                <face filter="RowNumber in (1,2)">
+                            <a  href="https://www.instagram.com/@largetext" class="font-IRANSansWeb500 duration-700 translate-y-[100%] font-medium text-sm leading-21.91 text-darkBlue">
+                                @largetext
+
+                            </a>
+                                </face>
+                            </basis>
+                         
+                           </span>
+                       </div>
+                       <div class="row w-90p mx-auto flex flex-col gap-1 overflow-hidden" >
+                           <span class="Phone font-IRANSansWeb300  duration-700 translate-y-[100%] font-light text-sm leading-21.91 text-darkBlue text-center">
+                            لینکدین
+                           </span>
+                           <span class="Answer overflow-hidden w-full flex flex-col justify-center items-center">
+                            <basis core="print" datamembername="db.social">
+                                <layout>
+                                    @child
+                                </layout>
+                
+                                <face filter="RowNumber in (3)">
+                            <a href="https://www.linkedin.com/@largetext" class="font-IRANSansWeb500  duration-700 translate-y-[100%] font-medium text-sm leading-21.91 text-darkBlue">
+                                @largetext
+                            </a>
+                                </face>
+                            </basis>
+                         
+                           </span>
+                       </div>
+                   
+                   </div>
+                </div>
+                <div class="Col w-full flex flex-col justify-start overflow-hidden">
+                   <div class="Title mb-[1.2em] w-full flex overflow-hidden justify-center items-center">
+                       <h4 class="font-IRANSansWeb700  duration-700 translate-y-[100%] font-bold text-sm leading-21.91 text-darkBlue text-center">
+                        وب سایت
+                       </h4>
+                   </div>
+                   <div class="box w-full flex flex-col gap-2 overflow-hidden">
+                       <div class="row w-90p mx-auto flex flex-col overflow-hidden gap-[2em]">
+                        
+                           <span class="Answer w-full flex duration-700 translate-y-[100%] flex-col justify-center items-center">
+                            <a  href="http://a112tl.undertest.ir" alt="retailShow" title="retailShow" class="font-IRANSansWeb500 font-medium text-sm leading-21.91 text-darkBlue">
+                                www.gbm.ir
+                             </a>
+                           </span>
+                           <span class="Answer w-full flex overflow-hidden flex-col justify-center items-center">
+                            <a href="http://www.ZpPs.UnderTest.ir"  alt="retailShow" title="retailShow" class="font-IRANSansWeb500 duration-700 translate-y-[100%] font-medium text-sm leading-21.91 text-darkBlue">
+                                www.iranretailawards.com
+                            </a>
+                          </span>
+                          <span class="Answer w-full flex flex-col overflow-hidden justify-center items-center">
+                            <a href="http://A112Tl.UnderTest.ir" alt="retailShow" title="retailShow" class="font-IRANSansWeb500 duration-700 translate-y-[100%] font-medium text-sm leading-21.91 text-darkBlue">
+                                www.gbmnews.ir
+                            </a>
+                          </span>
+                       </div>
+                  
+                   </div>
+                </div>
+             </div>
+         </section>
+         <section class="Section-3 w-full flex"> 
+            <img src="images/وکتور-نمایشگاه-x 4.png" alt="ritailshow" title="ritailshow" class="w-full object-cover">
+         </section>
+       </div>
+       <basis core="call" file="footer.inc" />
+        <div class="main-container">
+            <span class="icon w-auto hidden [&.show]:flex">
+                <svg width="42" height="41" viewBox="0 0 42 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21.4375 38.875C31.3441 38.875 39.375 30.8441 39.375 20.9375C39.375 11.0309 31.3441 3 21.4375 3C11.5309 3 3.5 11.0309 3.5 20.9375C3.5 30.8441 11.5309 38.875 21.4375 38.875Z" fill="#46B000"/>
+                    <path d="M11.1875 19.0626L21.4375 26.7501L39.375 3.68756" fill="#46B000"/>
+                    <path d="M11.1875 19.0626L21.4375 26.7501L39.375 3.68756" stroke="white" stroke-width="1.2"/>
+                    </svg>
+                    
+            </span>
+            <span class="text"></span>
+          
+        </div>
+    </main>
+    <basis core="call" file="script.inc" />
+    <script src="[##cms.cms.cdn##]/_js/leaflet.js"></script>
+    <script src="[##cms.cms.cdn##]/js/headerDark.js"></script>
+    <script src="[##cms.cms.cdn##]/js/contactUs.js"></script>
+
+
+</body>
+
+</html>

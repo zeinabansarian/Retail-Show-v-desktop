@@ -1,0 +1,201 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2363537"> 
+    <member name="aboutus" type="view"/> 
+</basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2363537">
+     <member name="aboutGallery" type="list" format="4"/> 
+</basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2363537"> 
+    <member name="aboutVideo" type="list" format="3"/> 
+</basis>
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>درباره‌ما</title>
+    <meta name="description" content="درباره‌ما">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/outputDesk.css">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/plyr.css" />
+</head>
+<body>
+    <main class="AboutUs-C w-full overflow-hidden" dir="rtl">
+  <basis core="call" file="header1.inc" pageindex="[##cms.cms.pageindex##]"/>
+    
+       <div class="about-container min-h-screen w-full flex flex-col">
+      <section class="section-1 w-full flex justify-center items-center h-screen">
+        <div class="Banner-Container w-full h-full flex justify-center items-center">
+            <basis core="print" datamembername="db.aboutGallery">
+                <layout>
+                    @child
+                </layout>
+                <face filter="ord=1">
+                    <div class="IMG w-full h-full flex justify-center items-center">
+                        <img src="@largeIMG" alt="retailshow" title="retailshow" class="w-full h-full object-cover">
+                    </div>    
+                </face>
+            </basis>
+     
+            <!-- <div class="Overlay">
+                <div class="title">
+                    <h1></h1>
+                    <h2></h2>
+                </div>
+            </div> -->
+        </div>
+      </section>
+      <section class="section-2 w-full flex justify-center items-center ">
+        <div class="Boss-Container w-90p mx-auto my-[2em] grid grid-cols-[1fr,1fr]">
+            <div class="RightSec pt-[13em] relative w-full flex justify-start items-start flex-col">
+                <div class="Box-container w-full flex justify-start items-start flex-col gap-[1.5em]">
+                    <div class="Title-main mr-auto flex-col relative overflow-hidden w-full
+                    flex justify-start gap-4 items-start ">
+        
+                      <span class="line duration-700 absolute flex left-0 my-auto top-0 bottom-0
+                      justify-center  right-0  delay-100  w-[2px] h-0  bg-darkBlue "></span>
+        
+                    
+                      <h1 class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] mr-[.5em]
+                      font-medium text-2xl leading-37.57 text-darkBlue">
+                      پیام مدیر عامل
+                      </h1>
+                  
+                  </div>
+                    <div class="Title min-h-[50px] w-full flex justify-start items-start overflow-hidden">
+                        <h2  class="font-IRANSansWeb700 relative duration-700 translate-y-[100%] 
+                        font-bold text-[25px] leading-[30.36px] text-darkBlue">
+                            جناب مهندس شاهرخ کشاورز
+                        </h2>
+                    </div>
+                   <div class="Text w-full flex justify-start items-start overflow-hidden flex-col">
+                    <basis core="print" datamembername="db.aboutus">
+                        <layout>
+                            @child
+                        </layout>
+
+                        <face filter="TypeID=250">
+                            <p class="font-IRANSansWeb200 font-light text-sm leading-21.91 text-black  duration-700 translate-y-[100%]"> 
+                                @largetext
+                            </p>
+                        </face>
+                    </basis>
+                
+                  
+                   </div>
+                </div>
+              </div>
+              <div class="LeftSec w-full flex justify-end items-end">
+                <basis core="print" datamembername="db.aboutGallery">
+                    <layout>
+                        @child
+                    </layout>
+                    <face filter="ord=2">
+                        <div class="IMG w-[90%] flex justify-start items-start">
+                            <img src="@largeIMG" alt="retailshow" title="retailshow"  class="w-full object-cover">
+                        </div>  
+                    </face>
+                </basis>
+           
+                <div class="Col w-[8%] relative left-[0] bottom-[0] flex justify-end items-end ">
+                    <span class="text w-max flex  relative before:content-[''] before:bg-darkBlue before:h-[50px]
+                    before:absolute before:top-0 before:w-[1px] before:translate-x-[-.6em] before:translate-y-[-100%] pt-[1em] ">
+                        <img src="/images/Engineer Shahrukh Keshavarz.png"alt="Engineer Shahrukh Keshavarz" title="Engineer Shahrukh Keshavarz">
+                    </span>
+                </div>
+              </div>
+        </div>
+ 
+      </section>
+      <section class="section-3 w-full flex-col flex justify-center items-center ">
+       <div class="about-c w-full flex-col justify-start items-start">
+        <div class="Box-container w-90p mx-auto flex justify-start items-start flex-col gap-[1.5em]">
+            <div class="Title-main mr-auto flex-col relative overflow-hidden w-full
+            flex justify-start gap-4 items-start ">
+
+              <span class="line duration-700 absolute flex left-0 my-auto top-0 bottom-0
+              justify-center  right-0  delay-100  w-[2px] h-0  bg-darkBlue "></span>
+
+            <basis core="print" datamembername="db.aboutus">
+                <layout>
+                    @child
+                </layout>
+                <face filter="TypeID=150">
+                    <h2 class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] mr-[.5em]
+                    font-medium text-2xl leading-37.57 text-darkBlue">
+                   @text
+                    </h2> 
+                </face>
+            </basis>
+            
+          
+          </div>
+       
+           <div class="Text w-full flex justify-start items-start overflow-hidden flex-col">
+            <basis core="print" datamembername="db.aboutus">
+                <layout>
+                    @child
+                </layout>
+                <face filter="TypeID=129">
+            <p class="font-IRANSansWeb400 font-normal text-sm leading-21.91 text-black  duration-700 translate-y-[100%]"> 
+                @largetext
+            </p>
+                </face>
+            </basis>
+           </div>
+        </div>
+       </div>
+       <div class="Video-Container  my-[1.5em] w-90p mx-auto flex justify-center items-center">
+        <div class="inVideo w-full relative flex items-center justify-center">
+            <basis core="print" datamembername="db.aboutVideo">
+                <layout>
+                    @child
+                </layout>
+                <face>
+                    <video src="@largeIMG" id="player" title="@name" playsinline 
+                    class="w-full object-cover">
+       
+                   </video>
+                </face>
+            </basis>
+           
+            <div class="ov overlay [&.hide]:opacity-0 [&.hide]:pointer-events-none duration-1000
+             absolute w-full h-full bg-[#0000004D] pointer-events-none"></div>
+            <div class="play-popup-container [&.hide]:opacity-0 [&.hide]:pointer-events-none duration-1000 overlay w-[126px] h-[126px] absolute z-1 cursor-pointer">
+                <div class="play-popup-btn relative flex items-center justify-center" data-video="https://player.vimeo.com/video/619757568?dnt=1&app_id=122963">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="153.417" height="153.417" viewBox="0 0 153.417 153.417">
+                        <g id="Group_457" data-name="Group 457" transform="translate(-1061.792 -431.792)">
+                        <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(1063 433)" fill="none" stroke="#fff" stroke-width="1" opacity="0.3">
+                        <circle cx="75.5" cy="75.5" r="75.5" stroke="none"/>
+                        <circle cx="75.5" cy="75.5" r="75" fill="none"/>
+                        </g>
+                        <path id="Path_1" data-name="Path 1" d="M75.708,0A75.708,75.708,0,1,1,0,75.708" transform="translate(1062.792 432.792)" fill="none" stroke="#fff" stroke-width="2"/>
+                        </g>
+                        </svg>
+                    <div class="play-popup-btn__circle absolute">
+                        <div class="play-popup-btn__circle__bullet"></div>
+                        <span class="play-popup-btn__circle__text text-left">
+                           <p class="font-IRANSansWeb300  text-lg text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
+                               Play 
+
+                           </p>
+                        <p class="font-IRANSansWeb500 text-lg text-white">
+
+                            video
+                        </p>
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      </section>
+    </div>
+ <basis core="call" file="footer.inc" />
+    </main>
+    <basis core="call" file="script.inc" />
+    <script src="[##cms.cms.cdn##]/js/headerLight.js"></script>
+    <script src="[##cms.cms.cdn##]/js/aboutUs.js"></script>
+
+</body>
+
+</html>
