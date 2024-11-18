@@ -1,15 +1,20 @@
 let closePop = document.querySelector(".closePop")
 let closeShowPop = document.querySelector(".closeShowPop")
+let closeTimePop = document.querySelector(".closeTimePop")
 let closeImgPop = document.querySelector(".closeImgPop")
 let popUpVideoGalleryContainer = document.querySelector(".popUpVideoGalleryContainer")
 let popUpVideoShowGalleryContainer = document.querySelector(".popUpVideoShowGalleryContainer")
+let popUpTimeLineGalleryContainer = document.querySelector(".popUpTimeLineGalleryContainer")
 let popUpImgGalleryContainer = document.querySelector(".popUpImgGalleryContainer")
 let openGallery = document.querySelectorAll(".openGallery")
 let openPopGallery = document.querySelectorAll(".openPopGallery")
 let openGalleryPop = document.querySelectorAll(".openGalleryPop")
 let openImgGallery = document.querySelectorAll(".openImgGallery")
 let sGallery = document.querySelector(".sGallery")
+let closeShowSlider = document.querySelector(".closeShowSlider")
+let closeTimeSlider = document.querySelector(".closeTimeSlider")
 let sShowGallery = document.querySelector(".sShowGallery")
+let sTimeGallery = document.querySelector(".sTimeGallery")
 let popUpVideo = document.querySelector(".popUpVideo")
 let closepopUpVideo = document.querySelector(".closepopUpVideo")
 let popUpimg = document.querySelector(".popUpimg")
@@ -17,10 +22,12 @@ let closeSlider = document.querySelector(".closeSlider")
 let closeImgSlider = document.querySelector(".closeImgSlider")
 let fThumb = document.querySelector(".fThumb")
 let fShowThumb = document.querySelector(".fShowThumb")
+let fTimeThumb = document.querySelector(".fTimeThumb")
 let sImgGallery = document.querySelector(".sImgGallery")
 let fImgThumb = document.querySelector(".fImgThumb")
 let closepopUpImg = document.querySelector(".closepopUpImg")
 let playVideoOpen = document.querySelectorAll(".playVideoOpen")
+let thumbTimeBox = document.querySelectorAll(".thumbTimeBox")
 let planSlides = document.querySelectorAll(".planSlider .swiper-slide")
 let body = document.querySelector("body")
 let galleryFlag=true;
@@ -41,6 +48,7 @@ let thumbBox = document.querySelectorAll(".thumbBox")
 let thumbImgBox = document.querySelectorAll(".thumbImgBox")
 let openVideoGallery = document.querySelectorAll(".openVideoGallery")
 let openShowVideoGallery = document.querySelectorAll(".openShowVideoGallery")
+let openTimeVideoGallery = document.querySelectorAll(".openTimeVideoGallery")
 const popSlider = new Swiper('.popSlider', {
     // Optional parameters
 
@@ -99,7 +107,7 @@ const popImgSlider = new Swiper('.popImgSlider', {
       },
 
     pagination: {
-        el: '.popSliderFraction',
+        el: '.popImgSliderFraction',
         type: 'custom',
         renderCustom: function (swiper, current, total) {
             if (total>10) {
@@ -129,7 +137,7 @@ const popImgSlider = new Swiper('.popImgSlider', {
         }
       },
   });
-const popShowSlider = new Swiper('.popImgSlider', {
+const popShowSlider = new Swiper('.popShowSlider', {
     // Optional parameters
 
     loop: true,
@@ -143,7 +151,51 @@ const popShowSlider = new Swiper('.popImgSlider', {
       },
 
     pagination: {
-        el: '.popSliderFraction',
+        el: '.popSlideShowFraction',
+        type: 'custom',
+        renderCustom: function (swiper, current, total) {
+            if (total>10) {
+                if (current>9) {
+                    
+                    return `<span class="current">${current}</span>` + '<i>/</i>' + `<span class="total">${(total)}</span>`; 
+                }
+                else{
+
+                    return `<span class="current">0${current}</span>` + '<i>/</i>' + `<span class="total">${(total)}</span>`; 
+
+                }
+            }
+            else{
+                if (current>9) {
+
+                    return `<span class="current">${current}</span>` + '<i>/</i>' + `<span class="total">0${(total)}</span>`; 
+                }
+                else{
+
+                    return `<span class="current">0${current}</span>` + '<i>/</i>' + `<span class="total">0${(total)}</span>`; 
+    
+                }
+
+            }
+          
+        }
+      },
+  });
+const popTimeSlider = new Swiper('.popTimeSlider', {
+    // Optional parameters
+
+    loop: true,
+    slidesPerView:1,
+    speed:1000,
+
+    centeredSlides:true,
+    navigation: {
+        nextEl: '.nextTimePop',
+        prevEl: '.prevTimePop',
+      },
+
+    pagination: {
+        el: '.popSlideTimeFraction',
         type: 'custom',
         renderCustom: function (swiper, current, total) {
             if (total>10) {
@@ -197,6 +249,7 @@ const popShowSlider = new Swiper('.popImgSlider', {
             popUpVideoGalleryContainer.classList.add("popOpen")
             galleryFlag=!galleryFlag
             body.style.overflow="hidden"
+            lenis.stop()
         }
         
     })
@@ -209,7 +262,9 @@ openPopGallery.forEach(element => {
             fImgThumb.classList.add("popOpen")
             popUpImgGalleryContainer.classList.add("popOpen")
             galleryFlag=!galleryFlag
-            body.style.overflow="hidden"
+            body.style.overflow="hidden";
+            lenis.stop()
+
         }
         
     })
@@ -220,6 +275,8 @@ closePop.addEventListener("click",function (params) {
                     popUpVideoGalleryContainer.classList.remove("popOpen")
                     galleryFlag=!galleryFlag
                     body.style.overflow="auto"
+                   lenis.start()
+
 
     }
 })
@@ -227,7 +284,9 @@ closeShowPop.addEventListener("click",function (params) {
     if (!galleryFlag) {
                     popUpVideoShowGalleryContainer.classList.remove("popOpen")
                     galleryFlag=!galleryFlag
-                    body.style.overflow="auto"
+                    body.style.overflow="auto";
+                    lenis.start()
+
 
     }
 })
@@ -235,7 +294,19 @@ closeImgPop.addEventListener("click",function (params) {
     if (!galleryFlag) {
                     popUpImgGalleryContainer.classList.remove("popOpen")
                     galleryFlag=!galleryFlag
-                    body.style.overflow="auto"
+                    body.style.overflow="auto";
+                    lenis.start()
+
+
+    }
+})
+closeTimePop.addEventListener("click",function (params) {
+    if (!galleryFlag) {
+                    popUpTimeLineGalleryContainer.classList.remove("popOpen")
+                    galleryFlag=!galleryFlag
+                    body.style.overflow="auto";
+                    lenis.start()
+
 
     }
 })
@@ -273,6 +344,22 @@ for (let i = 0; i < thumbImgBox.length; i++) {
         } )
         
     }
+for (let i = 0; i < thumbTimeBox.length; i++) {
+    const element = thumbTimeBox[i];
+  
+        element.addEventListener("click" ,function (params) {
+            if (sGalleryFlag) {
+                
+                popTimeSlider.slideTo(i+1,0)
+                sTimeGallery.classList.add("popOpen")
+                sGalleryFlag=!sGalleryFlag
+                popUpTimeLineGalleryContainer.scrollTo(0,0)
+                popUpTimeLineGalleryContainer.style.overflow="hidden"
+                
+            }
+        } )
+        
+    }
     closeSlider.addEventListener("click",function(params) {
         sGallery.classList.remove("popOpen")
         sGalleryFlag=!sGalleryFlag
@@ -282,6 +369,16 @@ for (let i = 0; i < thumbImgBox.length; i++) {
         sGallery.classList.remove("popOpen")
         sGalleryFlag=!sGalleryFlag
         popUpVideoShowGalleryContainer.style.overflow="auto"
+    })
+    closeShowSlider.addEventListener("click",function(params) {
+        sShowGallery.classList.remove("popOpen")
+        sGalleryFlag=!sGalleryFlag
+        popUpVideoShowGalleryContainer.style.overflow="auto"
+    })
+    closeTimeSlider.addEventListener("click",function(params) {
+        sTimeGallery.classList.remove("popOpen")
+        sGalleryFlag=!sGalleryFlag
+        popUpTimeLineGalleryContainer.style.overflow="auto"
     })
     closeImgSlider.addEventListener("click",function(params) {
         sImgGallery.classList.remove("popOpen")
@@ -306,7 +403,8 @@ for (let i = 0; i < thumbImgBox.length; i++) {
                 sGallery.classList.add("popOpen")
                 galleryFlag=!galleryFlag
                 body.style.overflow="hidden"
-                
+                lenis.stop()
+
                     popSlider.slideTo(newI+1,0)
                     sGalleryFlag=!sGalleryFlag
                     popUpVideoGalleryContainer.scrollTo(0,0)
@@ -322,8 +420,8 @@ for (let i = 0; i < thumbImgBox.length; i++) {
         
         
        newElem.addEventListener("click",function(params) {
-        let newI = element.getAttribute("data-swiper-slide-index")
-        console.log(newI);
+        // let newI = element.getAttribute("data-swiper-slide-index")
+        // console.log(newI);
         
             if (galleryFlag && sGalleryFlag) {
                 
@@ -332,11 +430,41 @@ for (let i = 0; i < thumbImgBox.length; i++) {
                 sShowGallery.classList.add("popOpen")
                 galleryFlag=!galleryFlag
                 body.style.overflow="hidden"
+                lenis.stop()
+
                 
-                popShowSlider.slideTo(newI+1,0)
+                popShowSlider.slideTo(i+1,0)
                     sGalleryFlag=!sGalleryFlag
                     popUpVideoShowGalleryContainer.scrollTo(0,0)
                     popUpVideoShowGalleryContainer.style.overflow="hidden"
+                
+            }
+            
+        })
+    });
+    openTimeVideoGallery.forEach((element,i) => {
+
+        // let newElem =  element.querySelector(".playbtn");
+        
+        
+       element.addEventListener("click",function(params) {
+        // let newI = element.getAttribute("data-swiper-slide-index")
+        // console.log(newI);
+        
+            if (galleryFlag && sGalleryFlag) {
+                
+                fTimeThumb.classList.add("popOpen")
+                popUpTimeLineGalleryContainer.classList.add("popOpen")
+                sTimeGallery.classList.add("popOpen")
+                galleryFlag=!galleryFlag
+                body.style.overflow="hidden"
+                lenis.stop()
+
+                
+                popTimeSlider.slideTo(i+1,0)
+                    sGalleryFlag=!sGalleryFlag
+                    popUpTimeLineGalleryContainer.scrollTo(0,0)
+                    popUpTimeLineGalleryContainer.style.overflow="hidden"
                 
             }
             
@@ -349,6 +477,7 @@ for (let i = 0; i < thumbImgBox.length; i++) {
         
        element.addEventListener("click",function(params) {
        
+        console.log(element);
         
             if (galleryFlag && sGalleryFlag) {
                 
@@ -356,7 +485,9 @@ for (let i = 0; i < thumbImgBox.length; i++) {
                 popUpImgGalleryContainer.classList.add("popOpen")
                 sImgGallery.classList.add("popOpen")
                 galleryFlag=!galleryFlag
-                body.style.overflow="hidden"
+                body.style.overflow="hidden";
+                lenis.stop()
+
                 
                     popSlider.slideTo(i+1,0)
                     sGalleryFlag=!sGalleryFlag
@@ -375,7 +506,7 @@ for (let i = 0; i < thumbImgBox.length; i++) {
     playVideoOpen.forEach(element => {
         element.addEventListener("click" , function (params) {
             popUpVideo.classList.add("popOpen")
-            let vodUrl = playVideoOpen.getAttribute("data-videoUrl")
+            let vodUrl = element.getAttribute("data-videoUrl")
             let videoPop = document.querySelector(".popUpVideo video")
             videoPop.setAttribute("src" , vodUrl)
         })

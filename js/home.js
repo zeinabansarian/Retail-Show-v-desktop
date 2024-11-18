@@ -6,7 +6,7 @@ const sliderPrevious = document.getElementById("js-cta-slider-previous");
 const interleaveOffset = 0.75;
 
 const swiper = new Swiper(slider, {
-  loop: false,
+  loop: true,
   // direction: "vertical",
   autoplay:true,
   speed: 1000,
@@ -48,8 +48,8 @@ const swiper = new Swiper(slider, {
 		el: ".swiper-progressbar",
       },
       navigation: {
-        nextEl: '.nextSlide',
-        prevEl: '.prevSlide',
+        nextEl: '.prevSlide',
+        prevEl: '.nextSlide',
       },
   on: {
     progress: function() {

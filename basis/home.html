@@ -1,15 +1,18 @@
 <basis core="dbsource" source="media" name="db" lid="1" catid="2120"> <member type="list" name="banner-def" perpage="10" pageno="1" /> </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2363552"> <member name="about-def" type="view"/> </basis>	
- <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2363552"> <member name="video" type="list"/> </basis>	
-<basis core="dbsource" source="media" name="db" lid="1" catid="2122"> <member type="list" name="banner-sec4" perpage="10" pageno="1"/> </basis>
+ <basis core="dbsource" source="media" name="db" lid="1" catid="2122"> <member type="list" name="banner-sec4" perpage="10" pageno="1"/> </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2363587"> <member name="def-sec5" type="view"/> </basis> 
 <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2363587"> <member name="image-sec5" type="list" format="4"/> </basis> 
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="210836"> <member name="list" size="279x395" type="list"/> </basis>
 <basis core="dbsource" source="media" name="db" lid="1" catid="2124"> <member type="list" name="banner-sec8" perpage="10" pageno="1" /> </basis>
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="2363592"> <member name="def-sec7" type="view"/> </basis> 
-
 <basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2363592"> <member name="def-sec7img" type="list"/> </basis>	
-
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2363552"> 
+    <member name="video" type="list" format="3"/> 
+</basis>
+<basis core="dbsource" name="db" source="media" lid="1" sourcemid="1" usedforid="2363552">
+     <member name="cover" type="list" format="4" postsql="select * from [db.cover] where ord=10"/> 
+</basis>
 <!DOCTYPE html>
 <html lang="fa">
 <head>
@@ -18,6 +21,7 @@
     <title>ریتیل شو</title>
     <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="[##cms.cms.cdn##]/css/outputDesk.css">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/plyr.css" />
 </head>
 <body>
     <div class="homePage overflow-hidden">
@@ -52,7 +56,7 @@
                     class="inner relative flex items-center gap-x-2 group-hover:after:scale-x-[1.2] after:duration-300 after:origin-right after:w-[71px] after:inline-block after:h-px after:bg-white">
                     <span
                         class="group-hover:-translate-x-[20px] duration-300 font-IRANSansWeb300 text-sm text-white">
-                        NEXT
+                        PREV
                     </span>
                 </div>
             </div>
@@ -61,7 +65,7 @@
                     class="inner relative flex items-center gap-x-2 group-hover:before:scale-x-125 before:duration-300 before:origin-left before:w-[71px] before:inline-block before:h-px before:bg-white">
                     <span
                         class="group-hover:translate-x-[20px] duration-300 font-IRANSansWeb300 text-sm text-white">
-                        PREV
+                          NEXT
                     </span>
                 </div>
             </div>
@@ -81,73 +85,61 @@
                         <h1 class="font-IRANSansWeb500 scrollTop text-2xl text-dark-blue pr-4 py-2.5 before:h-full before:block flex relative items-center before:absolute before:right-0 before:top-0 before:bg-dark-blue before:w-[2px]">
                          @text
                         </h1>
-                        <div class="para scrollTop font-IRANSansWeb(FaNum)400 mt-6 mb-8">
+                        <div class="para scrollTop font-IRANSansWeb300 mt-6 mb-8">
                            @largetext
                         </div>
                         
                     </face>
                 </basis>
-                <a href="/درباره-ما" class="ShowMore self-baseline mt-2.5 w-auto flex gap-[10px] overflow-hidden justify-center">
-                    <p class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-white">مشاهده </p>
-                    <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-white text-white relative 
+                <a href="/درباره-ما" class="ShowMore self-baseline mt-2.5 w-auto flex gap-[10px] overflow-hidden justify-right">
+                    <p class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-dark-blue">مشاهده </p>
+                    <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-dark-blue text-dark-blue relative 
                     ">
                     <div class="dot w-[5px] h-[5px] rounded-full translate-y-[-50%]
-                     bg-white text-white absolute top-[70%] translate-x-[-50%]"></div>
+                     bg-dark-blue text-dark-blue absolute top-[70%] translate-x-[-50%]"></div>
                     </div>
                 </a>
             </div>
             <div class="lSide w-[45%] pl-[5%]">
-                <div class="inVideo flex items-center justify-center -mr-16">
+                <div class="inVideo w-full relative flex items-center justify-center -mr-16">
 
                     <basis core="print" datamembername="db.video">
-                      
-                        <face filter="ord=10">
-                            
-                            <video poster="/@largeIMG" loop>
-                            </face>
-                        </basis>
-                    <basis core="print" datamembername="db.video">
-                      
-                        <face filter="format=4 and ord=1000">
-                            
-                            <source src="/@largeIMG">
-                            </face>
-                        </basis>
+                        <layout>
+                            @child
+                        </layout>
+                        <face filter="ord=1000">
+                         <video src="@largeIMG" class="w-full object-cover" id="player" loop poster="[##db.cover.largeIMG##]">
+                        </face>
+                    </basis>
                     </video>
-                    <div class="play-popup-container playbtn openVideoGallery w-[126px] h-[126px] absolute cursor-pointer">
-                    <div class="play-popup-btn relative flex items-center justify-center"
-                        data-video="https://player.vimeo.com/video/619757568?dnt=1&amp;amp;app_id=122963">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="153.417" height="153.417"
-                            viewBox="0 0 153.417 153.417">
-                            <g id="Group_457" data-name="Group 457"
-                                transform="translate(-1061.792 -431.792)">
-                                <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(1063 433)"
-                                    fill="none" stroke="#fff" stroke-width="1" opacity="0.3">
-                                    <circle cx="75.5" cy="75.5" r="75.5" stroke="none" />
-                                    <circle cx="75.5" cy="75.5" r="75" fill="none" />
-                                </g>
-                                <path id="Path_1" data-name="Path 1"
-                                    d="M75.708,0A75.708,75.708,0,1,1,0,75.708"
-                                    transform="translate(1062.792 432.792)" fill="none" stroke="#fff"
-                                    stroke-width="2" />
-                            </g>
-                        </svg>
-                        <div class="play-popup-btn__circle absolute">
-                            <div class="play-popup-btn__circle__bullet"></div>
-                            <span class="play-popup-btn__circle__text text-left">
-                                <p
-                                    class="font-IRANSansWeb300  text-lg text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
-                                    Play
-
-                                </p>
-                                <p class="font-IRANSansWeb500 text-lg text-white">
-
-                                    video
-                                </p>
-                            </span>
-                        </div>
-                    </div>
-                </div>
+                    <div class="ov overlay [&.hide]:opacity-0 [&.hide]:pointer-events-none duration-1000
+                    absolute w-full h-full bg-[#0000004D] pointer-events-none"></div>
+                   <div class="play-popup-container [&.hide]:opacity-0 [&.hide]:pointer-events-none duration-1000 overlay w-[126px] h-[126px] absolute z-1 cursor-pointer">
+                       <div class="play-popup-btn relative flex items-center justify-center" data-video="https://player.vimeo.com/video/619757568?dnt=1&app_id=122963">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="153.417" height="153.417" viewBox="0 0 153.417 153.417">
+                               <g id="Group_457" data-name="Group 457" transform="translate(-1061.792 -431.792)">
+                               <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(1063 433)" fill="none" stroke="#fff" stroke-width="1" opacity="0.3">
+                               <circle cx="75.5" cy="75.5" r="75.5" stroke="none"/>
+                               <circle cx="75.5" cy="75.5" r="75" fill="none"/>
+                               </g>
+                               <path id="Path_1" data-name="Path 1" d="M75.708,0A75.708,75.708,0,1,1,0,75.708" transform="translate(1062.792 432.792)" fill="none" stroke="#fff" stroke-width="2"/>
+                               </g>
+                               </svg>
+                           <div class="play-popup-btn__circle absolute">
+                               <div class="play-popup-btn__circle__bullet"></div>
+                               <span class="play-popup-btn__circle__text text-left">
+                                  <p class="font-IRANSansWeb300  text-lg text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
+                                      Play 
+       
+                                  </p>
+                               <p class="font-IRANSansWeb500 text-lg text-white">
+       
+                                   video
+                               </p>
+                           </span>
+                           </div>
+                       </div>
+                   </div>
                 </div>
             </div>
         </section>
@@ -200,7 +192,8 @@
                         
                     </face>
                 </basis>
-                <a class="block py-3 scrollTop px-16 font-IRANSansWeb400 text-sm text-black bg-gray-bg rounded-md w-fit duration-500 hover:bg-dark-blue hover:text-white" href="">
+                <a class="block py-3 scrollTop px-16 font-IRANSansWeb400 text-sm text-black bg-gray-bg rounded-md
+                 w-fit duration-500 hover:bg-dark-blue hover:text-white" href="اطلاعیه" alt=" اطلاعیه" title=" اطلاعیه" >
                     مشاهده اطلاعیه
                 </a>
             </div>
@@ -227,10 +220,10 @@
                           <face>
                               <div class="swiper-slide group">
                                 <a class="relative h-full flex items-center justify-center " href="/@link" title="@title">
-                                    <div class="imgS relative z-2">
+                                    <div class="imgS w-full relative z-2">
                                         <img class="w-full duration-500 opacity-0 group-hover:opacity-100" src="/@00279X00395prp" alt="@title">
                                     </div>
-                                    <div class="over absolute p-5 flex-col w-full h-full bg-main-blue flex items-center justify-center">
+                                    <div class="over items-start absolute p-5 flex-col w-full h-full bg-main-blue flex  justify-center">
                                         <div class="number">
                                             <span class="font-Battambang700 text-[85px] text-main-blue" style="-webkit-text-stroke: 1px white;line-height: 153px;">
                                                 08
@@ -271,7 +264,8 @@
                         
                     </face>
                 </basis>
-                <a class="block py-3 px-16 font-IRANSansWeb400 text-sm text-black bg-gray-bg rounded-md w-fit duration-500 hover:bg-dark-blue hover:text-white" href="">
+                <a class="block py-3 px-16 font-IRANSansWeb400 text-sm text-black
+                 bg-gray-bg rounded-md w-fit duration-500 hover:bg-dark-blue hover:text-white" ref="حامیان" alt=" حامیان" title=" حامیان">
                     مشاهده حامیان
                 </a>
             </div>

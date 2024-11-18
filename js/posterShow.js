@@ -12,7 +12,7 @@ const mainPosterSlider = new Swiper('.mainPosterSlider', {
         el: '.pagination1',
         type: 'custom',
         renderCustom: function (swiper, current, total) {
-            if (total>10) {
+            if (total>9) {
                 if (current>9) {
                     
                     return `<span class="current">${current}</span>` + '<i>/</i>' + `<span class="total">${(total)}</span>`; 
@@ -55,7 +55,7 @@ const mainPosterSlider = new Swiper('.mainPosterSlider', {
 
 jQuery('.openPara').readmore({
     speed: 100,
-    collapsedHeight:100,
+    collapsedHeight:103,
     moreLink: '<button class="readMoreBtn"> <span>+</span> بیشتر</button>',
     lessLink: '<button class="readMoreBtn"> <span>-</span> کمتر</button>',
     heightMargin: 16,
