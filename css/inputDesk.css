@@ -701,9 +701,12 @@ input[type="text"]:focus,
 .ContactUs-C .Box {
   margin-left: auto;
   width: 93%;
+  display: flex;
+  flex-direction: column;
+  gap: .8em;
 }
 .ContactUs-C .Form-container {
-  gap: 1em;
+  gap: 2em;
 }
 .leaflet-container.leaflet-touch-drag.leaflet-touch-zoom {
   z-index: 1 !important;

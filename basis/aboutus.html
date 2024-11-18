@@ -25,16 +25,16 @@
     <main class="AboutUs-C w-full overflow-hidden" dir="rtl">
   <basis core="call" file="header1.inc" pageindex="[##cms.cms.pageindex##]"/>
     
-       <div class="about-container min-h-screen w-full flex flex-col">
-      <section class="section-1 w-full flex justify-center items-center h-screen">
-        <div class="Banner-Container w-full h-full flex justify-center items-center">
+       <div class="about-container n w-full flex flex-col">
+      <section class="section-1 w-full flex justify-center items-center h-auto">
+        <div class="Banner-Container w-full  flex justify-center items-center">
             <basis core="print" datamembername="db.aboutGallery">
                 <layout>
                     @child
                 </layout>
                 <face filter="ord=1">
-                    <div class="IMG w-full h-full flex justify-center items-center">
-                        <img src="@largeIMG" alt="retailshow" title="retailshow" class="w-full h-full object-cover">
+                    <div class="IMG w-full flex justify-center items-center">
+                        <img src="@largeIMG" alt="retailshow" title="retailshow" class="w-full  object-cover">
                     </div>    
                 </face>
             </basis>
