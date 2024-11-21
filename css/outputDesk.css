@@ -1372,6 +1372,10 @@ video {
   width: 100svw;
 }
 
+.w-\[75\%\] {
+  width: 75%;
+}
+
 .min-w-\[545px\] {
   min-width: 545px;
 }
@@ -4405,18 +4409,31 @@ video {
 }
 
 .popSliderFraction .current,
-.popSliderFraction i {
+.popImgSliderFraction .current,
+.popImgSliderFraction i,
+.popSlideShowFraction .current,
+.popSliderFraction i,
+.popSlideTimeFraction .current,
+.popSlideTimeFraction i,
+.popSlideShowFraction i{
   font-family: "IRANSansWeb400";
   font-size: 20px;
   line-height: 31.3px;
   color: #febe1b;
 }
 
-.popSliderFraction i {
+.popSliderFraction i ,
+.popImgSliderFraction i ,
+.popSlideTimeFraction i ,
+.popSlideShowFraction i  {
   margin: 0 5px;
 }
 
-.popSliderFraction span {
+.popSliderFraction span ,
+.popImgSliderFraction span ,
+.popSlideTimeFraction span ,
+.popSlideShowFraction span 
+{
   font-family: "IRANSansWeb400";
   font-size: 15px;
   color: #febe1b;
