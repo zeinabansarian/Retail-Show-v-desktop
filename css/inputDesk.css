@@ -930,3 +930,9 @@ background-color: #002B43;
   font-family: "IRANSansWeb400";
   text-align: justify;
 }
+.AboutUs-C .inVideo {
+  position: relative;
+}
+a:hover{
+  text-decoration: none !important;
+}
