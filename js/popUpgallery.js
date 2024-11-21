@@ -7,6 +7,7 @@ let popUpVideoShowGalleryContainer = document.querySelector(".popUpVideoShowGall
 let popUpTimeLineGalleryContainer = document.querySelector(".popUpTimeLineGalleryContainer")
 let popUpImgGalleryContainer = document.querySelector(".popUpImgGalleryContainer")
 let openGallery = document.querySelectorAll(".openGallery")
+let thumbShowBox = document.querySelectorAll(".thumbShowBox")
 let openPopGallery = document.querySelectorAll(".openPopGallery")
 let openGalleryPop = document.querySelectorAll(".openGalleryPop")
 let openImgGallery = document.querySelectorAll(".openImgGallery")
@@ -328,6 +329,22 @@ for (let i = 0; i < thumbBox.length; i++) {
         } )
         
     }
+for (let i = 0; i < thumbShowBox.length; i++) {
+    const element = thumbShowBox[i];
+  
+        element.addEventListener("click" ,function (params) {
+            if (sGalleryFlag) {
+                
+                popShowSlider.slideTo(i+1,0)
+                sShowGallery.classList.add("popOpen")
+                sGalleryFlag=!sGalleryFlag
+                popUpVideoShowGalleryContainer.scrollTo(0,0)
+                popUpVideoShowGalleryContainer.style.overflow="hidden"
+                
+            }
+        } )
+        
+    }
 for (let i = 0; i < thumbImgBox.length; i++) {
     const element = thumbImgBox[i];
   
@@ -507,7 +524,10 @@ for (let i = 0; i < thumbTimeBox.length; i++) {
         element.addEventListener("click" , function (params) {
             popUpVideo.classList.add("popOpen")
             let vodUrl = element.getAttribute("data-videoUrl")
-            let videoPop = document.querySelector(".popUpVideo video")
+            
+            let videoPop = document.querySelector(".popUpVideo iframe")
+            console.log("vodUrl" , vodUrl);
+            console.log("videoPop" , videoPop);
             videoPop.setAttribute("src" , vodUrl)
         })
         
