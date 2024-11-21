@@ -136,6 +136,9 @@ const supporter = new Swiper('.supporter', {
    spaceBetween: 51,
    slidesPerView:5,
    freeMode:true,
+   autoplay:{
+    delay:3000,
+   }
   });
 
   let slidders=document.querySelectorAll(".section5 .swiper-slide")
