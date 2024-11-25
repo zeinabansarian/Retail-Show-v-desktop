@@ -31,7 +31,7 @@ closeSearchH.addEventListener('click',()=>{
       input: document.querySelector('[search="input"]'),
       items: document.querySelectorAll('[search="item"]'),
       noResults: document.querySelector('[search="noResults"]'),
-      clear: document.querySelector('[search="clear"]'),
+      // clear: document.querySelector('[search="clear"]'),
       indexedItems: [],
       hasControls: function() {
         return this.input != undefined && this.items != undefined
@@ -83,13 +83,13 @@ closeSearchH.addEventListener('click',()=>{
             controls.items[i].setAttribute('hidden', '');
           }
         });
-        controls.clear.removeAttribute('hidden');
+        // controls.clear.removeAttribute('hidden');
       } else {
         Array.prototype.forEach.call(controls.items, function (item) {
           item.removeAttribute('open');
           item.removeAttribute('hidden');
         });
-        controls.clear.setAttribute('hidden', '');
+        // controls.clear.setAttribute('hidden', '');
       }
  
       toggleNoResultsMessage(searchTerm);
@@ -117,12 +117,12 @@ closeSearchH.addEventListener('click',()=>{
     });
   
     // clear button click
-    controls.clear.addEventListener('click', function() {
-      event.target.setAttribute('hidden', '');
-      toggleNoResultsMessage('');
-      searchAndHighlight();
-      controls.input.focus();
-    })
+    // controls.clear.addEventListener('click', function() {
+    //   event.target.setAttribute('hidden', '');
+    //   toggleNoResultsMessage('');
+    //   searchAndHighlight();
+    //   controls.input.focus();
+    // })
 
   })();
   
