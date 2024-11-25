@@ -49,15 +49,62 @@
         html {
             font-size: unset;
         }
-        iframe{
+
+        iframe {
             width: 100%;
+        }
+
+        .section1 .imgS::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(64.64% 64.64% at 50% 75.89%,
+                    rgba(0, 0, 0, 0) 13.11%,
+                    rgba(0, 0, 0, 0.24) 100%),
+                linear-gradient(180deg,
+                    rgba(0, 0, 0, 0.42) 0%,
+                    rgba(0, 0, 0, 0.0252) 18.94%);
+        }
+
+        .popImgSliderFraction i,
+        .popImgSliderFraction span {
+            color: white !important;
+        }
+
+        .openGalleryPop:hover span,
+        .openPopGallery:hover span {
+            color: white !important;
+        }
+
+        .nextRight:hover path:first-child,
+        .nextImgPop:hover rect,
+        .nextTimePop:hover rect,
+        .prevTimePop:hover rect,
+        .nextShowPop:hover rect,
+        .prevShowPop:hover rect,
+        .prevImgPop:hover rect,
+        .prevRight:hover path:first-child {
+            fill: #002b43;
+        }
+
+        .nextRight:hover path:last-child,
+        .prevImgPop:hover path,
+        .nextTimePop:hover path,
+        .nextShowPop:hover path,
+        .prevTimePop:hover path,
+        .prevShowPop:hover path,
+        .prevRight:hover path:last-child,
+        .nextImgPop:hover path {
+            fill: white;
         }
     </style>
 </head>
 
 <body>
     <main class="posterShow">
-        <basis core="call" file="header1.inc" pageindex="[##cms.cms.pageindex##]"/>
+        <basis core="call" file="header1.inc" pageindex="[##cms.cms.pageindex##]" />
 
         <basis core="print" datamembername="db.posterGallery">
             <layout>
@@ -91,7 +138,7 @@
 
             <face filter="ord=1">
                 <div class="swiper-slide">
-                    <div class="imgS">
+                    <div class="imgS relative">
                         <img class="w-full" src="/@largeIMG" alt="@name" />
                     </div>
                 </div>
@@ -100,17 +147,23 @@
         <section class="section2 flex items-center mt-20 mb-16" dir="rtl">
             <div class="rSide pr-[5%] bg-lightbg w-[55%] pt-[122px] pb-[133px] pl-24">
                 <basis core="print" datamembername="db.poster">
-                    <face filter="TypeID=150">
-                        <h1
-                            class="font-IRANSansWeb500 text-2xl text-dark-blue pr-4 py-2.5 before:h-full before:block flex relative items-center before:absolute before:right-0 before:top-0 before:bg-dark-blue before:w-[2px]">
-                            @Answer
-                        </h1>
+                    <face filter="TypeID=128">
+                        <div
+                            class="Title-main relative overflow-hidden w-max flex justify-start gap-4 items-center my-[4em]">
+                            <span
+                                class="line duration-700 absolute flex left-0 my-auto justify-center right-0 delay-100 w-[2px] h-0 bg-darkBlue"></span>
+
+                            <h1
+                                class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-2xl leading-37.57 text-darkBlue pr-4 py-2.5">
+                                @Answer
+                            </h1>
+                        </div>
                     </face>
                 </basis>
 
                 <basis core="print" datamembername="db.poster">
                     <layout>
-                        <div class="para font-IRANSansWeb400 mt-6 overflow-hidden mb-8 openPara">
+                        <div class="para scrollTop font-IRANSansWeb400 mt-6 overflow-hidden mb-8 openPara">
                             @child
                         </div>
                     </layout>
@@ -132,7 +185,8 @@
                         </basis>
                         <basis core="print" datamembername="db.galleryLink2">
                             <face filter="TypeID=254">
-                                <div data-videoUrl="@largetext" class="play-popup-container playVideoOpen playbtn w-[126px] h-[126px] absolute cursor-pointer">
+                                <div data-videoUrl="@largetext"
+                                    class="play-popup-container playVideoOpen playbtn w-[126px] h-[126px] absolute cursor-pointer">
                                     <div class="play-popup-btn relative flex items-center justify-center"
                                         data-video="https://player.vimeo.com/video/619757568?dnt=1&app_id=122963">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="153.417" height="153.417"
@@ -174,10 +228,24 @@
         <basis core="print" datamembername="db.posterGallery">
             <layout>
                 <section class="section3 mb-24" dir="rtl">
-                    <h2
-                        class="font-IRANSansWeb500 w-90p mx-auto mb-10 text-2xl text-dark-blue pr-4 py-2.5 before:h-full before:block flex relative items-center before:absolute before:right-0 before:top-0 before:bg-dark-blue before:w-[2px]">
-                        حامیان ما در دوره های گذشته نمایشگاه Iran Retail Show
-                    </h2>
+
+
+
+                    <basis core="print" datamembername="db.poster">
+                        <face filter="TypeID=128">
+                            <div
+                                class="Title-main w-90p mb-10 mx-auto relative overflow-hidden flex justify-start gap-4 items-center my-[4em]">
+                                <span
+                                    class="line duration-700 absolute flex left-0 my-auto justify-center right-0 delay-100 w-[2px] h-0 bg-darkBlue"></span>
+
+                                <h2
+                                    class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-2xl leading-37.57 text-darkBlue pr-4 py-2.5">
+                                    حامیان ما در دوره های گذشته نمایشگاه Iran Retail Show
+
+                                </h2>
+                            </div>
+                        </face>
+                    </basis>
                     <!-- Slider main container -->
                     <div class="swiper branSlider px-[5%]">
                         <!-- Additional required wrapper -->
@@ -202,177 +270,178 @@
             </face>
         </basis>
 
+        <section class="section4 w-90p mx-auto mb-[171px]" dir="rtl">
+            <basis core="group" if="'[##db.posterGallery1001.RowNumber##]' <> ''">
 
-                <section class="section4 w-90p mx-auto mb-[171px]" dir="rtl">
-                    <basis core="group" if="'[##db.posterGallery1001.RowNumber##]' <> ''">
-                        <h3 class="font-IRANSansWeb500 mb-2 text-2xl text-dark-blue pr-4 py-2.5 before:h-full before:block flex relative items-center before:absolute before:right-0 before:top-0 before:bg-dark-blue before:w-[2px]">
-                            گزارش نمایشگاه
-                        </h3>
-                        
-                    </basis>
+                <div class="Title-main mb-2 w-max relative overflow-hidden flex justify-start gap-4 items-center">
+                    <span
+                        class="line duration-700 absolute flex left-0 my-auto justify-center right-0 delay-100 w-[2px] h-0 bg-darkBlue"></span>
 
-                    <div class="timeline w-85p mx-auto">
-                        <basis core="repeater" name="rep" datamembername="db.posterGallery1001">
-                          
-                            <div class="timeline-item gap-x-[117px] flex relative pb-10" id="item_0">
-                                <div class="timeline-item__line"></div>
-                                <div class="timeline-item__indicator flex items-center justify-center">
-                                    <img class="ml-[2px] opacity-0 duration-500" src="images/hoverIcon.png" alt="" />
-                                </div>
+                    <h3
+                        class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-2xl leading-37.57 text-darkBlue pr-4 py-2.5">
+                        گزارش نمایشگاه
 
-                                <div class="timeline-item__content-wrapper" dir="rtl">
-                                    <div class="para font-IRANSansWeb400 text-xs text-justify mb-20 mt-10">
-                                        <p>[##rep.current.description##]</p>
-                                    </div>
-                                    <button data-toggle="modal"
-                                        data-target=".bs-example-modal-new[##rep.current.RowNumber##]" type="button"
-                                        style="outline: none"
-                                        class="btn ShowMore self-baseline mt-2.5 w-auto flex gap-[10px] overflow-hidden justify-center">
-                                        <p class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-dark-blue">
-                                            مشاهده بیشتر
-                                        </p>
-                                        <div
-                                            class="circle w-[20px] h-[20px] rounded-full border-[1px] border-dark-blue text-dark-blue relative">
-                                            <div
-                                                class="dot w-[5px] h-[5px] rounded-full translate-y-[-50%] bg-dark-blue text-dark-blue absolute top-[70%] translate-x-[-50%]">
-                                            </div>
-                                        </div>
-                                    </button>
+                    </h3>
+                </div>
+            </basis>
 
-                                    <div style="background-color: #ffffffb0"
-                                        class="modal fade bs-example-modal-new[##rep.current.RowNumber##]" tabindex="-1"
-                                        role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" style="width: 70%;">
-                                            <!-- Modal Content: begins -->
-                                            <div class="modal-content bg-gray-bg" style="min-height: 80vh;">
-                                                <!-- Modal Header -->
-                                                <div class="modal-header absolute ring-0"
-                                                    style="border: none; transform: translateX(100%)">
-                                                    <button type="button" class="close group opacity-100"
-                                                        data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">
-                                                            <svg class="group-hover:rotate-[360deg] duration-1000"
-                                                                width="34" height="34" viewBox="0 0 34 34" fill="none"
-                                                                xmlns="http://www.w3.org/2000/svg">
-                                                                <g clip-path="url(#clip0_100_8112)">
-                                                                    <path
-                                                                        d="M17 34C7.6 34 0 26.4 0 17C0 7.6 7.6 0 17 0C26.4 0 34 7.6 34 17C34 26.4 26.4 34 17 34ZM17 2C8.7 2 2 8.7 2 17C2 25.3 8.7 32 17 32C25.3 32 32 25.3 32 17C32 8.7 25.3 2 17 2Z"
-                                                                        fill="black" />
-                                                                    <path
-                                                                        d="M24.2827 8.302L25.6967 9.717L9.71673 25.697L8.30273 24.283L24.2827 8.302Z"
-                                                                        fill="black" />
-                                                                    <path
-                                                                        d="M9.71673 8.302L25.6967 24.282L24.2827 25.697L8.30273 9.717L9.71673 8.302Z"
-                                                                        fill="black" />
-                                                                </g>
-                                                                <defs>
-                                                                    <clipPath id="clip0_100_8112">
-                                                                        <rect width="34" height="34" fill="black" />
-                                                                    </clipPath>
-                                                                </defs>
-                                                            </svg>
-                                                        </span>
-                                                    </button>
-                                                </div>
+            <div class="timeline w-85p mx-auto">
+                <basis core="repeater" name="rep" datamembername="db.posterGallery1001">
+                    <div class="timeline-item gap-x-[117px] flex relative pb-10" id="item_0">
+                        <div class="timeline-item__line"></div>
+                        <div class="timeline-item__indicator flex items-center justify-center">
+                            <img class="ml-[2px] opacity-0 duration-500" src="images/hoverIcon.png" alt="" />
+                        </div>
 
-                                                <!-- Modal Body -->
-                                                <div class="modal-body" style="padding: 28px 25px">
-                                                    <div class="body-message">
-                                                        <h4 class="font-IRANSansWeb700 text-base pb-3 w-fit" style="
-                                  border-bottom: 0.25px solid black;
-                                  padding-bottom: 12px;
-                                  margin-bottom: 15px;
-                                ">
-                                                          [##rep.current.name##]
-                                                        </h4>
-
-                                                        <img style="float: right;margin-left: 10px;" src="/[##rep.current.largeIMG##]" alt="">
-                                                        <div class="para font-IRANSansWeb400 text-sm">
-                                                            <p>[##rep.current.description##]</p>
-                                                        </div>
-                                                        <basis core="print" datamembername="db.posterGallery1001">
-                                                           
-                                                            <face filter="RowNumber=1">
-                                                                <div class="imgS w-full flex items-center justify-end mt-5">
-
-                                                                    <img src="/@largeIMG" alt="">
-                                                                </div>
-                                                            </face>
-                                                        </basis>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Modal Content: ends -->
-                                        </div>
+                        <div class="timeline-item__content-wrapper" dir="rtl">
+                            <div class="para scrollTop font-IRANSansWeb400 text-xs text-justify mb-20 mt-10">
+                                <p>[##rep.current.description##]</p>
+                            </div>
+                            <button data-toggle="modal" data-target=".bs-example-modal-new[##rep.current.RowNumber##]"
+                                type="button" style="outline: none"
+                                class="btn ShowMore self-baseline mt-2.5 w-auto flex gap-[10px] overflow-hidden justify-center">
+                                <p class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-main-blue">
+                                    مشاهده بیشتر
+                                </p>
+                                <div
+                                    class="circle w-[20px] h-[20px] rounded-full border-[1px] border-main-blue text-main-blue relative">
+                                    <div
+                                        class="dot w-[5px] h-[5px] rounded-full translate-y-[-50%] bg-main-blue text-main-blue absolute top-[70%] translate-x-[-50%]">
                                     </div>
                                 </div>
+                            </button>
 
-                                <div class="timeline-item__media-wrapper">
-                                    <div class="timeline-item__date mb-9">
-                                        <span class="font-IRANSansWeb500 text-sm">
-                                            [##rep.current.name##]
-                                        </span>
-                                    </div>
+                            <div style="background-color: #ffffffb0"
+                                class="modal fade bs-example-modal-new[##rep.current.RowNumber##]" tabindex="-1"
+                                role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" style="width: 70%">
+                                    <!-- Modal Content: begins -->
+                                    <div class="modal-content bg-gray-bg" style="min-height: 80vh">
+                                        <!-- Modal Header -->
+                                        <div class="modal-header absolute ring-0"
+                                            style="border: none; transform: translateX(100%)">
+                                            <button type="button" class="close group opacity-100" data-dismiss="modal"
+                                                aria-label="Close">
+                                                <span aria-hidden="true">
+                                                    <svg class="group-hover:rotate-[360deg] duration-1000" width="34"
+                                                        height="34" viewBox="0 0 34 34" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_100_8112)">
+                                                            <path
+                                                                d="M17 34C7.6 34 0 26.4 0 17C0 7.6 7.6 0 17 0C26.4 0 34 7.6 34 17C34 26.4 26.4 34 17 34ZM17 2C8.7 2 2 8.7 2 17C2 25.3 8.7 32 17 32C25.3 32 32 25.3 32 17C32 8.7 25.3 2 17 2Z"
+                                                                fill="black" />
+                                                            <path
+                                                                d="M24.2827 8.302L25.6967 9.717L9.71673 25.697L8.30273 24.283L24.2827 8.302Z"
+                                                                fill="black" />
+                                                            <path
+                                                                d="M9.71673 8.302L25.6967 24.282L24.2827 25.697L8.30273 9.717L9.71673 8.302Z"
+                                                                fill="black" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_100_8112">
+                                                                <rect width="34" height="34" fill="black" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                </span>
+                                            </button>
+                                        </div>
 
-                                    <div class="wrap-image">
-                                        <div class="image">
-                                            <div class="inVideo openTimeVideoGallery duration-500 flex items-center justify-center">
-                                                <img class="w-full" src="/[##rep.current.largeIMG##]" alt="" />
-                                              
-                                                        <div  class="play-popup-container playbtn w-[126px] h-[126px] absolute cursor-pointer">
-                                                            <div class="play-popup-btn relative flex items-center justify-center"
-                                                                data-video="https://player.vimeo.com/video/619757568?dnt=1&app_id=122963">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="153.417"
-                                                                    height="153.417" viewBox="0 0 153.417 153.417">
-                                                                    <g id="Group_457" data-name="Group 457"
-                                                                        transform="translate(-1061.792 -431.792)">
-                                                                        <g id="Ellipse_1" data-name="Ellipse 1"
-                                                                            transform="translate(1063 433)" fill="none"
-                                                                            stroke="#fff" stroke-width="1"
-                                                                            opacity="0.3">
-                                                                            <circle cx="75.5" cy="75.5" r="75.5"
-                                                                                stroke="none" />
-                                                                            <circle cx="75.5" cy="75.5" r="75"
-                                                                                fill="none" />
-                                                                        </g>
-                                                                        <path id="Path_1" data-name="Path 1"
-                                                                            d="M75.708,0A75.708,75.708,0,1,1,0,75.708"
-                                                                            transform="translate(1062.792 432.792)"
-                                                                            fill="none" stroke="#fff"
-                                                                            stroke-width="2" />
-                                                                    </g>
-                                                                </svg>
-                                                                <div class="play-popup-btn__circle absolute">
-                                                                    <div class="play-popup-btn__circle__bullet"></div>
-                                                                    <span
-                                                                        class="play-popup-btn__circle__text text-left">
-                                                                        <p
-                                                                            class="font-IRANSansWeb300 text-lg text-white relative after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
-                                                                            Play
-                                                                        </p>
-                                                                        <p
-                                                                            class="font-IRANSansWeb500 text-lg text-white">
-                                                                            video
-                                                                        </p>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                        <!-- Modal Body -->
+                                        <div class="modal-body" style="padding: 28px 25px">
+                                            <div class="body-message">
+
                                                 
+                                                <h4 class="font-IRANSansWeb700 text-base pb-3 w-fit" style="border-bottom: 0.25px solid black;padding-bottom: 12px;margin-bottom: 15px;">
+                                                    [##rep.current.name##]
+                                                </h4>
+
+                                                <img style="float: right; margin-left: 10px"
+                                                    src="/[##rep.current.largeIMG##]" alt="" />
+                                                <div class="para scrollTop font-IRANSansWeb400 text-sm">
+                                                    <p>[##rep.current.description##]</p>
+                                                </div>
+                                                <basis core="print" datamembername="db.posterGallery1001">
+                                                    <face filter="RowNumber=1">
+                                                        <div class="imgS w-full flex items-center justify-end mt-5">
+                                                            <img src="/@largeIMG" alt="" />
+                                                        </div>
+                                                    </face>
+                                                </basis>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Modal Content: ends -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item__media-wrapper">
+                            <div class="timeline-item__date mb-9">
+                                <span class="font-IRANSansWeb500 text-sm">
+                                    [##rep.current.name##]
+                                </span>
+                            </div>
+
+                            <div class="wrap-image">
+                                <div class="image">
+                                    <div
+                                        class="inVideo openTimeVideoGallery duration-500 flex items-center justify-center">
+                                        <img class="w-full" src="/[##rep.current.largeIMG##]" alt="" />
+
+                                        <div
+                                            class="play-popup-container playbtn w-[126px] h-[126px] absolute cursor-pointer">
+                                            <div class="play-popup-btn relative flex items-center justify-center"
+                                                data-video="https://player.vimeo.com/video/619757568?dnt=1&app_id=122963">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="153.417" height="153.417"
+                                                    viewBox="0 0 153.417 153.417">
+                                                    <g id="Group_457" data-name="Group 457"
+                                                        transform="translate(-1061.792 -431.792)">
+                                                        <g id="Ellipse_1" data-name="Ellipse 1"
+                                                            transform="translate(1063 433)" fill="none" stroke="#fff"
+                                                            stroke-width="1" opacity="0.3">
+                                                            <circle cx="75.5" cy="75.5" r="75.5" stroke="none" />
+                                                            <circle cx="75.5" cy="75.5" r="75" fill="none" />
+                                                        </g>
+                                                        <path id="Path_1" data-name="Path 1"
+                                                            d="M75.708,0A75.708,75.708,0,1,1,0,75.708"
+                                                            transform="translate(1062.792 432.792)" fill="none"
+                                                            stroke="#fff" stroke-width="2" />
+                                                    </g>
+                                                </svg>
+                                                <div class="play-popup-btn__circle absolute">
+                                                    <div class="play-popup-btn__circle__bullet"></div>
+                                                    <span class="play-popup-btn__circle__text text-left">
+                                                        <p
+                                                            class="font-IRANSansWeb300 text-lg text-white relative after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
+                                                            Play
+                                                        </p>
+                                                        <p class="font-IRANSansWeb500 text-lg text-white">
+                                                            video
+                                                        </p>
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </basis>
+                        </div>
                     </div>
-                </section>
-         
+                </basis>
+            </div>
+        </section>
+
         <section class="section5 mb-[110px] pr-[5%]" dir="rtl">
-            <h4
-                class="font-IRANSansWeb500 mb-10 text-2xl text-dark-blue pr-4 py-2.5 before:h-full before:block flex relative items-center before:absolute before:right-0 before:top-0 before:bg-dark-blue before:w-[2px]">
-                پنل های برگزار شده در دوره های گذشته ایران ریتیل شو
-            </h4>
+          
+            <div class="Title-main mb-10 relative overflow-hidden flex justify-start gap-4 items-center my-[4em]">
+                <span class="line duration-700 absolute flex left-0 my-auto justify-center right-0 delay-100 w-[2px] h-0 bg-darkBlue"></span>
+
+                <h4 class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-2xl leading-37.57 text-darkBlue pr-4 py-2.5">
+                    پنل های برگزار شده در دوره های گذشته ایران ریتیل شو
+
+                </h4>
+            </div>
             <div class="gap-x-8 flex">
                 <!-- Slider main container -->
                 <div class="swiper rightSlider relative w-[36%]">
@@ -385,13 +454,12 @@
                                 <div class="swiper-slide flex flex-col justify-center">
                                     <h5 class="font-IRANSansWeb700 text-lg mb-4">@name</h5>
                                     <!-- <span class="font-IRANSansWeb400 text-lg mb-3">
-                                        روز دوم
-                                    </span> -->
-                                    <div class="para font-IRANSansWeb400 text-sm mb-4 text-justify">
+                                            روز دوم
+                                        </span> -->
+                                    <div class="para scrollTop font-IRANSansWeb400 text-sm mb-4 text-justify">
                                         <p>@description</p>
                                     </div>
-                                    <button data-toggle="modal"
-                                        data-target=".bs-example-modal-@RowNumber" type="button"
+                                    <button data-toggle="modal" data-target=".bs-example-modal-@RowNumber" type="button"
                                         style="outline: none"
                                         class="btn ShowMore self-baseline mt-2.5 w-auto flex gap-[10px] overflow-hidden justify-center">
                                         <p class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-dark-blue">
@@ -404,16 +472,14 @@
                                             </div>
                                         </div>
                                     </button>
-
-                                
                                 </div>
                             </face>
                         </basis>
                     </div>
                     <div class="btns z-1 flex justify-between gap-x-6 absolute bottom-0 left-0 right-0" dir="rtl">
                         <div
-                            class="openGalleryPop openGallery cursor-pointer py-3 px-16 flex items-center justify-center rounded-md bg-gray-bg">
-                            <span class="font-IRANSansWeb400 text-sm whitespace-nowrap">
+                            class="openGalleryPop group duration-500 hover:bg-dark-blue openGallery cursor-pointer py-3 px-16 flex items-center justify-center rounded-md bg-gray-bg">
+                            <span class="font-IRANSansWeb400 group-hover:text-white text-sm whitespace-nowrap">
                                 مشاهده گالری ویدیو
                             </span>
                         </div>
@@ -423,10 +489,10 @@
                             <div class="nextRight cursor-pointer">
                                 <svg width="42" height="42" viewBox="0 0 42 42" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path
+                                    <path class="duration-300"
                                         d="M42 5C42 2.23858 39.7614 0 37 0H5C2.23858 0 0 2.23858 0 5V37C0 39.7614 2.23857 42 5 42H37C39.7614 42 42 39.7614 42 37V5Z"
                                         fill="#F5F5F5" />
-                                    <path
+                                    <path class="duration-300"
                                         d="M26.04 20.58L18.4795 12.6L15.96 15.2612L21.0009 20.58L15.96 25.8987L18.4795 28.56L26.04 20.58Z"
                                         fill="black" />
                                 </svg>
@@ -434,10 +500,10 @@
                             <div class="prevRight cursor-pointer">
                                 <svg width="42" height="42" viewBox="0 0 42 42" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path
+                                    <path class="duration-300"
                                         d="M0 5C0 2.23858 2.23858 0 5 0H37C39.7614 0 42 2.23858 42 5V37C42 39.7614 39.7614 42 37 42H5C2.23858 42 0 39.7614 0 37V5Z"
                                         fill="#F5F5F5" />
-                                    <path
+                                    <path class="duration-300"
                                         d="M15.96 20.58L23.5205 12.6L26.04 15.2612L20.9991 20.58L26.04 25.8987L23.5205 28.56L15.96 20.58Z"
                                         fill="black" />
                                 </svg>
@@ -446,68 +512,61 @@
                     </div>
                 </div>
 
-
-
                 <basis core="print" datamembername="db.posterGallery1002">
                     <face>
-                <div style="background-color: #ffffffb0"
-                class="modal fade bs-example-modal-@RowNumber" tabindex="-1"
-                role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                <div class="modal-dialog" style="width: 70%;">
-                    <!-- Modal Content: begins -->
-                    <div class="modal-content bg-gray-bg">
-                        <!-- Modal Header -->
-                        <div class="modal-header absolute ring-0"
-                            style="border: none; transform: translateX(100%)">
-                            <button type="button" class="close group opacity-100"
-                                data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">
-                                    <svg class="group-hover:rotate-[360deg] duration-1000"
-                                        width="34" height="34" viewBox="0 0 34 34" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_100_8112)">
-                                            <path
-                                                d="M17 34C7.6 34 0 26.4 0 17C0 7.6 7.6 0 17 0C26.4 0 34 7.6 34 17C34 26.4 26.4 34 17 34ZM17 2C8.7 2 2 8.7 2 17C2 25.3 8.7 32 17 32C25.3 32 32 25.3 32 17C32 8.7 25.3 2 17 2Z"
-                                                fill="black" />
-                                            <path
-                                                d="M24.2827 8.302L25.6967 9.717L9.71673 25.697L8.30273 24.283L24.2827 8.302Z"
-                                                fill="black" />
-                                            <path
-                                                d="M9.71673 8.302L25.6967 24.282L24.2827 25.697L8.30273 9.717L9.71673 8.302Z"
-                                                fill="black" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_100_8112">
-                                                <rect width="34" height="34" fill="black" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </span>
-                            </button>
-                        </div>
+                        <div style="background-color: #ffffffb0" class="modal fade bs-example-modal-@RowNumber"
+                            tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" style="width: 70%">
+                                <!-- Modal Content: begins -->
+                                <div class="modal-content bg-gray-bg">
+                                    <!-- Modal Header -->
+                                    <div class="modal-header absolute ring-0"
+                                        style="border: none; transform: translateX(100%)">
+                                        <button type="button" class="close group opacity-100" data-dismiss="modal"
+                                            aria-label="Close">
+                                            <span aria-hidden="true">
+                                                <svg class="group-hover:rotate-[360deg] duration-1000" width="34"
+                                                    height="34" viewBox="0 0 34 34" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_100_8112)">
+                                                        <path
+                                                            d="M17 34C7.6 34 0 26.4 0 17C0 7.6 7.6 0 17 0C26.4 0 34 7.6 34 17C34 26.4 26.4 34 17 34ZM17 2C8.7 2 2 8.7 2 17C2 25.3 8.7 32 17 32C25.3 32 32 25.3 32 17C32 8.7 25.3 2 17 2Z"
+                                                            fill="black" />
+                                                        <path
+                                                            d="M24.2827 8.302L25.6967 9.717L9.71673 25.697L8.30273 24.283L24.2827 8.302Z"
+                                                            fill="black" />
+                                                        <path
+                                                            d="M9.71673 8.302L25.6967 24.282L24.2827 25.697L8.30273 9.717L9.71673 8.302Z"
+                                                            fill="black" />
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_100_8112">
+                                                            <rect width="34" height="34" fill="black" />
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
 
-                        <!-- Modal Body -->
-                        <div class="modal-body" style="padding: 28px 25px">
-                            <div class="body-message">
-                                <!-- <h4 class="font-IRANSansWeb700 text-base pb-3 w-fit" style="border-bottom: 0.25px solid black; padding-bottom: 12px; margin-bottom: 15px;">
-                            
-                        </h4>
-                        -->
-                                <div class="para font-IRANSansWeb400 text-sm">
-                                    <p>@description</p>
+                                    <!-- Modal Body -->
+                                    <div class="modal-body" style="padding: 28px 25px">
+                                        <div class="body-message">
+                                            <!-- <h4 class="font-IRANSansWeb700 text-base pb-3 w-fit" style="border-bottom: 0.25px solid black; padding-bottom: 12px; margin-bottom: 15px;">
+                                
+                            </h4>
+                            -->
+                                            <div class="para scrollTop font-IRANSansWeb400 text-sm">
+                                                <p>@description</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                                <!-- Modal Content: ends -->
                             </div>
                         </div>
-                    </div>
-                    <!-- Modal Content: ends -->
-                </div>
-            </div>
                     </face>
                 </basis>
-
-
-
-
 
                 <!-- Slider main container -->
                 <div class="swiper leftSlider w-[64%]">
@@ -567,11 +626,14 @@
         <basis core="print" datamembername="db.posterGallery1003">
             <layout>
                 <section class="section6 mb-[126px]" dir="rtl">
-                    <h4
-                        class="font-IRANSansWeb500 w-90p mx-auto mb-10 text-2xl text-dark-blue pr-4 py-2.5 before:h-full before:block flex relative items-center before:absolute before:right-0 before:top-0 before:bg-dark-blue before:w-[2px]">
-                        ویدیو های مربوط به نمایشگاه
-                    </h4>
+                  
+                    <div class="Title-main w-90p mb-10 mx-auto relative overflow-hidden flex justify-start gap-4 items-center my-[4em]">
+                        <span class="line duration-700 absolute flex left-0 my-auto justify-center right-0 delay-100 w-[2px] h-0 bg-darkBlue"></span>
 
+                        <h4 class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-2xl leading-37.57 text-darkBlue pr-4 py-2.5">
+                            ویدیو های مربوط به نمایشگاه
+                        </h4>
+                    </div>
                     <div class="swiper videoSlider px-[5%]">
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
@@ -629,13 +691,19 @@
             <layout>
                 <section class="section7 mb-[115px]" dir="rtl">
                     <div class="title mb-16 w-90p mx-auto flex justify-between items-center">
-                        <h4
-                            class="font-IRANSansWeb500 mb-10 text-2xl text-dark-blue pr-4 py-2.5 before:h-full before:block flex relative items-center before:absolute before:right-0 before:top-0 before:bg-dark-blue before:w-[2px]">
-                            گالری تصاویر
-                        </h4>
+                       
+                        <div class="Title-main mb-10 relative overflow-hidden flex justify-start gap-4 items-center my-[4em]">
+                            <span class="line duration-700 absolute flex left-0 my-auto justify-center right-0 delay-100 w-[2px] h-0 bg-darkBlue"></span>
 
-                        <div class="openPopGallery cursor-pointer py-3 px-16 bg-gray-bg rounded-md">
-                            <span class="font-IRANSansWeb400 text-sm"> مشاهده گالری </span>
+                            <h4 class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-2xl leading-37.57 text-darkBlue pr-4 py-2.5">
+                                گالری تصاویر
+                            </h4>
+                        </div>
+                        <div
+                            class="openPopGallery duration-500 group hover:bg-dark-blue cursor-pointer py-3 px-16 bg-gray-bg rounded-md">
+                            <span class="font-IRANSansWeb400 text-sm group-hover:text-white">
+                                مشاهده گالری
+                            </span>
                         </div>
                     </div>
 
@@ -660,11 +728,14 @@
         <basis core="print" datamembername="db.posterGallery">
             <layout>
                 <section class="section8 pb-[134px]" dir="rtl">
-                    <h4
-                        class="font-IRANSansWeb500 w-90p mx-auto mb-10 text-2xl text-dark-blue pr-4 py-2.5 before:h-full before:block flex relative items-center before:absolute before:right-0 before:top-0 before:bg-dark-blue before:w-[2px]">
-                        پلان ها
-                    </h4>
+                  
+                    <div class="Title-main w-90p mb-10 mx-auto relative overflow-hidden flex justify-start gap-4 items-center my-[4em]">
+                        <span class="line duration-700 absolute flex left-0 my-auto justify-center right-0 delay-100 w-[2px] h-0 bg-darkBlue"></span>
 
+                        <h4 class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-2xl leading-37.57 text-darkBlue pr-4 py-2.5">
+                            پلان ها
+                        </h4>
+                    </div>
                     <div class="swiper planSlider px-[5%]">
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
@@ -698,9 +769,10 @@
         <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />
     </main>
 
-    <div style="z-index: 100;" class="popUpVideoGalleryContainer h-svh inset-0 z-1 w-svw bg-black -translate-y-[100%] duration-1000 fixed"
+    <div style="z-index: 100; overflow: auto"
+        class="popUpVideoGalleryContainer h-svh inset-0 z-1 w-svw bg-black -translate-y-[100%] duration-1000 fixed"
         data-lenis-prevent="true">
-        <div class="fThumb bg-black -translate-y-[100%] min-h-svh overflow-y-auto">
+        <div class="fThumb bg-black min-h-svh overflow-y-auto">
             <div class="closePop cursor-pointer absolute top-14 right-[5%]">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1.4 14L0 12.6L5.6 7L0 1.4L1.4 0L7 5.6L12.6 0L14 1.4L8.4 7L14 12.6L12.6 14L7 8.4L1.4 14Z"
@@ -766,14 +838,13 @@
                         <basis core="print" datamembername="db.galleryLink1002">
                             <face filter="TypeID=254">
                                 <div class="swiper-slide flex items-center justify-center">
-                                    <div class="imgS h-full" style="width: 70%;">
+                                    <div class="imgS h-full" style="width: 50%">
                                         <iframe class="h-full object-cover" src="@largetext"></iframe>
                                     </div>
                                 </div>
                             </face>
                         </basis>
                     </basis>
-
                 </div>
 
                 <div class="popSliderFraction text-center mt-14 relative z-2"></div>
@@ -795,9 +866,10 @@
         </div>
     </div>
 
-    <div style="z-index: 100;" class="popUpVideoShowGalleryContainer h-svh inset-0 z-1 w-svw bg-black -translate-y-[100%] duration-1000 fixed"
+    <div style="z-index: 100; overflow: auto"
+        class="popUpVideoShowGalleryContainer h-svh inset-0 z-1 w-svw bg-black -translate-y-[100%] duration-1000 fixed"
         data-lenis-prevent="true">
-        <div class="fShowThumb bg-black -translate-y-[100%] min-h-svh overflow-y-auto">
+        <div class="fShowThumb bg-black min-h-svh overflow-y-auto">
             <div class="closeShowPop cursor-pointer absolute top-14 right-[5%]">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1.4 14L0 12.6L5.6 7L0 1.4L1.4 0L7 5.6L12.6 0L14 1.4L8.4 7L14 12.6L12.6 14L7 8.4L1.4 14Z"
@@ -863,14 +935,13 @@
                         <basis core="print" datamembername="db.galleryLink1003">
                             <face filter="TypeID=254">
                                 <div class="swiper-slide flex items-center justify-center">
-                                    <div class="imgS h-full" style="width: 70%;">
+                                    <div class="imgS h-full" style="width: 50%">
                                         <iframe class="h-full object-cover" src="@largetext"></iframe>
                                     </div>
                                 </div>
                             </face>
                         </basis>
                     </basis>
-
                 </div>
 
                 <div class="popSlideShowFraction text-center mt-14 relative z-2"></div>
@@ -892,7 +963,8 @@
         </div>
     </div>
 
-    <div style="z-index: 100;" class="popUpVideo h-svh inset-0 z-1 w-svw bg-black -translate-y-[100%] duration-1000 fixed"
+    <div style="z-index: 100"
+        class="popUpVideo overflow-hidden h-svh inset-0 z-1 w-svw bg-black -translate-y-[100%] duration-1000 fixed"
         data-lenis-prevent="true">
         <div class="closepopUpVideo group absolute top-16 right-[5%] cursor-pointer z-3">
             <svg class="group-hover:rotate-[360deg] duration-1000" width="34" height="34" viewBox="0 0 34 34"
@@ -911,9 +983,9 @@
                 </defs>
             </svg>
         </div>
-        <div class="w-svw mt-24 pb-20 h-[80vh]" dir="rtl">
+        <div class="w-svw mt-24 pb-20 h-full" dir="rtl">
             <div class="flex h-full items-center justify-center">
-                <div class="imgS h-full" style="width: 70%;">
+                <div class="imgS h-full" style="width: 50%">
                     <iframe class="h-full object-cover" src=""
                         poster="images/Screenshot 2024-04-22 145538 1.png"></iframe>
                 </div>
@@ -921,9 +993,10 @@
         </div>
     </div>
 
-    <div style="z-index: 100;" class="popUpImgGalleryContainer h-svh inset-0 z-1 w-svw bg-black -translate-y-[100%] duration-1000 fixed"
+    <div style="z-index: 100; overflow: auto"
+        class="popUpImgGalleryContainer h-svh inset-0 z-1 w-svw bg-black -translate-y-[100%] duration-1000 fixed"
         data-lenis-prevent="true">
-        <div class="fImgThumb bg-black -translate-y-[100%] min-h-svh overflow-y-auto">
+        <div class="fImgThumb bg-black min-h-svh overflow-y-auto">
             <div class="closeImgPop cursor-pointer absolute top-14 right-[5%]">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1.4 14L0 12.6L5.6 7L0 1.4L1.4 0L7 5.6L12.6 0L14 1.4L8.4 7L14 12.6L12.6 14L7 8.4L1.4 14Z"
@@ -994,11 +1067,11 @@
                                     <img class="h-full" src="/@largeIMG" alt="" />
                                 </div>
                                 <!-- <div class="name text-center mt-8">
-                                    <span class="font-IRANSansWeb400 text-base text-white">
-                
-                                        قلعه ی شادی
-                                    </span>
-                                </div> -->
+                                        <span class="font-IRANSansWeb400 text-base text-white">
+                    
+                                            قلعه ی شادی
+                                        </span>
+                                    </div> -->
                             </div>
                         </face>
                     </basis>
@@ -1008,22 +1081,25 @@
             </div>
             <div class="nextImgPop absolute top-[50%] right-0 cursor-pointer z-2">
                 <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="58" height="58" fill="white" />
-                    <path d="M34.08 28.98L26.5196 21L24 23.6613L29.0409 28.98L24 34.2987L26.5196 36.96L34.08 28.98Z"
+                    <rect class="duration-300" width="58" height="58" fill="white" />
+                    <path class="duration-300"
+                        d="M34.08 28.98L26.5196 21L24 23.6613L29.0409 28.98L24 34.2987L26.5196 36.96L34.08 28.98Z"
                         fill="black" />
                 </svg>
             </div>
             <div class="prevImgPop rotate-180 absolute top-[50%] left-0 cursor-pointer z-2">
                 <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="58" height="58" fill="white" />
-                    <path d="M34.08 28.98L26.5196 21L24 23.6613L29.0409 28.98L24 34.2987L26.5196 36.96L34.08 28.98Z"
+                    <rect class="duration-300" width="58" height="58" fill="white" />
+                    <path class="duration-300"
+                        d="M34.08 28.98L26.5196 21L24 23.6613L29.0409 28.98L24 34.2987L26.5196 36.96L34.08 28.98Z"
                         fill="black" />
                 </svg>
             </div>
         </div>
     </div>
 
-    <div style="z-index: 100;" class="popUpimg h-svh inset-0 z-1 w-svw bg-black -translate-y-[100%] duration-1000 fixed"
+    <div style="z-index: 100; overflow: auto"
+        class="popUpimg h-svh inset-0 z-1 w-svw bg-black -translate-y-[100%] duration-1000 fixed"
         data-lenis-prevent="true">
         <div dir="rtl" class="popBtnsTools absolute top-16 right-[5%] z-3 flex items-center gap-x-6">
             <div class="closepopUpImg group cursor-pointer z-3">
@@ -1081,8 +1157,7 @@
         <div class="w-svw mt-24 pb-20 h-[80vh]" dir="rtl">
             <div class="flex flex-col h-full items-center justify-center">
                 <div class="imgS h-full">
-                    <img class="h-full" src=""
-                        alt="" />
+                    <img class="h-full" src="" alt="" />
                 </div>
                 <div class="name mt-10">
                     <span class="font-IRANSansWeb400 text-base text-white"> </span>
@@ -1091,11 +1166,10 @@
         </div>
     </div>
 
-
-    
-    <div style="z-index: 100;" class="popUpTimeLineGalleryContainer h-svh inset-0 z-1 w-svw bg-black -translate-y-[100%] duration-1000 fixed"
+    <div style="z-index: 100; overflow: auto"
+        class="popUpTimeLineGalleryContainer overflow-hidden h-svh inset-0 z-1 w-svw bg-black -translate-y-[100%] duration-1000 fixed"
         data-lenis-prevent="true">
-        <div class="fTimeThumb bg-black -translate-y-[100%] min-h-svh overflow-y-auto">
+        <div class="fTimeThumb bg-black min-h-svh overflow-y-auto">
             <div class="closeTimePop cursor-pointer absolute top-14 right-[5%]">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1.4 14L0 12.6L5.6 7L0 1.4L1.4 0L7 5.6L12.6 0L14 1.4L8.4 7L14 12.6L12.6 14L7 8.4L1.4 14Z"
@@ -1161,17 +1235,17 @@
                         <basis core="print" datamembername="db.galleryLink1001">
                             <face filter="TypeID=254">
                                 <div class="swiper-slide flex items-center justify-center">
-                                    <div class="imgS h-full" style="width: 70%;">
-                                        <iframe class="h-full object-cover" src="@largetext"></iframe>
+                                    <div class="imgS flex items-center justify-center h-full" style="width: 50%">
+                                        <iframe style="max-width: 1070px" class="h-full object-cover"
+                                            src="@largetext"></iframe>
                                     </div>
                                 </div>
                             </face>
                         </basis>
                     </basis>
-
                 </div>
 
-                <div class="popSlideTimeFraction text-center mt-14 relative z-2"></div>
+                <div class="popSlideTimeFraction mt-5 text-center relative z-2"></div>
             </div>
             <div class="nextTimePop absolute top-[50%] right-0 cursor-pointer z-2">
                 <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1197,6 +1271,7 @@
     <script src="[##cms.cms.cdn##]/js/swiper-bundle7.4.1.min.js"></script>
     <script src="[##cms.cms.cdn##]/js/popUpgallery.js"></script>
     <script src="[##cms.cms.cdn##]/js/headerLight.js"></script>
+
     <script src="[##cms.cms.cdn##]/js/posterShow.js"></script>
 </body>
 

@@ -317,15 +317,19 @@ for (let i = 0; i < thumbBox.length; i++) {
     const element = thumbBox[i];
   
         element.addEventListener("click" ,function (params) {
-            if (sGalleryFlag) {
-                
+            // if (sGalleryFlag) {
+                sGallery.style.transition = "0s"
                 popSlider.slideTo(i+1,0)
                 sGallery.classList.add("popOpen")
+                setTimeout(() => {
+                    sGallery.style.transition = "1s"
+                }, 1000);
+
                 sGalleryFlag=!sGalleryFlag
                 popUpVideoGalleryContainer.scrollTo(0,0)
                 popUpVideoGalleryContainer.style.overflow="hidden"
                 
-            }
+            // }
         } )
         
     }
@@ -333,15 +337,18 @@ for (let i = 0; i < thumbShowBox.length; i++) {
     const element = thumbShowBox[i];
   
         element.addEventListener("click" ,function (params) {
-            if (sGalleryFlag) {
-                
+            // if (sGalleryFlag) {
+                sShowGallery.style.transition = "0s"
+                setTimeout(() => {
+                    sShowGallery.style.transition = "1s"
+                }, 1000);
                 popShowSlider.slideTo(i+1,0)
                 sShowGallery.classList.add("popOpen")
                 sGalleryFlag=!sGalleryFlag
                 popUpVideoShowGalleryContainer.scrollTo(0,0)
                 popUpVideoShowGalleryContainer.style.overflow="hidden"
                 
-            }
+            // }
         } )
         
     }
@@ -349,15 +356,18 @@ for (let i = 0; i < thumbImgBox.length; i++) {
     const element = thumbImgBox[i];
   
         element.addEventListener("click" ,function (params) {
-            if (sGalleryFlag) {
-                
+            // if (sGalleryFlag) {
+                sImgGallery.style.transition = "0s"
+                setTimeout(() => {
+                    sImgGallery.style.transition = "1s"
+                }, 1000);
                 popImgSlider.slideTo(i+1,0)
                 sImgGallery.classList.add("popOpen")
                 sGalleryFlag=!sGalleryFlag
                 popUpImgGalleryContainer.scrollTo(0,0)
                 popUpImgGalleryContainer.style.overflow="hidden"
                 
-            }
+            // }
         } )
         
     }
@@ -365,15 +375,18 @@ for (let i = 0; i < thumbTimeBox.length; i++) {
     const element = thumbTimeBox[i];
   
         element.addEventListener("click" ,function (params) {
-            if (sGalleryFlag) {
-                
+            // if (sGalleryFlag) {
+                sTimeGallery.style.transition = "0s"
+                setTimeout(() => {
+                    sTimeGallery.style.transition = "1s"
+                }, 1000);
                 popTimeSlider.slideTo(i+1,0)
                 sTimeGallery.classList.add("popOpen")
                 sGalleryFlag=!sGalleryFlag
                 popUpTimeLineGalleryContainer.scrollTo(0,0)
                 popUpTimeLineGalleryContainer.style.overflow="hidden"
                 
-            }
+            // }
         } )
         
     }
@@ -413,8 +426,11 @@ for (let i = 0; i < thumbTimeBox.length; i++) {
         let newI = element.getAttribute("data-swiper-slide-index")
         console.log(newI);
         
-            if (galleryFlag && sGalleryFlag) {
-                
+            if (galleryFlag) {
+                sGallery.style.transition = "0s"
+                setTimeout(() => {
+                    sGallery.style.transition = "1s"
+                }, 1000);
                 fThumb.classList.add("popOpen")
                 popUpVideoGalleryContainer.classList.add("popOpen")
                 sGallery.classList.add("popOpen")
@@ -440,8 +456,11 @@ for (let i = 0; i < thumbTimeBox.length; i++) {
         // let newI = element.getAttribute("data-swiper-slide-index")
         // console.log(newI);
         
-            if (galleryFlag && sGalleryFlag) {
-                
+            if (galleryFlag) {
+                sShowGallery.style.transition = "0s"
+                setTimeout(() => {
+                    sShowGallery.style.transition = "1s"
+                }, 1000);
                 fShowThumb.classList.add("popOpen")
                 popUpVideoShowGalleryContainer.classList.add("popOpen")
                 sShowGallery.classList.add("popOpen")
@@ -468,8 +487,11 @@ for (let i = 0; i < thumbTimeBox.length; i++) {
         // let newI = element.getAttribute("data-swiper-slide-index")
         // console.log(newI);
         
-            if (galleryFlag && sGalleryFlag) {
-                
+            if (galleryFlag ) {
+                sTimeGallery.style.transition = "0s"
+                setTimeout(() => {
+                    sTimeGallery.style.transition = "1s"
+                }, 1000);
                 fTimeThumb.classList.add("popOpen")
                 popUpTimeLineGalleryContainer.classList.add("popOpen")
                 sTimeGallery.classList.add("popOpen")
@@ -496,11 +518,14 @@ for (let i = 0; i < thumbTimeBox.length; i++) {
        
         console.log(element);
         
-            if (galleryFlag && sGalleryFlag) {
-                
+            if (galleryFlag) {
+                sImgGallery.style.transition = "0s"
+                sImgGallery.classList.add("popOpen")
+                setTimeout(() => {
+                    sImgGallery.style.transition = "1s"
+                }, 1000);
                 fImgThumb.classList.add("popOpen")
                 popUpImgGalleryContainer.classList.add("popOpen")
-                sImgGallery.classList.add("popOpen")
                 galleryFlag=!galleryFlag
                 body.style.overflow="hidden";
                 lenis.stop()
@@ -510,6 +535,9 @@ for (let i = 0; i < thumbTimeBox.length; i++) {
                     sGalleryFlag=!sGalleryFlag
                     popUpImgGalleryContainer.scrollTo(0,0)
                     popUpImgGalleryContainer.style.overflow="hidden"
+
+
+                
                 
             }
             

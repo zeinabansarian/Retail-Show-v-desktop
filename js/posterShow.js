@@ -83,12 +83,12 @@ const branSlider = new Swiper('.branSlider', {
 const rightSlider = new Swiper('.rightSlider', {
     // Optional parameters
  speed:1000,
- loop:true,
+//  loop:true,
  pagination: {
     el: '.paginRigt',
     type: 'custom',
     renderCustom: function (swiper, current, total) {
-        if (total>10) {
+        if (total>9) {
             if (current>9) {
                 
                 return `<span class="current">${current}</span>` + '<i>/</i>' + `<span class="total">${(total)}</span>`; 
@@ -124,7 +124,7 @@ const leftSlider = new Swiper('.leftSlider', {
     // Optional parameters
  speed:1000,
  slidesPerView:1.3,
- loop:true,
+//  loop:true,
  spaceBetween: 20,
 
   });
@@ -143,13 +143,24 @@ const leftSlider = new Swiper('.leftSlider', {
     clickable:true,
   },
     });
-  const imgSlider = new Swiper('.imgSlider', {
-      // Optional parameters
-   speed:1000,
-   slidesPerView:1.4,
-   spaceBetween: 34,
-  
-    });
+
+    $('.section7').imagesLoaded( function() {
+        // images have loaded
+setTimeout(() => {
+    const imgSlider = new Swiper('.imgSlider', {
+        // Optional parameters
+     speed:1000,
+  //    slidesPerView:1.4,
+     slidesPerView:"auto",
+     spaceBetween: 34,
+     pagination: {
+        el: '.swiper-paginationimgSlider',
+        clickable:true,
+      },
+      });
+}, 500);
+      });
+      
   const planSlider = new Swiper('.planSlider', {
       // Optional parameters
    speed:1000,
@@ -173,4 +184,45 @@ hoverIcon.forEach(element => {
         },
     })
     
+});
+
+
+
+
+
+
+let titleMain = document.querySelectorAll('.Title-main')
+titleMain.forEach(t=>{
+    gsap.to(t.querySelector('h1,h2,h3,h4,h5'),{
+        y:0,
+        scrollTrigger:{
+          trigger:t,
+          start:'top 85%',
+          end:'bottom bottom'
+        }
+      })
+    gsap.to(t.querySelector('.line'),{
+      height:'60px',
+      scrollTrigger:{
+        trigger:t,
+        start:'top 85%',
+        end:'bottom bottom'
+      }
+    })
+})
+
+
+
+let scrollTop = document.querySelectorAll(".scrollTop")
+scrollTop.forEach(element => {
+ gsap.from(element,{
+     scrollTrigger:{
+         trigger:element,
+         start:"top 90%",
+         end:"bottom bottom",
+         // markers:true
+     },
+     y:"20vh",
+     opacity:0,
+ })
 });
