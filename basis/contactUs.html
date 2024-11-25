@@ -26,7 +26,7 @@
         <basis core="call" file="header1.inc" pageindex="[##cms.cms.pageindex##]"/>
        <div class="contact-container w-full flex flex-col">
         <section class="Section-1 w-full grid grid-cols-[45%,60%] mt-[15em] mb-[5em]">
-            <div class="RightSec gap-[1em] pt-[3em] w-full flex flex-col justify-start items-start">
+            <div class="RightSec gap-[1em] pt-[1em] w-full flex flex-col justify-start items-start">
                 <div class="Title-main mr-auto flex-col relative overflow-hidden w-[95%]
                 flex justify-start gap-4 items-start ">
     
@@ -104,8 +104,9 @@
               </div>
             </div>
             <div class="LeftSec w-full flex justify-start items-start">
-                <div class="Map-Container w-full flex justify-start items-start relative before:content-[''] before:absolute before:left-0
-               before:w-full before:h-[80%] before:bg-mainBlue before:top-[3em] before:z-[-1]">
+                <div class="Map-Container delay-200 [&.fade-left]:before:left-0 
+                 w-full flex justify-start items-start relative before:content-[''] before:absolute 
+               before:w-full before:h-[80%]  before:left-[-100%] before:duration-[2s] before:bg-mainBlue before:top-[3em] before:z-[-1]">
                <div class="map mr-auto w-[96%]">
                 <basis core="print" datamembername="db.contactus">
                     <face filter="TypeID =246">

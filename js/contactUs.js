@@ -1,4 +1,9 @@
 gsap.registerPlugin(ScrollTrigger)
+let mapcontain = document.querySelector('.Map-Container')
+setTimeout(() => {
+  mapcontain.classList.add('fade-left')
+}, 500);
+
 let titleMain = document.querySelectorAll('.Title-main')
 titleMain.forEach(t=>{
     gsap.to(t.querySelector('h1'),{

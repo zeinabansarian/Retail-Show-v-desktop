@@ -1,0 +1,113 @@
+<basis core="dbsource" request="seo" source="basiscore" name="db" lid="1">
+    <member name="seolist" type="list" request="cat" id="[##cms.query.catid##]"></member>
+  </basis>
+  
+  
+  <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="210836">
+    <member name="posterList" type="list" size="279x395" />
+  </basis />
+  <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1">
+    <member request="cat" type="tree" name="posterCat" parentid="210836" />
+  </basis />
+  <!DOCTYPE html>
+  <html lang="fa">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <basis core="print" datamembername="db.seolist">
+        <face>
+            <title>[##cms.seo.title|db.seolist.title##]</title>
+            <meta name="description" content="[##cms.seo.description|db.seolist.description##]" />
+        </face>
+    </basis>
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/leaflet.css">
+  
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/outputDesk.css">
+  </head>
+  
+  <body>
+    <main class="posterList " dir="rtl" >
+        <basis core="call" file="header1.inc" />
+  
+  
+  
+        <section class="section1 justify-start  flex flex-row flex-wrap w-90p  mt-32 mx-auto">
+  
+            <div class="title pb-16 w-full mx-auto">
+                <basis core="print" datamembername="db.posterCat">
+                    <face>
+  
+                        <p class=" text-xl font-IRANSansWeb500 text-right  font_style_Color">
+                            @urltitle
+  
+                        </p>
+  
+          
+            </face>
+            </basis>
+        </div>
+  
+  
+  
+        </section>
+  
+        <section class="section2 justify-start  flex flex-row flex-wrap w-90p pb-16 mx-auto">
+            <div class="  w-full grid grid-cols-[1fr,1fr,1fr,1fr] gap-[3em] mb-[5em] ">
+                <basis core="print" datamembername="db.posterList">
+  
+                    <else-layout>
+                        <div class="para font-IranYekan400 text-base text-OsloGray950 text-right">
+                            <p>
+                                متاسفانه پوستر ایی موجود نیست.
+                            </p>
+                        </div>
+                    </else-layout>
+  
+                    <face>
+                        <a class="relative h-full group flex items-center justify-center " href="/@link" title="@title">
+                            <div class="imgS w-full relative z-2">
+                                <img class="w-full duration-500 opacity-0 group-hover:opacity-100" src="/@00279X00395prp" alt="@title">
+                            </div>
+                            <div class="over items-start absolute p-5 flex-col w-full h-full bg-main-blue flex  justify-center">
+                                <div class="number">
+                                    <span class="font-Battambang700 text-[85px] text-main-blue" style="-webkit-text-stroke: 1px white;line-height: 153px;">
+                                        0@rownumber
+                                    </span>
+                                </div>
+                                <div class="para uppercase font-BaiJamjuree700 text-main-blue text-xl">
+                                    <p style="-webkit-text-stroke: 0.25px rgba(255, 255, 255, 0.37);">
+                                     @title
+                                    </p>
+                                </div>
+                                <div class="ShowMore self-baseline mt-2.5 w-auto flex gap-[10px] overflow-hidden justify-center">
+                                    <p class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-white">مشاهده </p>
+                                    <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-white text-white relative 
+                                    ">
+                                    <div class="dot w-[5px] h-[5px] rounded-full translate-y-[-50%]
+                                     bg-white text-white absolute top-[70%] translate-x-[-50%]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    </face>
+                </basis>
+            </div>
+  
+  
+  
+  
+  
+        </section>
+  
+  
+        <basis core="call" file="footer.inc" />
+    </main>
+  
+  
+    <basis core="call" file="script.inc" />
+  
+  </body>
+  
+  </html>

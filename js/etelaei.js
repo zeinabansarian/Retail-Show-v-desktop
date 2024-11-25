@@ -25,6 +25,11 @@ titleMain.forEach(t=>{
       }
     })
 })
+gsap.to('.ImgSec',{
+  opacity:1,
+  
+})
+
 let Faders = document.querySelectorAll('.section')
 Faders.forEach(t=>{
     gsap.to(t.querySelectorAll('h1'),{

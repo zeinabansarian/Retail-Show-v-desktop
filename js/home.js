@@ -154,3 +154,12 @@ const supporter = new Swiper('.supporter', {
 
     }
   });
+  let videoC = document.querySelector('.inVideo')
+  let overlays = document.querySelectorAll('.inVideo .overlay')
+  videoC.addEventListener('click',(e)=>{
+  overlays.forEach(o=>{
+      o.classList.add('hide')
+      e.stopPropagation()
+      const player = new Plyr('#player');
+  })
+  })

@@ -713,9 +713,12 @@ input[type="text"]:focus,
 .ContactUs-C .Box {
   margin-left: auto;
   width: 93%;
+  display: flex;
+  flex-direction: column;
+  gap: .8em;
 }
 .ContactUs-C .Form-container {
-  gap: 1em;
+  gap: 2em;
 }
 .leaflet-container.leaflet-touch-drag.leaflet-touch-zoom {
   z-index: 1 !important;
@@ -926,4 +929,10 @@ background-color: #002B43;
   color: #000000;
   font-family: "IRANSansWeb400";
   text-align: justify;
+}
+.AboutUs-C .inVideo {
+  position: relative;
+}
+a:hover{
+  text-decoration: none !important;
 }
