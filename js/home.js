@@ -88,25 +88,7 @@ const swiper = new Swiper(slider, {
 
 
 
-let titleMain = document.querySelectorAll(".Title-main")
-titleMain.forEach(element => {
- gsap.to(element.querySelector("h1,h2,h4"),{
-     scrollTrigger:{
-         trigger:element.querySelector("h1,h2,h4"),
-         start:"top 90%",
-         end:"bottom bottom",
-     },
-     y:"0",
- })
- gsap.to(element.querySelector(".line"),{
-     scrollTrigger:{
-         trigger:element.querySelector(".line"),
-         start:"top 90%",
-         end:"bottom bottom",
-     },
-     width:'60px',
- })
-});
+let titleMain=document.querySelectorAll(".Title-main");titleMain.forEach((t=>{gsap.to(t.querySelector("h1,h2,h3,h4,h5"),{y:0,scrollTrigger:{trigger:t,start:"top 90%",end:"bottom bottom"}}),gsap.to(t.querySelector("h1,h2,h3,h4,h5"),{y:0,scrollTrigger:{trigger:t,start:"top 90%",end:"bottom bottom"}}),gsap.to(t.querySelector(".line"),{height:"60px",scrollTrigger:{trigger:t,start:"top 90%",end:"bottom bottom"}})}))
 
 let scrollTop = document.querySelectorAll(".scrollTop")
 scrollTop.forEach(element => {
@@ -154,12 +136,3 @@ const supporter = new Swiper('.supporter', {
 
     }
   });
-  let videoC = document.querySelector('.inVideo')
-  let overlays = document.querySelectorAll('.inVideo .overlay')
-  videoC.addEventListener('click',(e)=>{
-  overlays.forEach(o=>{
-      o.classList.add('hide')
-      e.stopPropagation()
-      const player = new Plyr('#player');
-  })
-  })

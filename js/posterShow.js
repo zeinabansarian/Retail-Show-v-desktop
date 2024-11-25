@@ -143,13 +143,24 @@ const leftSlider = new Swiper('.leftSlider', {
     clickable:true,
   },
     });
-  const imgSlider = new Swiper('.imgSlider', {
-      // Optional parameters
-   speed:1000,
-   slidesPerView:1.4,
-   spaceBetween: 34,
-  
-    });
+
+    $('.section7').imagesLoaded( function() {
+        // images have loaded
+setTimeout(() => {
+    const imgSlider = new Swiper('.imgSlider', {
+        // Optional parameters
+     speed:1000,
+  //    slidesPerView:1.4,
+     slidesPerView:"auto",
+     spaceBetween: 34,
+     pagination: {
+        el: '.swiper-paginationimgSlider',
+        clickable:true,
+      },
+      });
+}, 500);
+      });
+      
   const planSlider = new Swiper('.planSlider', {
       // Optional parameters
    speed:1000,
