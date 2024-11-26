@@ -1,151 +1,151 @@
 <basis core="dbsource" request="seo" source="basiscore" name="db" lid="1" >
-    <member name="seolist" type="list" request="cat" id="[##cms.query.catid##]"></member>
-  </basis>
-  <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="210854"> 
-      <member name="cat-etelaeyie" type="tree" request="cat"/>
-   </basis>
-  
-  <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="210854"> 
-    <member name="list-etelaeyie" size="268x268" propertyid="7249" type="list"/> 
-  </basis>
-  
-  <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="210854">
-     <member name="list-poster" size="365x521"  order="id desc"  propertyid="7249" type="list"/>
-  </basis>
-  
-  
-  <!DOCTYPE html>
-  <html lang="fa">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>etelaeiList</title>
-      <meta name="description" content="etelaeiList">
-      <link rel="stylesheet" href="/css/outputDesk.css">
-      <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
-  </head>
-  <body>
-      <main class="EtelaeiList-C w-full overflow-hidden" dir="rtl">
-        <basis core="call" file="header1.inc" />
-  
-          <div class="EtelaeiListContents w-90p mx-auto mt-[2em] flex flex-col ">
-              <div class="Title-main  relative overflow-hidden w-max 
-                flex justify-start gap-4 items-center my-[4em]  ">
-  
-                  <span class="line duration-700 absolute flex left-0 my-auto
-                  justify-center  right-0  delay-100  w-[2px] h-0 mt-32 bg-darkBlue "></span>
-   
-                    <basis core="print" datamembername="db.cat-etelaeyie">
-                    <layout>
-                        @child
-                    </layout>
-                    <face filter="catid=210854">
-                  <h1 class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] mr-[.5em]
-                  font-medium text-2xl leading-37.57 text-darkBlue mt-32 ">
-               @urltitle
-                  </h1>
-      </face>
-                </basis>
-              </div>
-              <div class="listcontents gap-[3em] w-full grid grid-cols-[3fr,1fr]">
-                  <div class="EtelaeiLists w-full grid grid-cols-[1fr,1fr,1fr] gap-[3em] mb-[5em]">
-                    <basis core="print" datamembername="db.list-etelaeyie">
-                      <face>
-  
-                      <a href="/@link" class="EtalaeiItem group/EtalaeiItem w-full flex relative justify-center opacity-0 translate-y-[100%] duration-1000 flex-col gap-3 border-b border-pink pb-[.5em]
-                       items-center overflow-hidden">
-                       <div class="IMG w-full flex justify-center">
-                          <img src="/@00268X00268prp" alt="" class="w-full object-cover">
-                       </div>
-                        <div class="Date w-full flex justify-start">
-                          <span class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-gray-middle">
-                            @prp_7249
-                          </span>
+  <member name="seolist" type="list" request="cat" id="[##cms.query.catid##]"></member>
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="210854"> 
+    <member name="cat-etelaeyie" type="tree" request="cat"/>
+ </basis>
+
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="210854"> 
+  <member name="list-etelaeyie" size="268x268" propertyid="7249" type="list"/> 
+</basis>
+
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="210854">
+   <member name="list-poster" size="365x521"  order="id desc"  propertyid="7249" type="list"/>
+</basis>
+
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>اطلاعیه</title>
+            <meta name="description" content="اطلاعیه" />
+    <link rel="stylesheet" href="/css/outputDesk.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+</head>
+<body>
+    <main class="EtelaeiList-C w-full overflow-hidden" dir="rtl">
+      <basis core="call" file="header1.inc" />
+
+        <div class="EtelaeiListContents w-90p mx-auto mt-[2em] flex flex-col ">
+            <div class="Title-main  relative overflow-hidden w-max 
+              flex justify-start gap-4 items-center my-[4em]  ">
+
+                <span class="line duration-700 absolute flex left-0 my-auto
+                justify-center  right-0  delay-100  w-[2px] h-0 mt-32 bg-darkBlue "></span>
+ 
+                  <basis core="print" datamembername="db.cat-etelaeyie">
+                  <layout>
+                      @child
+                  </layout>
+                  <face filter="catid=210854">
+                <h1 class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] mr-[.5em]
+                font-medium text-2xl leading-37.57 text-darkBlue mt-32 ">
+             @urltitle
+                </h1>
+    </face>
+              </basis>
+            </div>
+            <div class="listcontents gap-[3em] w-full grid grid-cols-[3fr,1fr]">
+                <div class="EtelaeiLists w-full flex flex-wrap justify-start items-center gap-[3em] mb-[5em]">
+                  <basis core="print" datamembername="db.list-etelaeyie">
+                    <face>
+
+                    <a href="/@link" class="EtalaeiItem group/EtalaeiItem w-auto flex relative justify-center opacity-0 translate-y-[100%] duration-1000 flex-col gap-3 border-b border-pink pb-[.5em]
+                     items-center overflow-hidden">
+                     <div class="IMG w-full flex justify-center">
+                        <img src="/@00268X00268prp" alt="" class="w-full object-cover">
+                     </div>
+                      <div class="Date w-full flex justify-start">
+                        <span class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-gray-middle">
+                          @prp_7249
+                        </span>
+                      </div>
+                      <div class="title w-full flex justify-start">
+                        <h2 class="font-IRANSansWeb500 font-medium text-sm leading-21.91 text-black">
+                          @title
+                        </h2>
+                      </div>
+                      <span class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
+                        <p class="font-IRANSansWeb400 font-normal text-sm leading-21.91 text-darkBlue">مشاهده </p>
+                        <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-darkBlue relative 
+                        ">
+                        <div class="dot w-[5px] h-[5px]  translate-y-[-50%]
+                         bg-darkBlue absolute top-[70%] translate-x-[-50%]"></div>
                         </div>
-                        <div class="title w-full flex justify-start">
-                          <h2 class="font-IRANSansWeb500 font-medium text-sm leading-21.91 text-black">
-                            @title
-                          </h2>
-                        </div>
-                        <span class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
-                          <p class="font-IRANSansWeb400 font-normal text-sm leading-21.91 text-darkBlue">مشاهده </p>
-                          <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-darkBlue relative 
-                          ">
-                          <div class="dot w-[5px] h-[5px]  translate-y-[-50%]
-                           bg-darkBlue absolute top-[70%] translate-x-[-50%]"></div>
-                          </div>
-                      </span>
-                      </a>
-                      </face>
-                    </basis>
-  
-              
-                  </div>
-                  <div class="pinSec w-full flex justify-center">
-                   <div class="IMG w-full">
-                    <basis core="print" datamembername="db.list-poster">
-                 
-                      <face filter="RowNumber in (1)">
-                      <a href="/@link" class="w-full">
-                      <img  src="/@00365X00521prp"  alt="" class="w-full object-cover">
-                  </a>
-                  </face>
+                    </span>
+                    </a>
+                    </face>
                   </basis>
-  
-                   </div>
-                  </div>
-           
-              </div>
+
             
-          </div>
-          <basis core="call" file="footer.inc" />
-      </main>
-   
-      <basis core="call" file="script.inc" />
-      <script src="[##cms.cms.cdn##]/js/headerDark.js"></script>
-  <script>
-    ScrollTrigger.create({
-      trigger: '.pinSec',
-      start: 'top top',
-      endTrigger: ".listcontents",
-      end: "bottom 80%",
-      pin: true,
-      pinSpacing:false,
-    })
-    let titleMain = document.querySelectorAll('.Title-main')
-  titleMain.forEach(t=>{
-      gsap.to(t.querySelector('h1'),{
-          y:0,
-          scrollTrigger:{
-            trigger:t,
-            start:'top 60%',
-            end:'bottom bottom'
-          }
-        })
-      gsap.to(t.querySelector('.line'),{
-        height:'60px',
+                </div>
+                <div class="pinSec w-full flex justify-center">
+                 <div class="IMG w-full">
+                  <basis core="print" datamembername="db.list-poster">
+               
+                    <face filter="RowNumber in (1)">
+                    <a href="/@link" class="w-full">
+                    <img  src="/@00365X00521prp"  alt="" class="w-full object-cover">
+                </a>
+                </face>
+                </basis>
+
+                 </div>
+                </div>
+         
+            </div>
+          
+        </div>
+        <basis core="call" file="footer.inc" />
+    </main>
+ 
+    <basis core="call" file="script.inc" />
+    <script src="[##cms.cms.cdn##]/js/headerDark.js"></script>
+<script>
+  ScrollTrigger.create({
+    trigger: '.pinSec',
+    start: 'top top',
+    endTrigger: ".listcontents",
+    end: "bottom 80%",
+    pin: true,
+    pinSpacing:false,
+  })
+  let titleMain = document.querySelectorAll('.Title-main')
+titleMain.forEach(t=>{
+    gsap.to(t.querySelector('h1'),{
+        y:0,
         scrollTrigger:{
           trigger:t,
           start:'top 60%',
           end:'bottom bottom'
         }
       })
-  })
-  let EtalaeiItem = document.querySelectorAll('.EtalaeiItem')
-  EtalaeiItem.forEach(e=>{
-      gsap.to(e,{
-        opacity:1,
-        y:0,
-        stagger: 0.5,
-          scrollTrigger:{
-            trigger:e,
-            start:'top 100%',
-            end:'bottom bottom',
-           
-          }
-        })
-  })
-  </script>
-  </body>
-  
-  </html>
+    gsap.to(t.querySelector('.line'),{
+      height:'60px',
+      scrollTrigger:{
+        trigger:t,
+        start:'top 60%',
+        end:'bottom bottom'
+      }
+    })
+})
+let EtalaeiItem = document.querySelectorAll('.EtalaeiItem')
+EtalaeiItem.forEach(e=>{
+    gsap.to(e,{
+      opacity:1,
+      y:0,
+      stagger: 0.5,
+        scrollTrigger:{
+          trigger:e,
+          start:'top 100%',
+          end:'bottom bottom',
+         
+        }
+      })
+})
+</script>
+</body>
+
+</html>

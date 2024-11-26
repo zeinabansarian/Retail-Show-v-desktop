@@ -20,9 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ایران ریتل شو</title>
     <meta name="description" content="ایران ریتل شو">
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/outputDesk.css">
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/plyr.css" />
+   <basis core="call" file="styles.inc" />
 </head>
 <body>
     <div class="homePage overflow-hidden">
@@ -246,7 +244,7 @@
         </h2>
     
     </div>
-                <a class="block py-3 px-16 font-IRANSansWeb400 text-sm text-black bg-gray-bg rounded-md w-fit duration-500 hover:bg-dark-blue hover:text-white" href="اطلاعیه">
+                <a style="white-space: nowrap;" class="block py-3 px-16 font-IRANSansWeb400 text-sm text-black bg-gray-bg rounded-md w-fit duration-500 hover:bg-dark-blue hover:text-white" href="اطلاعیه">
                     مشاهده لیست
                 </a>
             </div>
@@ -318,7 +316,7 @@
     </div>
                     </face>
                 </basis>
-                <a class="block py-3 px-16 font-IRANSansWeb400 text-sm text-black
+                <a style="white-space: nowrap;" class="block py-3 px-16 font-IRANSansWeb400 text-sm text-black
                  bg-gray-bg rounded-md w-fit duration-500 hover:bg-dark-blue hover:text-white" href="حامیان" alt=" حامیان" title=" حامیان">
                     مشاهده حامیان
                 </a>
@@ -367,7 +365,16 @@
 
         <basis core="call" file="footer.inc" />
     </div>
-
+  <div dir="rtl"
+            class="notLoginPop inset-0 fixed h-svh bg-white duration-500 scale-0 flex items-center justify-center"
+            style="width: 100vw;transform: scale(0);z-index: 10;">
+            <div style="transform: translateY(-100%);"
+                class="para rounded-md px-5 py-3 bg-dark-blue text-white font-IRANSansWeb400 text-base  opacity-0 duration-500">
+                <p>
+                    لطفا ابتدا ثبت نام کنید.
+                </p>
+            </div>
+        </div>
 <basis core="call" file="script.inc" />
 
 
@@ -376,5 +383,43 @@
     <script src="[##cms.cms.cdn##]/js/headerLight.js"></script>
     <script src="[##cms.cms.cdn##]/_js/playVideo.js"></script>
     <script src="[##cms.cms.cdn##]/js/home.js"></script>
+
+
+     <script>
+            let notLoginPop = document.querySelector(".notLoginPop")
+        
+            if (!'[##cms.cookie.rkey##]') {
+                document.querySelector(".section7 a").addEventListener("click", function (e) {
+                e.preventDefault();
+
+                
+                
+                notLoginPop.style.transform = "scale(1)";
+                setTimeout(() => {
+
+                    notLoginPop.querySelector(".para").style.transform = "translateY(0)"
+                    notLoginPop.querySelector(".para").style.opacity = "1"
+
+                }, 500);
+                setTimeout(() => {
+                    setTimeout(() => {
+
+                        notLoginPop.style.transform = "scale(0)";
+                    }, 300);
+
+                    notLoginPop.querySelector(".para").style.transform = "translateY(100%)"
+                    notLoginPop.querySelector(".para").style.opacity = "0"
+
+                }, 2000);
+            })
+            }
+
+else{
+  
+    
+    document.querySelector(".section7 a").setAttribute("href","/panel/company-registration.bc")
+}
+
+        </script>
 </body>
 </html>

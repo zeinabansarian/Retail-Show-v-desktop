@@ -126,32 +126,15 @@ closeSearchH.addEventListener('click',()=>{
 
   })();
   // login popup
-//   const host = {
-//     debug: false,
-
-//     settings: {
-
-//         'connection.web.callcommand': 'http://127.20.20.64:5500/',
-//         "connection.web.trust_login": "https://basiscore.net/apicms",
-//         "connection.web.userbehavior": "https://basiscore.net/apicms",
-//         'connection.web.basiscore': 'https://basiscore.net/apicms',
-//         'default.dbsource.verb': 'post',
-//         'default.call.verb': 'get',
-//         'default.viewCommand.groupColumn': 'prpid',
-//         'default.dmnid': '4880',
-//         'default.binding.regex': '\\{##([^#]*)##\\}'
-
-//     }
-// }
-  let userIcon =document.querySelector('header .UserIcon')
-  let loginPop = document.querySelector('.loginPop-C')
-  let closeLoginPop = document.querySelector('.loginPop-C .closeLoginPop')
-  userIcon.addEventListener('click',()=>{
+//   let userIcon =document.querySelector('header .UserIcon')
+//   let loginPop = document.querySelector('.loginPop-C')
+//   let closeLoginPop = document.querySelector('.loginPop-C .closeLoginPop')
+//   userIcon.addEventListener('click',()=>{
   
-loginPop.classList.add('open')
-$bc.setSource('run.call',true)
-  })
-closeLoginPop.addEventListener('click',()=>{
-  loginPop.classList.remove('open')
-  $bc.setSource('run.call',false)
- })
+// loginPop.classList.add('open')
+// $bc.setSource('run.call',true)
+//   })
+// closeLoginPop.addEventListener('click',()=>{
+//   loginPop.classList.remove('open')
+//   $bc.setSource('run.call',false)
+//  })

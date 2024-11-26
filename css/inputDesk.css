@@ -65,22 +65,21 @@
 }
 @font-face {
   font-family: "BaiJamjuree700";
-  src: url("../_fonts/BaiJamjuree-Bold.eot");
-  src: url("../_fonts/BaiJamjuree-Bold.eot?#iefix") format("embedded-opentype"),
-    url("../_fonts/BaiJamjuree-Bold.woff") format("woff"),
-    url("../_fonts/BaiJamjuree-Bold.woff2") format("woff2"),
-    url("../_fonts/BaiJamjuree-Bold.ttf") format("truetype");
+  src: url("../fonts/BaiJamjuree-Bold.eot");
+  src: url("../fonts/BaiJamjuree-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/BaiJamjuree-Bold.woff") format("woff"),
+    url("../fonts/BaiJamjuree-Bold.woff2") format("woff2"),
+    url("../fonts/BaiJamjuree-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Battambang700";
-  src: url("../_fonts/Battambang-Bold.eot");
-  src: url("../_fonts/Battambang-Bold.eot?#iefix") format("embedded-opentype"),
-    url("../_fonts/Battambang-Bold.woff") format("woff"),
-    url("../_fonts/Battambang-Bold.woff2") format("woff2"),
-    url("../_fonts/Battambang-Bold.ttf") format("truetype");
+  src: url("../fonts/Battambang-Bold.eot");
+  src: url("../fonts/Battambang-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Battambang-Bold.woff") format("woff")
+    url("../fonts/Battambang-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -122,12 +121,12 @@
 }
 @font-face {
   font-family: "IRANSansWeb300";
-  src: url("../_fonts/IRANSansWeb(FaNum)_Light.eot");
-  src: url("../_fonts/IRANSansWeb(FaNum)_Light.eot?#iefix")
+  src: url("../_fonts/IRANSansWeb_Light.ttf.eot");
+  src: url("../_fonts/IRANSansWeb_Light.eot?#iefix")
       format("embedded-opentype"),
-    url("../_fonts/IRANSansWeb(FaNum)_Light.woff") format("woff"),
-    url("../_fonts/IRANSansWeb(FaNum)_Light.woff2") format("woff2"),
-    url("../_fonts/IRANSansWeb(FaNum)_Light.ttf") format("truetype");
+    url("../_fonts/IRANSansWeb_Light.woff") format("woff"),
+    url("../_fonts/IRANSansWeb_Light.woff2") format("woff2"),
+    url("../_fonts/IRANSansWeb_Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -935,4 +934,51 @@ background-color: #002B43;
 }
 a:hover{
   text-decoration: none !important;
+}
+.w-90p{
+  max-width: 1400px !important;
+ 
+}
+.posterList {
+  overflow: hidden;
+}
+.w-\[95\%\]{
+  width: 95%;
+
+}
+.homePage .section5 .swiper-slide,
+.homePage .section6 .swiper-slide,
+.Etelaei-C .swiper-slide,
+.posterShow .section7 .swiper-slide{
+  width: auto !important;
+}
+@media only screen and (min-width: 1400px) {
+  .Etelaei-C .Related-Etelaei{
+    margin-right: 8%;
+  }
+}
+.homePage .section5 .lastCourse ,
+.posterShow .section7 .imgSlider {
+  padding: 0 !important;
+  max-width: 1400px;
+}
+
+.SearchBox-popup{
+  min-height: 78px;
+background-color: #FFFFFFF2;
+}
+.SearchBox-popup .CloseSearch {
+right: 0;}
+.loaded{
+  max-height: 50vh;
+}
+.searchinnerIcon {
+pointer-events: none;
+}
+.ContactUs-C .Section-1{
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
 }

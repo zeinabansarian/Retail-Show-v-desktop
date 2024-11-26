@@ -61,7 +61,7 @@ Faders.forEach(t=>{
       })
 })
 let SwiperEtelaei= new Swiper ('.swiper-Etelaei', {
-    slidesPerView: 4.3,
+    slidesPerView: "auto",
     spaceBetween: 30,
     effect:'slide' ,
    speed:1000,

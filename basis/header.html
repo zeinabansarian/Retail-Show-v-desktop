@@ -1,42 +1,4 @@
-<style>
-    .SearchBox-popup{
-        min-height: 78px;
-    background-color: #FFFFFFF2;
-    }
-.SearchBox-popup .CloseSearch {
-    right: 0;}
-    .loaded{
-        max-height: 50vh;
-    }
-.searchinnerIcon {
-    pointer-events: none;
-}
-</style>
 
-<link rel="stylesheet" href="css/loginDesk.css">
-<link rel="stylesheet" href="css/popLogin.css">
-<script src="http://basiscore.net/_js/basiscore-2.36.2.min.js"></script>
-<script src="http://cdn.basiscore.net/_js/alasql.min.js"></script>
-<script>
-          const host = {
-        debug: false,
-
-        settings: {
-
-            'connection.web.callcommand': '/',
-            "connection.web.trust_login": "https://basiscore.net/apicms",
-            "connection.web.userbehavior": "https://basiscore.net/apicms",
-            'connection.web.basiscore': 'https://basiscore.net/apicms',
-            'default.dbsource.verb': 'post',
-            'default.call.verb': 'get',
-            'default.viewCommand.groupColumn': 'prpid',
-            'default.dmnid': '4880',
-            'default.binding.regex': '\\{##([^#]*)##\\}'
-
-        }
-    }
-</script>
-<link rel="stylesheet" href="css/f-style.css">
 <header class="DesktopHeader fixed [&.goDown]:top-[-100vh]  top-0 left-0 z-[99] group/header duration-100  w-full  flex flex-col " dir="rtl">
     <div class="Inner-header w-full flex flex-col ">
         <div class="Top-header group-[&.goTop]/header:translate-y-[-100%] duration-100
@@ -102,12 +64,12 @@
                       </li>
                     
                     </ul>
-                    <span class="UserIcon w-auto flex justify-start items-start hover:cursor-pointer">
+                    <a class="UserIcon w-auto flex justify-start items-start hover:cursor-pointer">
                       <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M9.5 10C10.7432 10 11.9355 9.50614 12.8146 8.62706C13.6936 7.74799 14.1875 6.5557 14.1875 5.3125C14.1875 4.0693 13.6936 2.87701 12.8146 1.99794C11.9355 1.11886 10.7432 0.625 9.5 0.625C8.2568 0.625 7.06451 1.11886 6.18544 1.99794C5.30636 2.87701 4.8125 4.0693 4.8125 5.3125C4.8125 6.5557 5.30636 7.74799 6.18544 8.62706C7.06451 9.50614 8.2568 10 9.5 10ZM12.625 5.3125C12.625 6.1413 12.2958 6.93616 11.7097 7.52221C11.1237 8.10826 10.3288 8.4375 9.5 8.4375C8.6712 8.4375 7.87634 8.10826 7.29029 7.52221C6.70424 6.93616 6.375 6.1413 6.375 5.3125C6.375 4.4837 6.70424 3.68884 7.29029 3.10279C7.87634 2.51674 8.6712 2.1875 9.5 2.1875C10.3288 2.1875 11.1237 2.51674 11.7097 3.10279C12.2958 3.68884 12.625 4.4837 12.625 5.3125ZM18.875 17.8125C18.875 19.375 17.3125 19.375 17.3125 19.375H1.6875C1.6875 19.375 0.125 19.375 0.125 17.8125C0.125 16.25 1.6875 11.5625 9.5 11.5625C17.3125 11.5625 18.875 16.25 18.875 17.8125ZM17.3125 17.8062C17.3109 17.4219 17.0719 16.2656 16.0125 15.2062C14.9938 14.1875 13.0766 13.125 9.5 13.125C5.92344 13.125 4.00625 14.1875 2.9875 15.2062C1.92813 16.2656 1.69062 17.4219 1.6875 17.8062H17.3125Z" fill="#FFFFFF"/>
                           </svg>
                           
-                    </span>
+                    </a>
                     <span class="headerSearchIcon w-auto flex justify-start items-start hover:cursor-pointer">
                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M19 19L15.5 15.5M15 8C15 8.91925 14.8189 9.82951 14.4672 10.6788C14.1154 11.5281 13.5998 12.2997 12.9497 12.9497C12.2997 13.5998 11.5281 14.1154 10.6788 14.4672C9.82951 14.8189 8.91925 15 8 15C7.08075 15 6.1705 14.8189 5.32122 14.4672C4.47194 14.1154 3.70026 13.5998 3.05025 12.9497C2.40024 12.2997 1.88463 11.5281 1.53284 10.6788C1.18106 9.82951 1 8.91925 1 8C1 6.14348 1.7375 4.36301 3.05025 3.05025C4.36301 1.7375 6.14348 1 8 1C9.85652 1 11.637 1.7375 12.9497 3.05025C14.2625 4.36301 15 6.14348 15 8Z" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
@@ -231,7 +193,25 @@ flex justify-center flex-col items-center py-[1em]  rounded-[15px]">
     </div>
 </div>
 <script>
-
-
-
+if (!'[##cms.cookie.rkey##]') {
+  
+  let userIcon =document.querySelector('header .UserIcon')
+  let loginPop = document.querySelector('.loginPop-C')
+  let closeLoginPop = document.querySelector('.loginPop-C .closeLoginPop')
+  userIcon.addEventListener('click',(e)=>{
+        // e.preventDefault()
+      
+      loginPop.classList.add('open')
+      $bc.setSource('run.call',true)
+      })
+      closeLoginPop.addEventListener('click',()=>{
+      loginPop.classList.remove('open')
+      $bc.setSource('run.call',false)
+      })
+}
+else{
+//   console.log("not login");
+  
+  document.querySelector(".UserIcon").setAttribute("href" , "/panel/company-registration.bc")
+}
 </script>

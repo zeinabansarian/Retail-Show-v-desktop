@@ -14,20 +14,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تماس‌باما</title>
     <meta name="description" content="تماس‌باما">
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/outputDesk.css">
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/plyr.css" />
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/leaflet.css">
-    <script src="https://cdn.basiscore.net/academy.basiscore.com/_js/basiscore-2.23.1.min.js"></script>
-<script src="https://cdn.basiscore.net/basispanel.ir/_js/alasql.min.js"></script>
+ <basis core="call" file="styles.inc" />    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/leaflet.css">
+
 </head>
 <body>
     <main class="ContactUs-C w-full overflow-hidden" dir="rtl">
         <basis core="call" file="header1.inc" pageindex="[##cms.cms.pageindex##]"/>
        <div class="contact-container w-full flex flex-col">
-        <section class="Section-1 w-full grid grid-cols-[45%,60%] mt-[15em] mb-[5em]">
+        <div class="contentt relative  mt-[15em]
+      ">
+      <div class="bgg absolute w-[40%] left-[-100%] duration-[.8s] top-[2.5em]  my-auto h-[68%] bg-mainBlue "></div>
+        <section class="Section-1 w-full grid grid-cols-[45%,60%]  mb-[5em]">
+         
             <div class="RightSec gap-[1em] pt-[1em] w-full flex flex-col justify-start items-start">
-                <div class="Title-main mr-auto flex-col relative overflow-hidden w-[95%]
+                <div class="Title-main mr-auto flex-col relative overflow-hidden w-full
                 flex justify-start gap-4 items-start ">
     
                   <span class="line duration-700 absolute flex left-0 my-auto top-0 bottom-0
@@ -40,7 +40,7 @@
                   </h1>
               
               </div>
-              <div class="Form-container flex-col  mr-auto w-[95%] flex">
+              <div class="Form-container flex-col  mr-auto w-full flex">
                 <div class="text w-full flex justify-start">
                         <p class="font-IRANSansWeb300 duration-700 translate-y-[100%] font-light text-sm leading-21.91 text-darkBlue w-[46%] mt-[.5em]">
                                 لطفا پیام مورد نظر خود را برای ما ثبت و  ارسال بفرمایید.
@@ -105,12 +105,11 @@
             </div>
             <div class="LeftSec w-full flex justify-start items-start">
                 <div class="Map-Container delay-200 [&.fade-left]:before:left-0 
-                 w-full flex justify-start items-start relative before:content-[''] before:absolute 
-               before:w-full before:h-[80%]  before:left-[-100%] before:duration-[2s] before:bg-mainBlue before:top-[3em] before:z-[-1]">
+                 w-full flex justify-start items-start relative ">
                <div class="map mr-auto w-[96%]">
                 <basis core="print" datamembername="db.contactus">
                     <face filter="TypeID =246">
-                        <div class="Map h-[598px] flex justify-start items-start ml-auto w-[80%] Map_1" id="Map_1" data-x="@text" data-y="@largetext">
+                        <div class="Map h-[598px] flex justify-start items-start ml-auto w-[97%] Map_1" id="Map_1" data-x="@text" data-y="@largetext">
                          
                         </div>
                     </face>
@@ -120,6 +119,8 @@
                 </div>
             </div>
         </section>
+        </div>
+     
          <section class="Section-2  w-full flex justify-center items-center mt-[5em]">
             <div class="Contacts w-90p mx-auto grid grid-cols-[1fr,1fr,1fr] justify-start items-start">
                 <div class="Col w-full flex flex-col before:absolute before:content-[''] relative
@@ -282,7 +283,16 @@
           
         </div>
     </main>
-    <basis core="call" file="script.inc" />
+
+<script src="[##cms.cms.cdn##]/_js/gsap.js"></script>
+<script src="[##cms.cms.cdn##]/_js/scrollTrigger.js"></script>
+<script src="[##cms.cms.cdn##]/_js/jquery/jquery-3.4.0.js"></script>
+<script src="[##cms.cms.cdn##]/_js/lenisScroll.js"></script>
+<script src="[##cms.cms.cdn##]/js/smoothScrollbar.js"></script>
+<script src="[##cms.cms.cdn##]/js/plyr.js"></script>
+<script src="[##cms.cms.cdn##]/js/configDesk.js"></script>
+<script src="[##cms.cms.cdn##]/js/smoothScrollbar.js"></script>
+
     <script src="[##cms.cms.cdn##]/_js/leaflet.js"></script>
     <script src="[##cms.cms.cdn##]/js/headerDark.js"></script>
     <script src="[##cms.cms.cdn##]/js/contactUs.js"></script>

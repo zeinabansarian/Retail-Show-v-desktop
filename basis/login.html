@@ -125,8 +125,7 @@
         body='{"token":"{##token.token.value##}","userid":{##forgetpassword.userid.value##},"user":"{##form.selectchangepassmethod.user##}","ismobile":{##form.selectchangepassmethod.ismobile##},"lid":1}'
         run="atclient" OnProcessed="onProcessedSelectChangePassMethodFn" triggers="form.selectchangepassmethod" if="{##token.token##} && {##form.selectchangepassmethod##}"></basis>
 
-    <basis core="cookie" name="rkey" path="/" value="{##user.rkey.value|()##}" if="{##user.rkey##}"
-    triggers="user.rkey" run="atclient" OnRendered="onRenderedCookie"></basis>
+    <basis core="cookie" name="rkey" path="/" value="{##user.rkey.value##}" triggers="user.rkey" run="atclient" OnRendered="onRenderedCookie"></basis>
 
 </div>
 
@@ -1097,11 +1096,8 @@ async function onProcessedLoginFn(args) {
             vars.loginFormMessage.classList.add('show')
             setTimeout(() => {
                 vars.loginFormMessage.classList.remove('show')
-                setTimeout(() => {
-                    
-              window.location.href ='/panel/company-registration.bc'
-                }, 3000);
             }, 5000);
+              window.location.href ='/panel/company-registration.bc'
             // setTimeout(() => {
             //     // loginBox.style.display = "none"
             //     modal.style.display = "none"
