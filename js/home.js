@@ -136,3 +136,6 @@ const supporter = new Swiper('.supporter', {
 
     }
   });
+
+
+  let videoC=document.querySelector(".section2 .inVideo"),overlays=document.querySelectorAll(".overlay"),is=!0;videoC.addEventListener("click",(t=>{overlays.forEach((o=>{o.classList.add("hide"),t.stopPropagation();const e=new Plyr("#player");is&&(e.play(),is=!1)}))}));
