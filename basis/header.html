@@ -1,3 +1,42 @@
+<style>
+    .SearchBox-popup{
+        min-height: 78px;
+    background-color: #FFFFFFF2;
+    }
+.SearchBox-popup .CloseSearch {
+    right: 0;}
+    .loaded{
+        max-height: 50vh;
+    }
+.searchinnerIcon {
+    pointer-events: none;
+}
+</style>
+
+<link rel="stylesheet" href="css/loginDesk.css">
+<link rel="stylesheet" href="css/popLogin.css">
+<script src="http://basiscore.net/_js/basiscore-2.36.2.min.js"></script>
+<script src="http://cdn.basiscore.net/_js/alasql.min.js"></script>
+<script>
+          const host = {
+        debug: false,
+
+        settings: {
+
+            'connection.web.callcommand': '/',
+            "connection.web.trust_login": "https://basiscore.net/apicms",
+            "connection.web.userbehavior": "https://basiscore.net/apicms",
+            'connection.web.basiscore': 'https://basiscore.net/apicms',
+            'default.dbsource.verb': 'post',
+            'default.call.verb': 'get',
+            'default.viewCommand.groupColumn': 'prpid',
+            'default.dmnid': '4880',
+            'default.binding.regex': '\\{##([^#]*)##\\}'
+
+        }
+    }
+</script>
+<link rel="stylesheet" href="css/f-style.css">
 <header class="DesktopHeader fixed [&.goDown]:top-[-100vh]  top-0 left-0 z-[99] group/header duration-100  w-full  flex flex-col " dir="rtl">
     <div class="Inner-header w-full flex flex-col ">
         <div class="Top-header group-[&.goTop]/header:translate-y-[-100%] duration-100
@@ -105,15 +144,15 @@ flex justify-center flex-col items-center py-[1em]  rounded-[15px]">
                 </svg>
                 
         </span>
-        <div class="Input w-[75%] flex justify-center items-center relative z-20">
+        <div class="Input w-[60%] flex justify-center items-center relative z-20">
             <input type="text" id="search" placeholder="جستجو کنید..." class="w-full 
             px-[1em] font-IRANSansWeb400 font-normal leading-21.91 text-gray2 text-sm bg-white h-[40px] placeholder:font-IRANSansWeb400 placeholder:font-normal
             placeholder:leading-21.91 placeholder:text-gray2" search="input">
             <span class="searchinnerIcon absolute left-[.5em] top-[.5em]" search="clear" >
-                <!-- <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M19.2817 19L15.7269 15.5M15.2191 8C15.2191 8.91925 15.0352 9.82951 14.6779 10.6788C14.3206 11.5281 13.797 12.2997 13.1368 12.9497C12.4766 13.5998 11.6928 14.1154 10.8303 14.4672C9.96769 14.8189 9.0432 15 8.10956 15C7.17592 15 6.25142 14.8189 5.38885 14.4672C4.52628 14.1154 3.74252 13.5998 3.08234 12.9497C2.42216 12.2997 1.89847 11.5281 1.54118 10.6788C1.18389 9.82951 1 8.91925 1 8C1 6.14348 1.74904 4.36301 3.08234 3.05025C4.41564 1.7375 6.22398 1 8.10956 1C9.99513 1 11.8035 1.7375 13.1368 3.05025C14.4701 4.36301 15.2191 6.14348 15.2191 8Z" stroke="#9A9A9A" stroke-width="2" stroke-linecap="round"/>
                     </svg>
-                     -->
+                   
             </span>
         </div>
     </div>
@@ -125,7 +164,7 @@ flex justify-center flex-col items-center py-[1em]  rounded-[15px]">
     </basis />
 
 
-    <div class="loaded w-full h-[300px] flex flex-col live-search-list" id="searchContainer">
+    <div class="loaded w-full flex flex-col live-search-list" id="searchContainer">
         <div class="Nores w-full  justify-center items-end py-[2em]" search="noResults">
             <p class="w-[13%] text-center mx-auto font-IRANSansWeb400 font-normal text-[13px] leading-[22.45px] text-black">
                 باعرض پوزش مطلبی پیدا نشد.
@@ -180,3 +219,19 @@ flex justify-center flex-col items-center py-[1em]  rounded-[15px]">
     </div>
 </div>
 </div>
+<div class="loginPop-C">
+    <span class="closeLoginPop">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.13268 23.0837L0.916016 20.867L9.78268 12.0003L0.916016 3.13366L3.13268 0.916992L11.9993 9.78366L20.866 0.916992L23.0827 3.13366L14.216 12.0003L23.0827 20.867L20.866 23.0837L11.9993 14.217L3.13268 23.0837Z" fill="#C1C1C1"/>
+            </svg>
+            
+    </span>
+    <div class="Container-pop">
+        <basis core="call" run="atclient" triggers="run.call" file="login.bc" />
+    </div>
+</div>
+<script>
+
+
+
+</script>
