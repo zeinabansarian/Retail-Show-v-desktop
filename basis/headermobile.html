@@ -1,0 +1,359 @@
+<style>
+    .SearchBox-popup{
+        min-height: 78px;
+    background-color: #FFFFFFF2 !important;
+    }
+.SearchBox-popup .CloseSearch {
+    right: 0;
+top:0;
+}
+    .loaded{
+        max-height: 50vh;
+    }
+.searchinnerIcon {
+    pointer-events: none;
+}
+</style>
+<link rel="stylesheet" href="css/loginDesk.css">
+<link rel="stylesheet" href="css/popLogin.css">
+<link rel="stylesheet" href="css/f-style.css">
+<script src="http://basiscore.net/_js/basiscore-2.36.2.min.js"></script>
+<script src="http://cdn.basiscore.net/_js/alasql.min.js"></script>
+<script>
+    const host = {
+  debug: false,
+
+  settings: {
+
+      'connection.web.callcommand': '/',
+      "connection.web.trust_login": "https://basiscore.net/apicms",
+      "connection.web.userbehavior": "https://basiscore.net/apicms",
+      'connection.web.basiscore': 'https://basiscore.net/apicms',
+      'default.dbsource.verb': 'post',
+      'default.call.verb': 'get',
+      'default.viewCommand.groupColumn': 'prpid',
+      'default.dmnid': '4880',
+      'default.binding.regex': '\\{##([^#]*)##\\}'
+
+  }
+}
+</script>
+<header class="Mobile_Header fixed top-0 left-0 [&.activeHeader]:bg-main-blue z-[99] group/header [&.goDown]:translate-y-[-100%] duration-[.4s]
+w-full  grid grid-cols-[50vw,50vw]" dir="rtl">
+
+       <div class="Right w-full flex justify-start items-center gap-[1em] mr-[10%]">
+           <div class="Toggle w-[22px] flex flex-col gap-[5px]">
+               <span class="Toggle_Item w-[21px] h-[2px] bg-white"></span>
+               <span class="Toggle_Item w-[21px] h-[2px] bg-white"></span>
+               <span class="Toggle_Item w-[21px] h-[2px] bg-white"></span>
+
+           </div>
+           <span class="headerSearchIcon w-auto flex justify-start items-start hover:cursor-pointer">
+               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M19 19L15.5 15.5M15 8C15 8.91925 14.8189 9.82951 14.4672 10.6788C14.1154 11.5281 13.5998 12.2997 12.9497 12.9497C12.2997 13.5998 11.5281 14.1154 10.6788 14.4672C9.82951 14.8189 8.91925 15 8 15C7.08075 15 6.1705 14.8189 5.32122 14.4672C4.47194 14.1154 3.70026 13.5998 3.05025 12.9497C2.40024 12.2997 1.88463 11.5281 1.53284 10.6788C1.18106 9.82951 1 8.91925 1 8C1 6.14348 1.7375 4.36301 3.05025 3.05025C4.36301 1.7375 6.14348 1 8 1C9.85652 1 11.637 1.7375 12.9497 3.05025C14.2625 4.36301 15 6.14348 15 8Z" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+                   </svg>
+                   
+             </span>
+           <span class="UserIcon w-auto flex justify-start items-start hover:cursor-pointer">
+               <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M9.5 10C10.7432 10 11.9355 9.50614 12.8146 8.62706C13.6936 7.74799 14.1875 6.5557 14.1875 5.3125C14.1875 4.0693 13.6936 2.87701 12.8146 1.99794C11.9355 1.11886 10.7432 0.625 9.5 0.625C8.2568 0.625 7.06451 1.11886 6.18544 1.99794C5.30636 2.87701 4.8125 4.0693 4.8125 5.3125C4.8125 6.5557 5.30636 7.74799 6.18544 8.62706C7.06451 9.50614 8.2568 10 9.5 10ZM12.625 5.3125C12.625 6.1413 12.2958 6.93616 11.7097 7.52221C11.1237 8.10826 10.3288 8.4375 9.5 8.4375C8.6712 8.4375 7.87634 8.10826 7.29029 7.52221C6.70424 6.93616 6.375 6.1413 6.375 5.3125C6.375 4.4837 6.70424 3.68884 7.29029 3.10279C7.87634 2.51674 8.6712 2.1875 9.5 2.1875C10.3288 2.1875 11.1237 2.51674 11.7097 3.10279C12.2958 3.68884 12.625 4.4837 12.625 5.3125ZM18.875 17.8125C18.875 19.375 17.3125 19.375 17.3125 19.375H1.6875C1.6875 19.375 0.125 19.375 0.125 17.8125C0.125 16.25 1.6875 11.5625 9.5 11.5625C17.3125 11.5625 18.875 16.25 18.875 17.8125ZM17.3125 17.8062C17.3109 17.4219 17.0719 16.2656 16.0125 15.2062C14.9938 14.1875 13.0766 13.125 9.5 13.125C5.92344 13.125 4.00625 14.1875 2.9875 15.2062C1.92813 16.2656 1.69062 17.4219 1.6875 17.8062H17.3125Z" fill="#FFFFFF"/>
+                   </svg>
+                   
+             </span>
+    
+           <div class="Menu_Bar fixed top-0 left-0 w-[100vw] h-[100vh] [&.OP]:!grid
+            z-2 hidden grid-rows-[65vh,2vh,27vh]">
+               <div class="Top w-full flex justify-center items-center">
+                   <nav class="Menu w-full flex justify-center">
+                       <ul class="w-full flex flex-col gap-5 justify-center items-center">
+                               <li class="Menu_Item w-auto flex justify-center items-center overflow-hidden">
+                                   <a href="/" alt="صفحه‌نخست" title="صفحه‌نخست" class="Menu_Link font-IRANSansWeb400 duration-[100] hover:text-pink
+                                    font-normal text-base leading-25.04 text-white">
+                                   صفحه نخست</a>
+                               </li>
+                               <li class="Menu_Item w-auto flex justify-center items-center overflow-hidden">
+                                   <a href="درباره-ما" alt="درباره‌ما" title="درباره‌ما" class="Menu_Link font-IRANSansWeb400 font-normal text-base leading-25.04 text-white">
+                                       درباره ما
+                                        </a>
+                               </li>
+                               <li class="Menu_Item w-auto flex justify-center items-center overflow-hidden">
+                                   <a href="نمایشگاه-ریتیل-شو" alt=" نمایشگاه ریتیل شو" title=" نمایشگاه ریتیل شو" class="Menu_Link font-IRANSansWeb400  duration-100 hover:text-pink
+                                   font-normal text-base leading-25.04 text-white">
+                                       نمایشگاه ایران ریتیل شو
+                                   </a>
+                               </li>
+                               <li class="Menu_Item w-auto flex justify-center items-center overflow-hidden">
+                                   <a href="اطلاعیه" alt=" اطلاعیه" title=" اطلاعیه"  class="Menu_Link font-IRANSansWeb400 duration-100 hover:text-pink
+                                    font-normal text-base leading-25.04 text-white">
+                                       اطلاعیه
+                                   </a>
+                               </li>
+                               <li class="Menu_Item w-auto flex justify-center items-center overflow-hidden">
+                                   <a href="حامیان" alt=" حامیان" title=" حامیان" class="Menu_Link font-IRANSansWeb400  duration-100 hover:text-pink
+                                   font-normal text-base leading-25.04 text-white">
+                                       حامیان
+                                   </a>
+                               </li>
+                               <li class="Menu_Item w-auto flex justify-center items-center overflow-hidden">
+                                   <a href="تماس-با-ما" alt=" تماس‌باما" title=" تماس‌باما" class="Menu_Link font-IRANSansWeb400  duration-100 hover:text-pink
+                                   font-normal text-base leading-25.04 text-white">
+                                       تماس با ما
+                                         </a>
+                               </li>
+                               <li class="Menu_Item w-auto flex justify-center items-center overflow-hidden">
+                                   <a href="http://www.gbm.ir" class="Menu_Link font-IRANSansWeb400  duration-100 hover:text-pink
+                                   font-normal text-base leading-25.04 text-white">
+                                       سایت هلدینگ تجارت طلایی
+                                   </a>
+                               </li>
+                               <li class="Menu_Item w-auto flex justify-center items-center overflow-hidden">
+                                   <a href="http://a112tl.undertest.ir" class="Menu_Link font-IRANSansWeb400  duration-100 hover:text-pink
+                                   font-normal text-base leading-25.04 text-white">
+                                       سایت پایگاه خبری
+                                   </a>
+                               </li>
+                               <li class="Menu_Item w-auto flex justify-center items-center overflow-hidden">
+                                   <a href="http://zpps.undertest.ir/" class="Menu_Link font-IRANSansWeb400  duration-100 hover:text-pink
+                                   font-normal text-base leading-25.04 text-white">
+                                       سایت ایران ریتیل اواردز
+                                   </a>
+                               </li>
+                       </ul>
+                   </nav>
+               </div>
+               <div class="Close">
+                   <span class="Line w-full h-[1px] flex justify-center items-center relative mx-auto bg-white">
+                       <div class="Circle before:absolute
+                        before:w-[80px] before:h-[80px] before:z-[-1] before:content-[''] before:rounded-full
+                        before:bg-[#A0A0A024] absolute w-[56px] h-[56px] rounded-[50%] bg-white flex justify-center items-center">
+                           <svg class="w-[15px]" width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                               <path d="M31.5612 1.46235L31.562 1.46307C32.1226 2.0237 32.1226 2.99247 31.562 3.5531L19.3222 15.7929L18.6151 16.5L19.3222 17.2071L31.562 29.4469C31.7008 29.5858 31.811 29.7507 31.8862 29.9321C31.9613 30.1136 32 30.308 32 30.5044C32 30.7008 31.9613 30.8953 31.8862 31.0768C31.811 31.2582 31.7008 31.4231 31.562 31.562C31.4231 31.7008 31.2582 31.811 31.0768 31.8862C30.8953 31.9613 30.7008 32 30.5044 32C30.308 32 30.1136 31.9613 29.9321 31.8862C29.7507 31.811 29.5858 31.7008 29.4469 31.562L17.2071 19.3222L16.5 18.6151L15.7929 19.3222L3.5531 31.562C3.41422 31.7008 3.24935 31.811 3.0679 31.8862C2.88645 31.9613 2.69197 32 2.49557 32C2.29917 32 2.10468 31.9613 1.92324 31.8862C1.74179 31.811 1.57692 31.7008 1.43804 31.562C1.29916 31.4231 1.189 31.2582 1.11384 31.0768C1.03868 30.8953 1 30.7008 1 30.5044C1 30.308 1.03868 30.1136 1.11384 29.9321C1.189 29.7507 1.29917 29.5858 1.43804 29.4469L13.6778 17.2071L14.3849 16.5L13.6778 15.7929L1.43804 3.5531C1.29916 3.41422 1.189 3.24935 1.11384 3.0679C1.03868 2.88645 1 2.69197 1 2.49557C1 2.29917 1.03868 2.10469 1.11384 1.92324C1.189 1.74179 1.29916 1.57692 1.43804 1.43804C1.57692 1.29916 1.74179 1.189 1.92324 1.11384C2.10469 1.03868 2.29917 1 2.49557 1C2.69197 1 2.88645 1.03868 3.0679 1.11384C3.24935 1.189 3.41422 1.29916 3.5531 1.43804L15.7929 13.6778L16.4993 14.3842L17.2064 13.6786L29.4462 1.4638L29.4476 1.46235C29.5863 1.32338 29.751 1.21314 29.9324 1.13791C30.1137 1.06269 30.3081 1.02397 30.5044 1.02397C30.7008 1.02397 30.8952 1.06269 31.0765 1.13791C31.2578 1.21314 31.4226 1.32338 31.5612 1.46235Z" fill="#ED2289" stroke="#ED2289" stroke-width="2"/>
+                               </svg>
+                               
+                       </div>
+                   </span>
+               </div>
+               <div class="Bottom w-full flex justify-center items-center">
+                   <div class="Contact  w-full flex flex-col gap-2">
+                       <div class="Row w-full flex justify-center items-center">
+                       <div class="socials w-full flex flex-col gap-2">
+                           <a href="http://www.gbm.ir" alt="retailShow" title="retailShow" class="social w-auto flex justify-center text-center font-IRANSansWeb300 font-light text-xs leading-[19.2px] text-white">
+                            www.gbm.ir
+                           </a>
+                           <a href="http://www.ZpPs.UnderTest.ir"  alt="retailShow" title="retailShow" class="social w-auto  flex justify-center text-center font-IRANSansWeb300 font-light text-xs leading-[19.2px] text-white">
+                            www.iranretailawards.com
+                           </a>
+                           <a href="http://A112Tl.UnderTest.ir" alt="retailShow" title="retailShow" class="social w-auto   flex justify-center text-center font-IRANSansWeb300 font-light text-xs leading-[19.2px] text-white">
+                            www.gbmnews.ir
+                           </a>
+                       </div>
+                          
+                       </div>
+                       <basis core="dbsource" name="db" source="basiscore" lid="1" mid="5" usedforid="9623">
+                        <member name="tel" type="view" postsql="select * from [db.tel] where TypeID=240"/> 
+                     </basis>
+                       <div class="Row  w-full flex justify-center items-center">
+                        <div class="phone w-full flex flex-col gap-2">
+                            <basis core="print" datamembername="db.tel">
+                                <layout>
+                                    @child
+                                </layout>
+
+                                <face>
+                                    <a href="tel:@Answer" title="retailShow" alt="retailShow" class="w-auto  flex justify-center text-center font-IRANSansWeb400 font-normal text-[15px] leading-[23.48px] text-white">
+                                       @Answer
+                                    </a>
+                                </face>
+                            </basis>
+                        
+                        </div>
+                       </div>
+                       <basis core="dbsource" name="db" source="basiscore" lid="1" mid="5" usedforid="9623">
+                        <member name="social" type="view" postsql="select * from [db.social] where TypeID=245"/> 
+                     </basis>
+
+
+                       <div class="Row w-full flex justify-center items-center">
+                        <div class="shares w-full flex justify-center items-center gap-3">
+                     
+                                    <span class="Sharebox whatsapp">
+                                        <a href="#" alt="whatsapp" title="whatsapp">
+                                            <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="12.75" cy="12.375" r="11.875" stroke="white"/>
+                                                <g clip-path="url(#clip0_53_6357)">
+                                                <path d="M9.85354 11.7147C10.2022 12.3647 10.6026 12.9883 11.125 13.5584C11.6465 14.1315 12.2969 14.6521 13.1387 15.0968C13.2012 15.1282 13.2608 15.1282 13.3125 15.1069C13.3926 15.0756 13.4746 15.0069 13.5547 14.924C13.6172 14.8593 13.6944 14.7562 13.7754 14.644C14.0987 14.2033 14.5 13.6565 15.0655 13.9294C15.0781 13.9354 15.0879 13.9425 15.0996 13.9486L16.9873 15.0715C16.9932 15.0746 17 15.0817 17.0059 15.0847C17.2549 15.2616 17.3574 15.5355 17.3604 15.8448C17.3604 16.1602 17.2481 16.5149 17.084 16.8131C16.8672 17.2083 16.5459 17.4701 16.1768 17.643C15.8252 17.8108 15.4336 17.9007 15.0576 17.9583C14.4668 18.0483 13.9141 17.9907 13.3487 17.8108C12.7949 17.6339 12.2383 17.3408 11.6299 16.9516L11.585 16.9223C11.3057 16.7424 11.0039 16.5483 10.708 16.3209C9.62404 15.4738 8.52053 14.2518 7.80178 12.9065C7.19826 11.7764 6.86916 10.5574 7.04885 9.395C7.14846 8.7582 7.41213 8.17903 7.87307 7.79594C8.27444 7.46137 8.81447 7.27741 9.51467 7.3421C9.59475 7.34816 9.66701 7.39668 9.70412 7.46744L10.9141 9.58401C11.0908 9.82155 11.1133 10.0571 11.0166 10.2926C10.9365 10.4856 10.7744 10.6635 10.5537 10.8293C10.4883 10.8869 10.4112 10.9455 10.3301 11.0062C10.0596 11.2094 9.75197 11.4439 9.85744 11.7208L9.85354 11.7147ZM14.1631 6.76292C14.1133 6.75888 14.0664 6.74473 14.0244 6.72249C13.9805 6.69924 13.9424 6.66791 13.9112 6.63051C13.8799 6.5921 13.8555 6.54864 13.8399 6.50012C13.8262 6.45362 13.8203 6.40409 13.8242 6.35254L13.8252 6.34547C13.8291 6.29594 13.8428 6.24944 13.8633 6.208L13.8672 6.20093C13.8887 6.15847 13.918 6.12108 13.9522 6.09176C13.9883 6.05942 14.0313 6.03415 14.0781 6.01798C14.1221 6.00281 14.169 5.99675 14.2168 5.99978L14.2266 6.00079C14.5615 6.02808 14.8848 6.08064 15.1953 6.15746C15.5088 6.23529 15.8076 6.3394 16.0899 6.46575C16.374 6.59412 16.6416 6.74675 16.8906 6.92263C17.1387 7.0985 17.3701 7.29763 17.5801 7.51899C17.7881 7.73833 17.9766 7.9799 18.1436 8.2417C18.3086 8.50147 18.4522 8.78145 18.5733 9.07862C18.6905 9.36973 18.7862 9.67903 18.8584 10.0065C18.9287 10.3269 18.9766 10.6635 19 11.0153L19.001 11.0325V11.0507C19.001 11.0972 18.9932 11.1426 18.9785 11.1851C18.9629 11.2306 18.9395 11.271 18.9092 11.3064C18.8789 11.3418 18.8428 11.3711 18.8018 11.3933C18.7637 11.4145 18.7197 11.4277 18.6739 11.4337L18.6543 11.4358H18.6358C18.5899 11.4368 18.5459 11.4287 18.5049 11.4125C18.4619 11.3963 18.4219 11.3721 18.3877 11.3408C18.3516 11.3084 18.3213 11.268 18.2998 11.2225C18.2793 11.179 18.2656 11.1295 18.2627 11.079C18.2422 10.7666 18.2012 10.4695 18.1397 10.1895C18.0781 9.90342 17.9951 9.63354 17.8936 9.37984C17.792 9.12512 17.6699 8.88657 17.5303 8.66622C17.3887 8.44284 17.2295 8.23866 17.0537 8.05268C16.876 7.86568 16.6817 7.69789 16.4707 7.54931C16.2588 7.39971 16.0303 7.27033 15.7862 7.16117L15.7822 7.15915C15.5401 7.05099 15.2832 6.96205 15.0127 6.89533C14.7432 6.83165 14.46 6.78617 14.1631 6.76292ZM13.3506 10.3674C13.3008 10.3623 13.2539 10.3461 13.2129 10.3239C13.1699 10.2996 13.1319 10.2673 13.1026 10.2289C13.0742 10.1925 13.0518 10.1501 13.0371 10.1046C13.0235 10.0621 13.0176 10.0166 13.0196 9.97013C13.0205 9.95699 13.0205 9.94688 13.0225 9.93475C13.0293 9.88624 13.0449 9.84075 13.0664 9.80133C13.0889 9.75989 13.1192 9.7235 13.1543 9.69419C13.1895 9.66488 13.2305 9.64163 13.2744 9.62647C13.3155 9.61333 13.3594 9.60625 13.4053 9.60827L13.4395 9.6113C13.585 9.62748 13.7246 9.65376 13.8594 9.68913C13.9961 9.72552 14.126 9.77202 14.2481 9.8266L14.252 9.82862C14.376 9.88523 14.4922 9.95093 14.6006 10.0267C14.71 10.1036 14.8115 10.1895 14.9053 10.2865C14.9981 10.3825 15.0821 10.4866 15.1563 10.5998C15.2305 10.712 15.2949 10.8323 15.3506 10.9617C15.4043 11.0881 15.4492 11.2225 15.4844 11.364C15.5186 11.5025 15.543 11.6501 15.5586 11.8057C15.5635 11.8573 15.5586 11.9078 15.5459 11.9543L15.5449 11.9583C15.5313 12.0048 15.5078 12.0483 15.4795 12.0857L15.4785 12.0877C15.4483 12.1261 15.4112 12.1575 15.3682 12.1817C15.3272 12.205 15.2803 12.2201 15.2305 12.2252H15.2256C15.1778 12.2292 15.1309 12.2242 15.0869 12.211C15.0401 12.1969 14.9971 12.1726 14.96 12.1413H14.959C14.9219 12.11 14.8906 12.0715 14.8672 12.0261C14.8447 11.9836 14.8301 11.9351 14.8252 11.8846V11.8805C14.8145 11.7703 14.7969 11.6652 14.7725 11.5651C14.7481 11.4631 14.7168 11.368 14.6797 11.2801C14.6426 11.1922 14.5996 11.1103 14.5508 11.0355C14.501 10.9597 14.4463 10.891 14.3858 10.8283C14.3252 10.7656 14.2578 10.709 14.1846 10.6585C14.1113 10.6079 14.0313 10.5635 13.9444 10.524L13.9395 10.522C13.8545 10.4836 13.7627 10.4523 13.666 10.427C13.5645 10.3977 13.46 10.3795 13.3506 10.3674ZM13.7412 8.6268H13.7315L13.7188 8.62478C13.6729 8.61973 13.6299 8.60558 13.5918 8.58536C13.5508 8.56312 13.5147 8.53381 13.4844 8.49944C13.4531 8.46306 13.4287 8.42161 13.4131 8.37512C13.3985 8.33165 13.3906 8.28516 13.3916 8.23563V8.21845L13.3936 8.20227C13.3985 8.15578 13.4121 8.1113 13.4317 8.07188C13.4531 8.02943 13.4815 7.99102 13.5147 7.9607C13.5508 7.92734 13.5928 7.90207 13.6397 7.88489C13.6846 7.86872 13.7324 7.86164 13.7822 7.86467C14.042 7.88085 14.2891 7.91521 14.5225 7.96676C14.7569 8.01831 14.9785 8.08806 15.1846 8.17498C15.3926 8.26292 15.5869 8.36905 15.7666 8.49237C15.9444 8.61467 16.1084 8.75517 16.2559 8.91387C16.4024 9.07054 16.5332 9.24439 16.6465 9.43442C16.7588 9.62242 16.8555 9.8266 16.9336 10.0459C17.0098 10.2602 17.0703 10.4907 17.1133 10.7373C17.1553 10.9799 17.1807 11.2356 17.1885 11.5075L17.1895 11.5217C17.1895 11.5702 17.1807 11.6177 17.1631 11.6612C17.1455 11.7067 17.1201 11.7471 17.0889 11.7825C17.0567 11.8189 17.0166 11.8482 16.9717 11.8684C16.9297 11.8886 16.8819 11.8997 16.8321 11.9017H16.8155C16.7686 11.9007 16.7246 11.8916 16.6836 11.8744C16.6397 11.8563 16.6006 11.83 16.5674 11.7976C16.5322 11.7633 16.5039 11.7228 16.4834 11.6763C16.4639 11.6319 16.4531 11.5833 16.4512 11.5308C16.4453 11.3044 16.4239 11.0911 16.3897 10.8899C16.3555 10.6868 16.3067 10.4978 16.2461 10.3239C16.1856 10.1501 16.1114 9.99035 16.0254 9.84378C15.9385 9.69621 15.8389 9.5638 15.7276 9.44351C15.6143 9.32323 15.4893 9.21508 15.3516 9.12108C15.2129 9.02606 15.0596 8.94419 14.8955 8.87546L14.8916 8.87343C14.7256 8.80571 14.5479 8.75012 14.3574 8.70868C14.166 8.66723 13.9619 8.63893 13.7471 8.62579L13.7412 8.6268Z" fill="white"/>
+                                                </g>
+                                                <defs>
+                                                <clipPath id="clip0_53_6357">
+                                                <rect width="12" height="12" fill="white" transform="translate(7 6)"/>
+                                                </clipPath>
+                                                </defs>
+                                                </svg>
+                                                
+                                        </a>
+                                    </span>
+                                </face>
+                            </basis>
+                            <basis core="print" datamembername="db.social">
+                                <layout>
+                                    @child
+                                </layout>
+                
+                                <face filter="RowNumber in (1)">
+                               <span class="Sharebox instagram">
+                                   <a href="https://www.instagram.com/@largetext"  alt="retailShow" title="retailShow">
+                                       <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                           <path d="M13.6104 6.4375C14.2783 6.43928 14.6174 6.44284 14.9101 6.45116L15.0253 6.45531C15.1583 6.46006 15.2895 6.466 15.448 6.47312C16.0798 6.50281 16.5108 6.60256 16.889 6.74922C17.2809 6.90003 17.611 7.10428 17.9412 7.43381C18.2431 7.73063 18.4767 8.08966 18.6258 8.48594C18.7724 8.86416 18.8722 9.29522 18.9019 9.92756C18.909 10.0855 18.9149 10.2167 18.9197 10.3503L18.9232 10.4655C18.9321 10.7576 18.9357 11.0967 18.9369 11.7646L18.9375 12.2076V12.9854C18.9389 13.4185 18.9344 13.8515 18.9238 14.2845L18.9203 14.3997C18.9155 14.5333 18.9096 14.6645 18.9024 14.8224C18.8728 15.4548 18.7718 15.8852 18.6258 16.2641C18.4771 16.6606 18.2435 17.0197 17.9412 17.3162C17.6443 17.618 17.2853 17.8516 16.889 18.0008C16.5108 18.1474 16.0798 18.2472 15.448 18.2769C15.3071 18.2835 15.1662 18.2894 15.0253 18.2947L14.9101 18.2983C14.6174 18.3066 14.2783 18.3107 13.6104 18.3119L13.1674 18.3125H12.3902C11.9569 18.314 11.5236 18.3094 11.0905 18.2988L10.9753 18.2953C10.8343 18.2899 10.6934 18.2838 10.5525 18.2769C9.92079 18.2472 9.48973 18.1474 9.11091 18.0008C8.71469 17.852 8.35579 17.6183 8.05938 17.3162C7.75719 17.0195 7.52336 16.6604 7.3742 16.2641C7.22754 15.8858 7.12779 15.4548 7.0981 14.8224C7.09149 14.6816 7.08555 14.5406 7.08029 14.3997L7.07732 14.2845C7.06638 13.8515 7.06143 13.4185 7.06248 12.9854V11.7646C7.06082 11.3315 7.06517 10.8985 7.07554 10.4655L7.0797 10.3503C7.08445 10.2167 7.09038 10.0855 7.09751 9.92756C7.1272 9.29522 7.22695 8.86475 7.3736 8.48594C7.5227 8.08926 7.757 7.73011 8.05998 7.43381C8.35631 7.13188 8.71497 6.89824 9.11091 6.74922C9.48973 6.60256 9.92019 6.50281 10.5525 6.47312C10.7105 6.466 10.8423 6.46006 10.9753 6.45531L11.0905 6.45175C11.5234 6.4412 11.9565 6.43665 12.3896 6.43809L13.6104 6.4375ZM13 9.40625C12.2126 9.40625 11.4575 9.71903 10.9008 10.2758C10.344 10.8325 10.0312 11.5876 10.0312 12.375C10.0312 13.1624 10.344 13.9175 10.9008 14.4742C11.4575 15.031 12.2126 15.3438 13 15.3438C13.7873 15.3438 14.5425 15.031 15.0992 14.4742C15.6559 13.9175 15.9687 13.1624 15.9687 12.375C15.9687 11.5876 15.6559 10.8325 15.0992 10.2758C14.5425 9.71903 13.7873 9.40625 13 9.40625ZM13 10.5938C13.2339 10.5937 13.4655 10.6397 13.6817 10.7292C13.8978 10.8187 14.0942 10.9499 14.2596 11.1153C14.425 11.2806 14.5563 11.477 14.6458 11.6931C14.7354 11.9092 14.7815 12.1408 14.7815 12.3747C14.7816 12.6086 14.7355 12.8403 14.646 13.0564C14.5566 13.2725 14.4254 13.4689 14.26 13.6343C14.0946 13.7998 13.8983 13.931 13.6822 14.0205C13.4661 14.1101 13.2345 14.1562 13.0006 14.1562C12.5282 14.1562 12.0751 13.9686 11.741 13.6345C11.407 13.3005 11.2193 12.8474 11.2193 12.375C11.2193 11.9026 11.407 11.4495 11.741 11.1155C12.0751 10.7814 12.5282 10.5938 13.0006 10.5938M16.1178 8.51562C15.9209 8.51562 15.7321 8.59382 15.593 8.73301C15.4538 8.87219 15.3756 9.06097 15.3756 9.25781C15.3756 9.45465 15.4538 9.64343 15.593 9.78262C15.7321 9.92181 15.9209 10 16.1178 10C16.3146 10 16.5034 9.92181 16.6426 9.78262C16.7818 9.64343 16.8599 9.45465 16.8599 9.25781C16.8599 9.06097 16.7818 8.87219 16.6426 8.73301C16.5034 8.59382 16.3146 8.51562 16.1178 8.51562Z" fill="white"/>
+                                           <circle cx="13" cy="12.375" r="11.875" stroke="white"/>
+                                           </svg>
+                                           
+                                   </a>
+                               </span>
+                                </face>
+                            </basis>
+                            <basis core="print" datamembername="db.social">
+                                <layout>
+                                    @child
+                                </layout>
+                
+                                <face filter="RowNumber in (3)">
+                               <span class="Sharebox linkdin">
+                                   <a href="https://www.linkedin.com/@largetext" alt="retailShow" title="retailShow">
+                                       <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                           <circle cx="13.25" cy="12.375" r="11.875" stroke="white"/>
+                                           <g clip-path="url(#clip0_53_6346)">
+                                           <path fill-rule="evenodd" clip-rule="evenodd" d="M16.25 7.6875C16.6976 7.6875 17.1268 7.86529 17.4432 8.18176C17.7597 8.49822 17.9375 8.92745 17.9375 9.375V16.125C17.9375 16.5726 17.7597 17.0018 17.4432 17.3182C17.1268 17.6347 16.6976 17.8125 16.25 17.8125H9.5C9.05245 17.8125 8.62322 17.6347 8.30676 17.3182C7.99029 17.0018 7.8125 16.5726 7.8125 16.125V9.375C7.8125 8.92745 7.99029 8.49822 8.30676 8.18176C8.62322 7.86529 9.05245 7.6875 9.5 7.6875H16.25ZM10.625 11.625C10.4758 11.625 10.3327 11.6843 10.2273 11.7898C10.1218 11.8952 10.0625 12.0383 10.0625 12.1875V15C10.0625 15.1492 10.1218 15.2923 10.2273 15.3977C10.3327 15.5032 10.4758 15.5625 10.625 15.5625C10.7742 15.5625 10.9173 15.5032 11.0227 15.3977C11.1282 15.2923 11.1875 15.1492 11.1875 15V12.1875C11.1875 12.0383 11.1282 11.8952 11.0227 11.7898C10.9173 11.6843 10.7742 11.625 10.625 11.625ZM12.3125 11.0625C12.1633 11.0625 12.0202 11.1218 11.9148 11.2273C11.8093 11.3327 11.75 11.4758 11.75 11.625V15C11.75 15.1492 11.8093 15.2923 11.9148 15.3977C12.0202 15.5032 12.1633 15.5625 12.3125 15.5625C12.4617 15.5625 12.6048 15.5032 12.7102 15.3977C12.8157 15.2923 12.875 15.1492 12.875 15V12.9412C13.0466 12.7478 13.3362 12.5205 13.6586 12.3827C13.8459 12.3028 14.1277 12.2702 14.3234 12.3321C14.3884 12.3485 14.4462 12.3856 14.4882 12.4378C14.5175 12.4772 14.5625 12.5649 14.5625 12.75V15C14.5625 15.1492 14.6218 15.2923 14.7273 15.3977C14.8327 15.5032 14.9758 15.5625 15.125 15.5625C15.2742 15.5625 15.4173 15.5032 15.5227 15.3977C15.6282 15.2923 15.6875 15.1492 15.6875 15V12.75C15.6875 12.3731 15.5919 12.0379 15.3927 11.769C15.2095 11.5252 14.9531 11.3464 14.6609 11.2588C14.1536 11.0996 13.5916 11.1879 13.2164 11.3488C13.0962 11.4003 12.9792 11.4589 12.866 11.5243C12.8424 11.3947 12.7741 11.2775 12.6729 11.1931C12.5718 11.1087 12.4442 11.0625 12.3125 11.0625ZM10.625 9.9375C10.4758 9.9375 10.3327 9.99676 10.2273 10.1023C10.1218 10.2077 10.0625 10.3508 10.0625 10.5C10.0625 10.6492 10.1218 10.7923 10.2273 10.8977C10.3327 11.0032 10.4758 11.0625 10.625 11.0625C10.7742 11.0625 10.9173 11.0032 11.0227 10.8977C11.1282 10.7923 11.1875 10.6492 11.1875 10.5C11.1875 10.3508 11.1282 10.2077 11.0227 10.1023C10.9173 9.99676 10.7742 9.9375 10.625 9.9375Z" fill="white"/>
+                                           </g>
+                                           <defs>
+                                           <clipPath id="clip0_53_6346">
+                                           <rect width="13.5" height="13.5" fill="white" transform="translate(6.125 6)"/>
+                                           </clipPath>
+                                           </defs>
+                                           </svg>
+                                           
+                                   </a>
+                               </span>
+                                </face>
+                            </basis>
+                        </div>
+                          
+                       </div>
+                   </div>
+               </div>
+               <div class="Menu_bg Is_top fixed w-full h-[51svh] bg-main-blue top-0 z-[-1]" ></div>
+               <div class="Menu_bg Is_bottom fixed w-full h-[51svh] bg-main-blue bottom-0 z-[-1]"></div>
+           </div>
+       </div>
+       <div class="Left w-full flex justify-end items-center ">
+           <div class="Logo ml-[10%]">
+               <a href="/" alt="صفحه‌نخست" title="صفحه‌نخست">
+                <svg width="56" height="69" viewBox="0 0 56 69" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <rect width="56" height="69" fill="url(#pattern0_1441_1629)"/>
+                    <defs>
+                    <pattern id="pattern0_1441_1629" patternContentUnits="objectBoundingBox" width="1" height="1">
+                    <use xlink:href="#image0_1441_1629" transform="matrix(0.0111111 0 0 0.00901771 0 0.0987118)"/>
+                    </pattern>
+                    <image id="image0_1441_1629" width="90" height="89" xlink:href="data:image/png;base64,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"/>
+                    </defs>
+                    </svg>
+                    
+                       
+               </a>
+           </div>
+       </div>
+
+</header>
+<div class="SearchBox-popup fixed w-90p  px-[1em] duration-200 top-[5em]  !bg-white
+z-20 left-0 right-0 mx-auto translate-y-[-100vh] [&.OpenSearch]:translate-y-[0]
+flex justify-center flex-col items-center py-[1em]  rounded-[15px]">
+   <div class="inputBox w-full flex justify-center items-center relative">
+       <span class="CloseSearch hover:cursor-pointer w-auto absolute right-0 top-[.8em]">
+           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M12.4 14L7 8.6L1.6 14L0 12.4L5.4 7L0 1.6L1.6 0L7 5.4L12.4 0L14 1.6L8.6 7L14 12.4L12.4 14Z" fill="#ED2289"/>
+               </svg>
+               
+       </span>
+       <div class="Input w-[80%] flex justify-center items-center relative z-20">
+           <input type="text" id="search" placeholder="جستجو کنید..." class="w-full 
+           px-[1em] font-IRANSansWeb400 font-normal leading-21.91 text-gray2 text-sm bg-white h-[40px] placeholder:font-IRANSansWeb400 placeholder:font-normal
+           placeholder:leading-21.91 placeholder:text-gray2" search="input">
+           <span class="searchinnerIcon absolute left-[.5em] top-[.5em]" search="clear">
+            <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M19.2817 19L15.7269 15.5M15.2191 8C15.2191 8.91925 15.0352 9.82951 14.6779 10.6788C14.3206 11.5281 13.797 12.2997 13.1368 12.9497C12.4766 13.5998 11.6928 14.1154 10.8303 14.4672C9.96769 14.8189 9.0432 15 8.10956 15C7.17592 15 6.25142 14.8189 5.38885 14.4672C4.52628 14.1154 3.74252 13.5998 3.08234 12.9497C2.42216 12.2997 1.89847 11.5281 1.54118 10.6788C1.18389 9.82951 1 8.91925 1 8C1 6.14348 1.74904 4.36301 3.08234 3.05025C4.41564 1.7375 6.22398 1 8.10956 1C9.99513 1 11.8035 1.7375 13.1368 3.05025C14.4701 4.36301 15.2191 6.14348 15.2191 8Z" stroke="#9A9A9A" stroke-width="2" stroke-linecap="round"/>
+                   </svg>
+                   
+           </span>
+       </div>
+   </div>
+   <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="210854"> 
+    <member name="list-etelaeyie" size="268x268" propertyid="7249" type="list"/> 
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="210836">
+    <member name="posterList" type="list" size="279x395" />
+</basis />
+   <div class="loaded w-full flex flex-col" id="searchContainer">
+       <div class="Nores w-full flex justify-center items-end py-[2em]" search="noResults">
+           <p class="w-[57%] text-center mx-auto font-IRANSansWeb400 font-normal text-[13px] leading-[20.35px] text-black">
+               باعرض پوزش مطلبی پیدا نشد.
+            واژه دیگری را جست و جو نمایید.
+           </p>
+       </div>
+       <div class="ResultSearch w-[95%] mx-auto flex flex-col" >
+        <basis core="print" datamembername="db.list-etelaeyie">
+            <layout>
+                @child
+            </layout>
+            <face>
+           <div class="ItemR w-full py-[1em] flex flex-col justify-between border-b border-gray2" search="item">
+               <div class="Title w-full flex justify-start items-start">
+                   <p class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-black text-right">
+                      @title
+                   </p>
+               </div>
+               <a href="@link" alt="@title" title="@title" class="ShowMore mr-auto w-auto flex gap-[10px] overflow-hidden justify-center">
+                   <p class="font-IRANSansWeb300 font-light text-[10px] leading-[15.65px] text-gray3">مشاهده </p>
+                   <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-gray3 relative 
+                   ">
+                   <div class="dot w-[5px] h-[5px] rounded-full translate-y-[-50%]
+                    bg-gray3 absolute top-[70%] translate-x-[-50%]"></div>
+                   </div>
+               </a>
+       </div>
+            </face>
+        </basis>
+        <basis core="print" datamembername="db.posterList">
+            <layout>
+                @child
+            </layout>
+            <face>
+           <div class="ItemR w-full py-[1em] flex flex-col justify-between border-b border-gray2" search="item">
+               <div class="Title w-full flex justify-start items-start">
+                   <p class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-black text-right">
+                      @title
+                   </p>
+               </div>
+               <a href="@link" alt="@title" title="@title" class="ShowMore mr-auto w-auto flex gap-[10px] overflow-hidden justify-center">
+                   <p class="font-IRANSansWeb300 font-light text-[10px] leading-[15.65px] text-gray3">مشاهده </p>
+                   <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-gray3 relative 
+                   ">
+                   <div class="dot w-[5px] h-[5px] rounded-full translate-y-[-50%]
+                    bg-gray3 absolute top-[70%] translate-x-[-50%]"></div>
+                   </div>
+               </a>
+       </div>
+            </face>
+        </basis>
+   </div>
+</div>
+</div>
+<div class="loginPop-C">
+    <span class="closeLoginPop">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.13268 23.0837L0.916016 20.867L9.78268 12.0003L0.916016 3.13366L3.13268 0.916992L11.9993 9.78366L20.866 0.916992L23.0827 3.13366L14.216 12.0003L23.0827 20.867L20.866 23.0837L11.9993 14.217L3.13268 23.0837Z" fill="#C1C1C1"/>
+            </svg>
+            
+    </span>
+    <div class="Container-pop">
+        <basis core="call" run="atclient" triggers="run.call" file="login.bc" />
+    </div>
+</div>
