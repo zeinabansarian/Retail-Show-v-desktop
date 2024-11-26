@@ -143,15 +143,7 @@ closeSearchH.addEventListener('click',()=>{
 
 //     }
 // }
-  let userIcon =document.querySelector('header .UserIcon')
-  let loginPop = document.querySelector('.loginPop-C')
-  let closeLoginPop = document.querySelector('.loginPop-C .closeLoginPop')
-  userIcon.addEventListener('click',()=>{
-  
-loginPop.classList.add('open')
-$bc.setSource('run.call',true)
-  })
-closeLoginPop.addEventListener('click',()=>{
-  loginPop.classList.remove('open')
-  $bc.setSource('run.call',false)
- })
+
+
+
+

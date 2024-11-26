@@ -109,14 +109,17 @@ const lastCourse = new Swiper('.lastCourse', {
     // Optional parameters
    speed:1000,
    spaceBetween: 100,
-   slidesPerView:3.3,
+  //  slidesPerView:3.3,
+   slidesPerView:"auto",
+
    freeMode:true,
   });
 const supporter = new Swiper('.supporter', {
     // Optional parameters
    speed:1000,
    spaceBetween: 51,
-   slidesPerView:5,
+  //  slidesPerView:5,
+   slidesPerView:"auto",
    freeMode:true,
    autoplay:{
     delay:3000,
