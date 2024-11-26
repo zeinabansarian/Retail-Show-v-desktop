@@ -60,7 +60,7 @@ module.exports = {
       'TeluguMN700':['TeluguMN700'],
       'Battambang700': ['"Battambang700"'],
       'BaiJamjuree700': ['"BaiJamjuree700"'],
-
+'IRANSansWebb400':['IRANSansWebb400']
     },
     extend: {
       borderRadius:{
