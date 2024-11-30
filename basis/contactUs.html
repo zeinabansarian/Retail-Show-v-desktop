@@ -14,12 +14,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تماس‌باما</title>
     <meta name="description" content="تماس‌باما">
- <basis core="call" file="styles.inc" />    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/leaflet.css">
-
+ <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />    
+ <link rel="stylesheet" href="[##cms.cms.cdn##]/css/leaflet.css">
+<style>
+.ContactUs-C .Section-1 {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex
+;
+    justify-content: space-between;
+    width: 90%;
+}
+.Box{
+    /* opacity: 0; */
+}
+</style>
 </head>
 <body>
     <main class="ContactUs-C w-full overflow-hidden" dir="rtl">
-        <basis core="call" file="header1.inc" pageindex="[##cms.cms.pageindex##]"/>
+        <basis core="call" file="header1.inc" pageindex="[##cms.cms.pageindex##]" />
        <div class="contact-container w-full flex flex-col">
         <div class="contentt relative  mt-[15em]
       ">
@@ -41,6 +55,7 @@
               
               </div>
               <div class="Form-container flex-col  mr-auto w-full flex">
+                <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                 <div class="text w-full flex justify-start">
                         <p class="font-IRANSansWeb300 duration-700 translate-y-[100%] font-light text-sm leading-21.91 text-darkBlue w-[46%] mt-[.5em]">
                                 لطفا پیام مورد نظر خود را برای ما ثبت و  ارسال بفرمایید.
@@ -48,7 +63,7 @@
                         </p>
                 </div>
                 <div class="Box">
-                    <basis core="schema" run="atclient" OnRendered="rendered"
+                    <basis core="schema" run="atclient" onRendered="rendered" OnRendering="fn"
                     schemaUrl="/schema/domainform/1585635B-6FD2-49CA-93C5-104CBA31716D/C82FAB80-82CB-47F5-8FE3-AF292C0974B2/fa/فرم-ارسال-پیام"
                 displayMode="new" button="[data-btn-add]" resultSourceId="demo.data"> 
                 </basis> 
@@ -58,13 +73,13 @@
                 run="atclient" 
                 body="object_edit={##edit.object.value##}&captcha={##edit.object.captcha##}&captchaid={##edit.object.captchaid##}" 
                 content-type="application/x-www-form-urlencoded" triggers="edit.object" if="{##edit.object|(false)##}" 
-                OnProcessed="OnProcessesEditObjectFn"> 
+                OnProcessed="OnProcessesEditObjectFn"  onRendered="renderEditobject"> 
                 </basis>
-                <basis core="dbsource" source="trust_login" run="atclient" name="captcha" triggers="refresh.captcha">
-                    <member type="scalar" request="captcha" name="code" />
+                <basis core="dbsource" source="trust_login" run="atclient" name="captcha1" triggers="refresh1.captcha">
+                    <member type="scalar" request="captcha" name="code1" />
                     </basis>
                         <div class="col">
-                        <basis core="print" datamembername="captcha.code" run="atclient">
+                        <basis core="print" datamembername="captcha1.code1" run="atclient">
                             <layout>
                                 <script type="text/template">
                                 @child
@@ -92,7 +107,7 @@
                         </basis>
     
                         </div>
-                        <button type="submit" class="ShowBTN w-full group/btn rounded-[5px] mt-[1em]
+                        <button type="submit" class="schemaBtn1 ShowBTN w-full group/btn rounded-[5px] mt-[1em]
                        
                         py-[.4em] bg-mainBlue flex justify-center items-center gap-2 schemaBtn" data-btn-add data-btn-submit="">
                            <span class="Text font-IRANSansWeb700 font-bold text-sm text-white leading-21.91">
@@ -283,15 +298,9 @@
           
         </div>
     </main>
+    <div class="lds-roller2"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 
-<script src="[##cms.cms.cdn##]/_js/gsap.js"></script>
-<script src="[##cms.cms.cdn##]/_js/scrollTrigger.js"></script>
-<script src="[##cms.cms.cdn##]/_js/jquery/jquery-3.4.0.js"></script>
-<script src="[##cms.cms.cdn##]/_js/lenisScroll.js"></script>
-<script src="[##cms.cms.cdn##]/js/smoothScrollbar.js"></script>
-<script src="[##cms.cms.cdn##]/js/plyr.js"></script>
-<script src="[##cms.cms.cdn##]/js/configDesk.js"></script>
-<script src="[##cms.cms.cdn##]/js/smoothScrollbar.js"></script>
+    <basis core="call" file="script.inc" pageindex="[##cms.cms.pageindex##]" />
 
     <script src="[##cms.cms.cdn##]/_js/leaflet.js"></script>
     <script src="[##cms.cms.cdn##]/js/headerDark.js"></script>

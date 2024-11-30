@@ -92,24 +92,18 @@
         </div>
 
     </div>
-    <basis core="callback" triggers="run.call" run="atclient"></basis>
-    <basis core="dbsource" source="trustloginapi" name="db"
-     useragent="[##cms.request.user-agent##]" ip="[##cms.request.clientip##]">
+    <basis core="dbsource" source="trustloginapi" name="db" useragent="[##cms.request.user-agent##]" ip="[##cms.request.clientip##]">
         <member name="dmntoken" type="scalar" request="dmntoken"></member>
     </basis>
 
-    <basis name="api.token" core="api" url="https://api.trust-login.com/token?recaptcha={##token.recaptcha.value|()##}" method="post" body='{"dmntoken": "[##db.dmntoken.dmntoken##]"}' 
-        content-type="application/json" run="atclient"  OnProcessed="onProcessedTokenFn" 
-         triggers=" token.recaptcha"
-        
-        ></basis>
 
+    <basis name="api.token" core="api" url="https://api.trust-login.com/token?recaptcha={##token.recaptcha.value|()##}" method="post" body='{"dmntoken": "[##db.dmntoken.dmntoken##]"}'
+        content-type="application/json" run="atclient"  OnProcessed="onProcessedTokenFn" triggers="run.token db.login db.runTokenCommand"
+        if="{##db.login.value|(true)##}"></basis>
         
     <basis name="api.authentication" core="api" url="https://api.trust-login.com/authentication?culture=fa" method="post"
-        body='{"token": "{##token.token.value##}", "username": "{##form.authentication.username##}", "captcha": "{##form.authentication.captchaid##}"}' 
-        content-type="application/json" run="atclient"
-        OnProcessed="onProcessedAuthenticationFn" triggers="form.authentication"
-         if="{##token.token|(false)##} && {##form.authentication|(false)##}"></basis>
+        body='{"token": "{##token.token.value##}", "username": "{##form.authentication.username##}", "captcha": "{##form.authentication.captchaid##}"}' content-type="application/json" run="atclient"
+        OnProcessed="onProcessedAuthenticationFn" triggers="form.authentication" if="{##token.token##} && {##form.authentication##}"></basis>
 
     <basis name="api.login" core="api" url="https://api.trust-login.com/login?culture=fa" method="post"
         body='{"hashid": "{##authentication.hashid.value##}", "code": "{##form.login.code##}", "recode": "{##form.login.recode##}", "email": "{##form.login.email##}", "mobile": "{##form.login.mobile##}"}'
@@ -131,31 +125,30 @@
         body='{"token":"{##token.token.value##}","userid":{##forgetpassword.userid.value##},"user":"{##form.selectchangepassmethod.user##}","ismobile":{##form.selectchangepassmethod.ismobile##},"lid":1}'
         run="atclient" OnProcessed="onProcessedSelectChangePassMethodFn" triggers="form.selectchangepassmethod" if="{##token.token##} && {##form.selectchangepassmethod##}"></basis>
 
-    <basis core="cookie" name="rkey" path="/" value="{##user.rkey.value|()##}" if="{##user.rkey##}"
-    triggers="user.rkey" run="atclient" OnRendered="onRenderedCookie"></basis>
+    <basis core="cookie" name="rkey" path="/" value="{##user.rkey.value##}" triggers="user.rkey" run="atclient" OnRendered="onRenderedCookie"></basis>
 
 </div>
 
 
 
-<basis core="callback" run="atClient" triggers="form.authentication"></basis>
-<!-- <basis core="callback" run="atClient" triggers="formm.login"></basis> -->
+<basis core="callback" run="atClient" triggers="form.login"></basis>
+<basis core="callback" run="atClient" triggers="formm.login"></basis>
 <script>
-//     let openRegister = document.querySelector(".openRegister")
-//     let registerPop = document.querySelector(".registerPop")
-//     let closeregisterPop = document.querySelector(".closeregisterPop")
+    let openRegister = document.querySelector(".openRegister")
+    let registerPop = document.querySelector(".registerPop")
+    let closeregisterPop = document.querySelector(".closeregisterPop")
 
-//     openRegister.addEventListener("click" , function (params) {
-//         registerPop.classList.add("registerPopActive")
-//     })
-//     closeregisterPop.addEventListener("click" , function (params) {
-//         registerPop.classList.remove("registerPopActive")
-//     })
+    openRegister.addEventListener("click" , function (params) {
+        registerPop.classList.add("registerPopActive")
+    })
+    closeregisterPop.addEventListener("click" , function (params) {
+        registerPop.classList.remove("registerPopActive")
+    })
 
 
-// Scrollbar.init(document.querySelector(".registerPop"), {
-// damping: 0.2,
-// });
+Scrollbar.init(document.querySelector(".registerPop"), {
+damping: 0.2,
+});
 
 
 </script>
@@ -277,13 +270,7 @@ async function onProcessedTokenFn(args) {
                 // loginForm.querySelector(".item_wrapper")?.remove()
 
                 // loginForm.innerHTML = "";
-
-
-
-                // vars.loginForm.setAttribute("name", "form.authentication");
-
-
-
+                vars.loginForm.setAttribute("name", "form.authentication");
 
                 // const itemTempCopyForUsername = itemTemp.cloneNode(true);
                 // itemTempCopyForUsername.querySelector(".itemInput").setAttribute("name", "username");
@@ -348,8 +335,7 @@ async function onProcessedTokenFn(args) {
                     vars.loginFormMessage.innerHTML = "";
                 }, 5000);
             }
-        } 
-        else if (errorid == '10') {
+        } else if (errorid == '10') {
             vars.loginFormMessage.innerHTML = `<span class="error">خطا در انجام عملیات</span>`;
             document.querySelector('.fixOverlay').classList.add('show')
    
@@ -398,8 +384,7 @@ async function onProcessedAuthenticationFn(args) {
                 document.querySelector('.fixOverlay').classList.remove('show')
             }, 5000);
             vars.itemInputTemp.classList.add("redBox")
-        }
-         else if (errorid == "2") {
+        } else if (errorid == "2") {
             // document.querySelector(".captcha_resize").style.display = "none"
             let type = responseJson.type;
             let newUser = responseJson.newUser;
@@ -831,16 +816,14 @@ async function onProcessedAuthenticationFn(args) {
                    
                 }
             }
-        } 
-        else if (errorid == '3') {
+        } else if (errorid == '3') {
             // remaintime - less than 60 seconds
             vars.loginFormMessage.innerHTML = `<div class="apiMessage2 redBox"><span class="error">
                 <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.75 9.75H8.25V11.25H6.75V9.75ZM6.75 3.75H8.25V8.25H6.75V3.75ZM7.4925 0C3.3525 0 0 3.36 0 7.5C0 11.64 3.3525 15 7.4925 15C11.64 15 15 11.64 15 7.5C15 3.36 11.64 0 7.4925 0ZM7.5 13.5C4.185 13.5 1.5 10.815 1.5 7.5C1.5 4.185 4.185 1.5 7.5 1.5C10.815 1.5 13.5 4.185 13.5 7.5C13.5 10.815 10.815 13.5 7.5 13.5Z" fill="#EE273A"/>
                 </svg>
                 از زمان اعتبار کلید قبلی ${responseJson.remain_time} ثانیه باقی مانده است</span></div>`;
-        } 
-        else if (errorid == '4') {
+        } else if (errorid == '4') {
             // authentication by mobile – multi user
             const users = responseJson.users;
             vars.loginForm.setAttribute("name", "form.selectuser");
@@ -875,8 +858,7 @@ async function onProcessedAuthenticationFn(args) {
 
                 vars.loginForm.lastChild.before(emailListLabel);
             });
-        } 
-        else if (errorid == "4") {
+        } else if (errorid == "4") {
             // authentication by mobile – multi user
             const users = responseJson.users;
             vars.loginForm.setAttribute("name", "form.selectuser");
@@ -951,16 +933,14 @@ async function onProcessedAuthenticationFn(args) {
             });
             // var offsetHeight = mailsSelectBox.offsetHeight;
             // mailsSelecContainer.style.height = offsetHeight + "px";
-        } 
-        else if (errorid == "8") {
+        } else if (errorid == "8") {
             // loginFormMessage.innerHTML = `<span class="error"> این ایمیل توسط کاربر دیگری ثبت گردیده است </span>`;
             vars.loginFormMessage.innerHTML = `<span class="success"> این ایمیل برای نام کاربری دیگری ثبت گردیده‌است. ایمیل بازیابی نام کاربری برای شما ارسال شد. </span>`;
       
 
        
             vars.loginForm.querySelector(".submitForm").textContent = "ارسال مجدد ایمیل";
-        } 
-        else if (errorid == "10") {
+        } else if (errorid == "10") {
             // invalid inputs
             vars.loginFormMessage.innerHTML = `
                     <div class="apiMessage2 redBox">
@@ -982,8 +962,7 @@ async function onProcessedAuthenticationFn(args) {
             // setTimeout(function () {
             //     loginFormMessage.querySelector(".error").style.height = "0"
             // }, 3000);
-        } 
-        else if (errorid == "17") {
+        } else if (errorid == "17") {
             // invalid captcha
             vars.loginFormMessage.innerHTML = `
                             <div class="apiMessage2 redBox">
@@ -1007,8 +986,7 @@ async function onProcessedAuthenticationFn(args) {
             //     loginFormMessage.querySelector(".error").style.height = "0"
             // }, 3000);
             //  document.getElementById("captchaCode").value = "";
-        } 
-        else if (errorid == "53") {
+        } else if (errorid == "53") {
             vars.loginFormMessage.innerHTML = `<span class="success"> ایمیل فعالسازی مجددا برای شما ارسال شد </span>`;
        
 
@@ -1020,8 +998,7 @@ async function onProcessedAuthenticationFn(args) {
                 document.querySelector('.fixOverlay').classList.remove('show')
             }, 5000);
             vars.loginForm.querySelector(".submitForm").textContent = "ارسال مجدد ایمیل";
-        }
-         else if (errorid == "54") {
+        } else if (errorid == "54") {
             // token is expired
             vars.loginFormMessage.innerHTML = `<span class="error"> useragent نامعتبر است </span>`;
         
@@ -1032,8 +1009,7 @@ async function onProcessedAuthenticationFn(args) {
                 vars.loginFormMessage.classList.remove('show')
                 document.querySelector('.fixOverlay').classList.remove('show')
             }, 5000);
-        } 
-        else if (errorid == "58") {
+        } else if (errorid == "58") {
             // token is expired
             vars.loginFormMessage.innerHTML = `<span class="error"> کاربر غیرفعال است </span>`;
       
@@ -1120,11 +1096,8 @@ async function onProcessedLoginFn(args) {
             vars.loginFormMessage.classList.add('show')
             setTimeout(() => {
                 vars.loginFormMessage.classList.remove('show')
-                setTimeout(() => {
-                    
-              window.location.href ='/panel/company-registration.bc'
-                }, 3000);
             }, 5000);
+              window.location.href ='/panel/company-registration.bc'
             // setTimeout(() => {
             //     // loginBox.style.display = "none"
             //     modal.style.display = "none"
@@ -1310,10 +1283,7 @@ function resendSMS(e, mode) {
 };
 
 function refreshCaptcha(e) {
-    // $bc.setSource("run.token", true);
-    $bc.setSource("token.recaptcha", true);
-
-    
+    $bc.setSource("run.token", true);
 };
 
 function onRenderedCookie(args) {
