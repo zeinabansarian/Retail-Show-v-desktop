@@ -136,7 +136,8 @@ const leftSlider = new Swiper('.leftSlider', {
   const videoSlider = new Swiper('.videoSlider', {
       // Optional parameters
    speed:1000,
-   slidesPerView:1.4,
+//    slidesPerView:1.4,
+   slidesPerView:"auto",
    spaceBetween: 30,
    pagination: {
     el: '.videoSliderpagination',
