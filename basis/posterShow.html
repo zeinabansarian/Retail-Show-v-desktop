@@ -34,72 +34,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <basis core="print" datamembername="db.seolist">
-        <face>
-            <title>[##cms.seo.title|db.seolist.title##]</title>
-            <meta name="description" content="[##cms.seo.description|db.seolist.description##]" />
-        </face>
-    </basis>
-
+            <title>[##cms.seo.title##]</title>
+            <meta name="description" content="[##cms.seo.description##]" />
     <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="[##cms.cms.cdn##]/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/outputDesk.css" />
-    <style>
-        html {
-            font-size: unset;
-        }
-
-        iframe {
-            width: 100%;
-        }
-
-        .section1 .imgS::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(64.64% 64.64% at 50% 75.89%,
-                    rgba(0, 0, 0, 0) 13.11%,
-                    rgba(0, 0, 0, 0.24) 100%),
-                linear-gradient(180deg,
-                    rgba(0, 0, 0, 0.42) 0%,
-                    rgba(0, 0, 0, 0.0252) 18.94%);
-        }
-
-        .popImgSliderFraction i,
-        .popImgSliderFraction span {
-            color: white !important;
-        }
-
-        .openGalleryPop:hover span,
-        .openPopGallery:hover span {
-            color: white !important;
-        }
-
-        .nextRight:hover path:first-child,
-        .nextImgPop:hover rect,
-        .nextTimePop:hover rect,
-        .prevTimePop:hover rect,
-        .nextShowPop:hover rect,
-        .prevShowPop:hover rect,
-        .prevImgPop:hover rect,
-        .prevRight:hover path:first-child {
-            fill: #002b43;
-        }
-
-        .nextRight:hover path:last-child,
-        .prevImgPop:hover path,
-        .nextTimePop:hover path,
-        .nextShowPop:hover path,
-        .prevTimePop:hover path,
-        .prevShowPop:hover path,
-        .prevRight:hover path:last-child,
-        .nextImgPop:hover path {
-            fill: white;
-        }
-    </style>
+    <basis core="call" file="styles.inc" />
 </head>
 
 <body>
@@ -138,90 +77,98 @@
 
             <face filter="ord=1">
                 <div class="swiper-slide">
-                    <div class="imgS relative">
-                        <img class="w-full" src="/@largeIMG" alt="@name" />
+                    <div class="imgS relative" style="min-height: 100vh;">
+                        <img style="min-height: 100vh;object-fit: cover;" class="w-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name" />
                     </div>
                 </div>
             </face>
         </basis>
-        <section class="section2 flex items-center mt-20 mb-16" dir="rtl">
-            <div class="rSide pr-[5%] bg-lightbg w-[55%] pt-[122px] pb-[133px] pl-24">
-                <basis core="print" datamembername="db.poster">
-                    <face filter="TypeID=128">
-                        <div
-                            class="Title-main relative overflow-hidden w-max flex justify-start gap-4 items-center my-[4em]">
-                            <span
-                                class="line duration-700 absolute flex left-0 my-auto justify-center right-0 delay-100 w-[2px] h-0 bg-darkBlue"></span>
+        <section class="section2 relative mt-20 mb-16 " dir="rtl">
+            <div class="bgOver absolute right-0 h-full bg-lightbg w-[55%]"></div>
 
-                            <h1
-                                class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-2xl leading-37.57 text-darkBlue pr-4 py-2.5">
-                                @Answer
-                            </h1>
-                        </div>
-                    </face>
-                </basis>
+            <div class="flex items-center mx-auto w-90p relative z-2" styel="max-width: 1440px;">
 
-                <basis core="print" datamembername="db.poster">
-                    <layout>
-                        <div class="para scrollTop font-IRANSansWeb400 mt-6 overflow-hidden mb-8 openPara">
-                            @child
-                        </div>
-                    </layout>
 
-                    <face filter="TypeID=129"> @Answer </face>
-                </basis>
-            </div>
-            <div class="lSide w-[45%] pl-[5%]">
-                <div class="inVideo flex items-center justify-center -mr-16">
-                    <basis core="print" datamembername="db.posterGallery">
-                        <face filter="ord=2">
-                            <img class="w-full" src="/@largeIMG" alt="" />
+                <div class="rSide w-[55%] pt-[122px] pb-[133px] pl-24">
+                    <basis core="print" datamembername="db.poster">
+                        <face filter="TypeID=128">
+                            <div
+                                class="Title-main relative overflow-hidden w-max flex justify-start gap-4 items-center my-[4em]">
+                                <span
+                                    class="line duration-700 absolute flex left-0 my-auto justify-center right-0 delay-100 w-[2px] h-0 bg-darkBlue"></span>
+
+                                <h1
+                                    class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-2xl leading-37.57 text-darkBlue pr-4 py-2.5">
+                                    @Answer
+                                </h1>
+                            </div>
                         </face>
                     </basis>
-                    <basis core="repeater" name="repGallery2" datamembername="db.posterGallery2">
-                        <basis core="dbsource" source="media" name="db" lid="1" mid="15"
-                            mainid="[##repGallery2.current.Table2ID##]">
-                            <member type="view" name="galleryLink2" />
-                        </basis>
-                        <basis core="print" datamembername="db.galleryLink2">
-                            <face filter="TypeID=254">
-                                <div data-videoUrl="@largetext"
-                                    class="play-popup-container playVideoOpen playbtn w-[126px] h-[126px] absolute cursor-pointer">
-                                    <div class="play-popup-btn relative flex items-center justify-center"
-                                        data-video="https://player.vimeo.com/video/619757568?dnt=1&app_id=122963">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="153.417" height="153.417"
-                                            viewBox="0 0 153.417 153.417">
-                                            <g id="Group_457" data-name="Group 457"
-                                                transform="translate(-1061.792 -431.792)">
-                                                <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(1063 433)"
-                                                    fill="none" stroke="#fff" stroke-width="1" opacity="0.3">
-                                                    <circle cx="75.5" cy="75.5" r="75.5" stroke="none" />
-                                                    <circle cx="75.5" cy="75.5" r="75" fill="none" />
-                                                </g>
-                                                <path id="Path_1" data-name="Path 1"
-                                                    d="M75.708,0A75.708,75.708,0,1,1,0,75.708"
-                                                    transform="translate(1062.792 432.792)" fill="none" stroke="#fff"
-                                                    stroke-width="2" />
-                                            </g>
-                                        </svg>
-                                        <div class="play-popup-btn__circle absolute">
-                                            <div class="play-popup-btn__circle__bullet"></div>
-                                            <span class="play-popup-btn__circle__text text-left">
-                                                <p
-                                                    class="font-IRANSansWeb300 text-lg text-white relative after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
-                                                    Play
-                                                </p>
-                                                <p class="font-IRANSansWeb500 text-lg text-white">
-                                                    video
-                                                </p>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </face>
-                        </basis>
+
+                    <basis core="print" datamembername="db.poster">
+                        <layout>
+                            <div class="para font-IRANSansWeb400 mt-6 overflow-hidden mb-8 openPara">
+                                @child
+                            </div>
+                        </layout>
+
+                        <face filter="TypeID=129"> @Answer </face>
                     </basis>
                 </div>
+                <div class="lSide w-[45%] ">
+                    <div class="inVideo flex items-center justify-center -mr-16">
+                        <basis core="print" datamembername="db.posterGallery">
+                            <face filter="ord=2">
+                                <img class="" src="[##cms.cms.cdn##]/@largeIMG" alt="@name" />
+                            </face>
+                        </basis>
+                        <basis core="repeater" name="repGallery2" datamembername="db.posterGallery2">
+                            <basis core="dbsource" source="media" name="db" lid="1" mid="15"
+                                mainid="[##repGallery2.current.Table2ID##]">
+                                <member type="view" name="galleryLink2" />
+                            </basis>
+                            <basis core="print" datamembername="db.galleryLink2">
+                                <face filter="TypeID=254">
+                                    <div data-videoUrl="@largetext"
+                                        class="play-popup-container playVideoOpen playbtn w-[126px] h-[126px] absolute cursor-pointer">
+                                        <div class="play-popup-btn relative flex items-center justify-center"
+                                            data-video="https://player.vimeo.com/video/619757568?dnt=1&app_id=122963">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="153.417" height="153.417"
+                                                viewBox="0 0 153.417 153.417">
+                                                <g id="Group_457" data-name="Group 457"
+                                                    transform="translate(-1061.792 -431.792)">
+                                                    <g id="Ellipse_1" data-name="Ellipse 1"
+                                                        transform="translate(1063 433)" fill="none" stroke="#fff"
+                                                        stroke-width="1" opacity="0.3">
+                                                        <circle cx="75.5" cy="75.5" r="75.5" stroke="none" />
+                                                        <circle cx="75.5" cy="75.5" r="75" fill="none" />
+                                                    </g>
+                                                    <path id="Path_1" data-name="Path 1"
+                                                        d="M75.708,0A75.708,75.708,0,1,1,0,75.708"
+                                                        transform="translate(1062.792 432.792)" fill="none"
+                                                        stroke="#fff" stroke-width="2" />
+                                                </g>
+                                            </svg>
+                                            <div class="play-popup-btn__circle absolute">
+                                                <div class="play-popup-btn__circle__bullet"></div>
+                                                <span class="play-popup-btn__circle__text text-left">
+                                                    <p
+                                                        class="font-IRANSansWeb300 text-lg text-white relative after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
+                                                        Play
+                                                    </p>
+                                                    <p class="font-IRANSansWeb500 text-lg text-white">
+                                                        video
+                                                    </p>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </face>
+                            </basis>
+                        </basis>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -247,7 +194,7 @@
                         </face>
                     </basis>
                     <!-- Slider main container -->
-                    <div class="swiper branSlider px-[5%]">
+                    <div class="swiper branSlider px-[5%] py-3">
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
                             <!-- Slides -->
@@ -260,10 +207,10 @@
 
             <face filter="ord=3">
                 <div class="swiper-slide">
-                    <div
+                    <div style="width: 230px;"
                         class="p-5 flex items-center justify-center bg-light-gray aspect-square group hover:shadow-[0px_4px_12px_0px_rgba(0,_0,_0,_0.3)] rounded-md overflow-hidden duration-500">
                         <div class="imgS">
-                            <img class="w-full object-cover h-full duration-500" src="/@largeIMG" alt="@name" />
+                            <img class="w-full object-cover h-full duration-500" src="[##cms.cms.cdn##]/@largeIMG" alt="@name" />
                         </div>
                     </div>
                 </div>
@@ -290,11 +237,11 @@
                     <div class="timeline-item gap-x-[117px] flex relative pb-10" id="item_0">
                         <div class="timeline-item__line"></div>
                         <div class="timeline-item__indicator flex items-center justify-center">
-                            <img class="ml-[2px] opacity-0 duration-500" src="images/hoverIcon.png" alt="" />
+                            <img class="ml-[2px] opacity-0 duration-500" src="[##cms.cms.cdn##]/images/hoverIcon.png" alt="timeline" />
                         </div>
 
                         <div class="timeline-item__content-wrapper" dir="rtl">
-                            <div class="para scrollTop font-IRANSansWeb400 text-xs text-justify mb-20 mt-10">
+                            <div class="para font-IRANSansWeb400 text-xs text-justify mb-20 mt-10">
                                 <p>[##rep.current.description##]</p>
                             </div>
                             <button data-toggle="modal" data-target=".bs-example-modal-new[##rep.current.RowNumber##]"
@@ -351,20 +298,21 @@
                                         <div class="modal-body" style="padding: 28px 25px">
                                             <div class="body-message">
 
-                                                
-                                                <h4 class="font-IRANSansWeb700 text-base pb-3 w-fit" style="border-bottom: 0.25px solid black;padding-bottom: 12px;margin-bottom: 15px;">
+
+                                                <h4 class="font-IRANSansWeb700 text-base pb-3 w-fit"
+                                                    style="border-bottom: 0.25px solid black;padding-bottom: 12px;margin-bottom: 15px;">
                                                     [##rep.current.name##]
                                                 </h4>
 
                                                 <img style="float: right; margin-left: 10px"
-                                                    src="/[##rep.current.largeIMG##]" alt="" />
-                                                <div class="para scrollTop font-IRANSansWeb400 text-sm">
+                                                    src="[##cms.cms.cdn##]/[##rep.current.largeIMG##]" alt="[##rep.current.name##]" />
+                                                <div class="para font-IRANSansWeb400 text-sm">
                                                     <p>[##rep.current.description##]</p>
                                                 </div>
                                                 <basis core="print" datamembername="db.posterGallery1001">
                                                     <face filter="RowNumber=1">
                                                         <div class="imgS w-full flex items-center justify-end mt-5">
-                                                            <img src="/@largeIMG" alt="" />
+                                                            <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name" />
                                                         </div>
                                                     </face>
                                                 </basis>
@@ -387,7 +335,7 @@
                                 <div class="image">
                                     <div
                                         class="inVideo openTimeVideoGallery duration-500 flex items-center justify-center">
-                                        <img class="w-full" src="/[##rep.current.largeIMG##]" alt="" />
+                                        <img class="w-full" src="[##cms.cms.cdn##]/[##rep.current.largeIMG##]" alt="[##rep.current.name##]" />
 
                                         <div
                                             class="play-popup-container playbtn w-[126px] h-[126px] absolute cursor-pointer">
@@ -433,11 +381,13 @@
         </section>
 
         <section class="section5 mb-[110px] pr-[5%]" dir="rtl">
-          
-            <div class="Title-main mb-10 relative overflow-hidden flex justify-start gap-4 items-center my-[4em]">
-                <span class="line duration-700 absolute flex left-0 my-auto justify-center right-0 delay-100 w-[2px] h-0 bg-darkBlue"></span>
 
-                <h4 class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-2xl leading-37.57 text-darkBlue pr-4 py-2.5">
+            <div class="Title-main mb-10 relative overflow-hidden flex justify-start gap-4 items-center my-[4em]">
+                <span
+                    class="line duration-700 absolute flex left-0 my-auto justify-center right-0 delay-100 w-[2px] h-0 bg-darkBlue"></span>
+
+                <h4
+                    class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-2xl leading-37.57 text-darkBlue pr-4 py-2.5">
                     پنل های برگزار شده در دوره های گذشته ایران ریتیل شو
 
                 </h4>
@@ -456,7 +406,7 @@
                                     <!-- <span class="font-IRANSansWeb400 text-lg mb-3">
                                             روز دوم
                                         </span> -->
-                                    <div class="para scrollTop font-IRANSansWeb400 text-sm mb-4 text-justify">
+                                    <div class="para font-IRANSansWeb400 text-sm mb-4 text-justify">
                                         <p>@description</p>
                                     </div>
                                     <button data-toggle="modal" data-target=".bs-example-modal-@RowNumber" type="button"
@@ -556,7 +506,7 @@
                                 
                             </h4>
                             -->
-                                            <div class="para scrollTop font-IRANSansWeb400 text-sm">
+                                            <div class="para font-IRANSansWeb400 text-sm">
                                                 <p>@description</p>
                                             </div>
                                         </div>
@@ -579,7 +529,7 @@
                                 <div class="swiper-slide openVideoGallery">
                                     <div
                                         class="inVideo grayscale duration-500 scale-90 flex items-center justify-center">
-                                        <img class="w-full" src="/@largeIMG" alt="" />
+                                        <img class="w-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name" />
                                         <div
                                             class="play-popup-container playbtn w-[126px] h-[126px] absolute cursor-pointer">
                                             <div class="play-popup-btn relative flex items-center justify-center"
@@ -626,11 +576,14 @@
         <basis core="print" datamembername="db.posterGallery1003">
             <layout>
                 <section class="section6 mb-[126px]" dir="rtl">
-                  
-                    <div class="Title-main w-90p mb-10 mx-auto relative overflow-hidden flex justify-start gap-4 items-center my-[4em]">
-                        <span class="line duration-700 absolute flex left-0 my-auto justify-center right-0 delay-100 w-[2px] h-0 bg-darkBlue"></span>
 
-                        <h4 class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-2xl leading-37.57 text-darkBlue pr-4 py-2.5">
+                    <div
+                        class="Title-main w-90p mb-10 mx-auto relative overflow-hidden flex justify-start gap-4 items-center my-[4em]">
+                        <span
+                            class="line duration-700 absolute flex left-0 my-auto justify-center right-0 delay-100 w-[2px] h-0 bg-darkBlue"></span>
+
+                        <h4
+                            class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-2xl leading-37.57 text-darkBlue pr-4 py-2.5">
                             ویدیو های مربوط به نمایشگاه
                         </h4>
                     </div>
@@ -650,7 +603,7 @@
                 <div class="swiper-slide openShowVideoGallery">
                     <div class="inVideo duration-500 flex items-center justify-center">
                         <div class="imgS w-full">
-                            <img class="w-full" src="/@largeIMG" alt="" />
+                            <img class="w-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name" />
                         </div>
                         <div class="play-popup-container playbtn w-[126px] h-[126px] absolute cursor-pointer">
                             <div class="play-popup-btn relative flex items-center justify-center"
@@ -691,11 +644,14 @@
             <layout>
                 <section class="section7 mb-[115px]" dir="rtl">
                     <div class="title mb-16 w-90p mx-auto flex justify-between items-center">
-                       
-                        <div class="Title-main mb-10 relative overflow-hidden flex justify-start gap-4 items-center my-[4em]">
-                            <span class="line duration-700 absolute flex left-0 my-auto justify-center right-0 delay-100 w-[2px] h-0 bg-darkBlue"></span>
 
-                            <h4 class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-2xl leading-37.57 text-darkBlue pr-4 py-2.5">
+                        <div
+                            class="Title-main mb-10 relative overflow-hidden flex justify-start gap-4 items-center my-[4em]">
+                            <span
+                                class="line duration-700 absolute flex left-0 my-auto justify-center right-0 delay-100 w-[2px] h-0 bg-darkBlue"></span>
+
+                            <h4
+                                class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-2xl leading-37.57 text-darkBlue pr-4 py-2.5">
                                 گالری تصاویر
                             </h4>
                         </div>
@@ -713,13 +669,16 @@
                             <!-- Slides -->
                             @child
                         </div>
+                        <div class="swiper-paginationimgSlider">
+
+                        </div>
                     </div>
                 </section>
             </layout>
             <face filter="ord=1000">
                 <div class="swiper-slide cursor-pointer">
-                    <div class="imgS openImgGallery">
-                        <img class="w-full" src="/@largeIMG" alt="" />
+                    <div class="imgS openImgGallery" style="width:fit-content;">
+                        <img class="" src="[##cms.cms.cdn##]/@largeIMG" alt="@name" />
                     </div>
                 </div>
             </face>
@@ -728,11 +687,14 @@
         <basis core="print" datamembername="db.posterGallery">
             <layout>
                 <section class="section8 pb-[134px]" dir="rtl">
-                  
-                    <div class="Title-main w-90p mb-10 mx-auto relative overflow-hidden flex justify-start gap-4 items-center my-[4em]">
-                        <span class="line duration-700 absolute flex left-0 my-auto justify-center right-0 delay-100 w-[2px] h-0 bg-darkBlue"></span>
 
-                        <h4 class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-2xl leading-37.57 text-darkBlue pr-4 py-2.5">
+                    <div
+                        class="Title-main w-90p mb-10 mx-auto relative overflow-hidden flex justify-start gap-4 items-center my-[4em]">
+                        <span
+                            class="line duration-700 absolute flex left-0 my-auto justify-center right-0 delay-100 w-[2px] h-0 bg-darkBlue"></span>
+
+                        <h4
+                            class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-2xl leading-37.57 text-darkBlue pr-4 py-2.5">
                             پلان ها
                         </h4>
                     </div>
@@ -751,7 +713,7 @@
                     <div class="relative h-full flex items-center justify-center cursor-pointer">
                         <div class="imgS w-full relative z-2">
                             <img class="w-full object-cover duration-500 opacity-0 group-hover:opacity-100"
-                                src="/@largeIMG" alt="" />
+                                src="[##cms.cms.cdn##]/@largeIMG" alt="@name" />
                         </div>
                         <div
                             class="over absolute p-5 flex-col w-full h-full bg-dark-blue flex items-center justify-center">
@@ -784,7 +746,7 @@
                     <face>
                         <div class="thumbBox flex items-center relative justify-center">
                             <div class="imgS">
-                                <img class="w-full" src="/@largeIMG" alt="" />
+                                <img class="w-full duration-300" src="[##cms.cms.cdn##]/@largeIMG" alt="@name" />
                             </div>
                             <div class="play-popup-container thumbBtn w-[64px] h-[64px] absolute cursor-pointer">
                                 <div class="play-popup-btn relative flex items-center justify-center"
@@ -847,7 +809,7 @@
                     </basis>
                 </div>
 
-                <div class="popSliderFraction text-center mt-14 relative z-2"></div>
+                <div class="popSliderFraction text-center relative z-2"></div>
             </div>
             <div class="nextPop absolute top-[50%] right-0 cursor-pointer z-2">
                 <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -877,11 +839,11 @@
                 </svg>
             </div>
             <div class="thumbContainer mt-44 grid grid-cols-3 gap-x-10 gap-y-12 w-90p mx-auto" dir="rtl">
-                <basis core="print" datamembername="db.posterGallery1002">
+                <basis core="print" datamembername="db.posterGallery1003">
                     <face>
                         <div class="thumbShowBox flex items-center relative justify-center">
                             <div class="imgS">
-                                <img class="w-full" src="/@largeIMG" alt="" />
+                                <img class="w-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name" />
                             </div>
                             <div class="play-popup-container thumbBtn w-[64px] h-[64px] absolute cursor-pointer">
                                 <div class="play-popup-btn relative flex items-center justify-center"
@@ -984,7 +946,7 @@
             </svg>
         </div>
         <div class="w-svw mt-24 pb-20 h-full" dir="rtl">
-            <div class="flex h-full items-center justify-center">
+            <div class="flex  items-center justify-center" style="height: 55vh;">
                 <div class="imgS h-full" style="width: 50%">
                     <iframe class="h-full object-cover" src=""
                         poster="images/Screenshot 2024-04-22 145538 1.png"></iframe>
@@ -1006,9 +968,15 @@
             <div class="thumbContainer mt-44 grid grid-cols-3 gap-x-10 gap-y-12 w-90p mx-auto" dir="rtl">
                 <basis core="print" datamembername="db.posterGallery">
                     <face filter="ord=1000">
-                        <div class="thumbImgBox flex items-center relative justify-center">
+                        <div class="thumbImgBox group flex items-center relative justify-center">
                             <div class="imgS">
-                                <img class="w-full" src="/@largeIMG" alt="" />
+                                <img class="" src="[##cms.cms.cdn##]/@largeIMG" alt="@name" />
+                            </div>
+                            <div class="imgOver absolute duration-500 w-full flex items-end justify-center group-hover:opacity-100 opacity-0 h-fit z-1 inset-0"
+                                style="background-color: rgba(0, 0, 0, 0.3);">
+                                <div class="name pb-3 font-IRANSansWeb400 text-sm text-white">
+                                    @name
+                                </div>
                             </div>
                         </div>
                     </face>
@@ -1063,8 +1031,8 @@
                     <basis core="print" datamembername="db.posterGallery">
                         <face filter="ord=1000">
                             <div class="swiper-slide flex flex-col items-center justify-center">
-                                <div class="imgS h-full">
-                                    <img class="h-full" src="/@largeIMG" alt="" />
+                                <div class="imgS h-full flex items-center justify-center">
+                                    <img class="h-fit" src="[##cms.cms.cdn##]/@largeIMG" alt="@name" />
                                 </div>
                                 <!-- <div class="name text-center mt-8">
                                         <span class="font-IRANSansWeb400 text-base text-white">
@@ -1157,7 +1125,7 @@
         <div class="w-svw mt-24 pb-20 h-[80vh]" dir="rtl">
             <div class="flex flex-col h-full items-center justify-center">
                 <div class="imgS h-full">
-                    <img class="h-full" src="" alt="" />
+                    <img class="h-full" src="" alt="postershow" />
                 </div>
                 <div class="name mt-10">
                     <span class="font-IRANSansWeb400 text-base text-white"> </span>
@@ -1177,11 +1145,11 @@
                 </svg>
             </div>
             <div class="thumbContainer mt-44 grid grid-cols-3 gap-x-10 gap-y-12 w-90p mx-auto" dir="rtl">
-                <basis core="print" datamembername="db.posterGallery1002">
+                <basis core="print" datamembername="db.posterGallery1001">
                     <face>
                         <div class="thumbTimeBox flex items-center relative justify-center">
                             <div class="imgS">
-                                <img class="w-full" src="/@largeIMG" alt="" />
+                                <img class="w-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name" />
                             </div>
                             <div class="play-popup-container thumbBtn w-[64px] h-[64px] absolute cursor-pointer">
                                 <div class="play-popup-btn relative flex items-center justify-center"
@@ -1268,10 +1236,14 @@
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> -->
     <script src="[##cms.cms.cdn##]/_js/bootstrap3.3.7.min.js"></script>
     <script src="[##cms.cms.cdn##]/_js/readmore.min.js"></script>
+
+    <script src="[##cms.cms.cdn##]/_js/imageLoaded.js"></script>
+
     <script src="[##cms.cms.cdn##]/js/swiper-bundle7.4.1.min.js"></script>
+
+
     <script src="[##cms.cms.cdn##]/js/popUpgallery.js"></script>
     <script src="[##cms.cms.cdn##]/js/headerLight.js"></script>
-
     <script src="[##cms.cms.cdn##]/js/posterShow.js"></script>
 </body>
 

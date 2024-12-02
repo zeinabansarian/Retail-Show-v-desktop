@@ -15,31 +15,11 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <basis core="print" datamembername="db.seolist">
-        <face>
-            <title>[##cms.seo.title##]</title>
-            <meta name="description" content="[##cms.seo.description##]" />
-        </face>
-    </basis>
+
+            <title>لیست پوستر</title>
+            <meta name="description" content="لیست پوستر" />
     <link rel="stylesheet" href="[##cms.cms.cdn##]/css/leaflet.css">
-  
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/outputDesk.css">
-    <style>
-main.posterList .section2 .bg {
-    background: url('../images/bgdesk.png');
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    width: 100%;
-    height: 650px;
-    background-size: cover;
-    transform: translateY(40%);
-}
-main.posterList .section1 {
-    margin-top:9em;
-}
-    </style>
+ <basis core="call" file="styles.inc" />
   </head>
   
   <body>
@@ -75,7 +55,7 @@ main.posterList .section1 {
   
         <section class="section2 justify-start  flex flex-row flex-wrap w-full pb-16 mx-auto">
             <div class="bg"></div>
-            <div class="  w-90p   mx-auto flex flex-wrap justify-start items-center gap-[3em] mb-[5em] ">
+            <div class="  w-90p listt   mx-auto gap-[3em] mb-[5em] ">
                 <basis core="print" datamembername="db.posterList">
   
                     <else-layout>
@@ -89,7 +69,8 @@ main.posterList .section1 {
                     <face>
                         <a class="relative h-full group flex items-center justify-center " href="/@link" title="@title">
                             <div class="imgS w-full relative z-2">
-                                <img class="w-full duration-500 opacity-0 group-hover:opacity-100" src="/@00279X00395prp" alt="@title">
+                                <img class="w-full duration-500 opacity-0 group-hover:opacity-100" loading="lazy"
+                                 src="[##cms.cms.cdn##]/@00279X00395prp" alt="@title">
                             </div>
                             <div class="over items-start absolute p-5 flex-col w-full h-full bg-main-blue flex  justify-center">
                                 <div class="number">
@@ -130,27 +111,7 @@ main.posterList .section1 {
   
     <basis core="call" file="script.inc" />
    <script src="[##cms.cms.cdn##]/js/headerDark.js"></script>
-   <script>
-     let titleMain = document.querySelectorAll('.Title-main')
-  titleMain.forEach(t=>{
-      gsap.to(t.querySelector('h1'),{
-          y:0,
-          scrollTrigger:{
-            trigger:t,
-            start:'top 60%',
-            end:'bottom bottom'
-          }
-        })
-      gsap.to(t.querySelector('.line'),{
-        height:'60px',
-        scrollTrigger:{
-          trigger:t,
-          start:'top 60%',
-          end:'bottom bottom'
-        }
-      })
-  })
-   </script>
+   <script src="[##cms.cms.cdn##]/js/posterList.js"></script>
   </body>
   
   </html>

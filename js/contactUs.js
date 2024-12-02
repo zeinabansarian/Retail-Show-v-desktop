@@ -165,12 +165,7 @@ function rendered(){
     ease:'none'
 })
 setTimeout(() => {
-    gsap.to('.Form-Container .Titlebox',{
-    opacity:'1',
-    duration:1,
-    ease:'none'
-})
-gsap.to('.Form-Container .Box',{
+    gsap.to('.Form-container',{
     opacity:'1',
     duration:1,
     ease:'none'

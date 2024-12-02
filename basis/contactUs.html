@@ -16,20 +16,6 @@
     <meta name="description" content="تماس‌باما">
  <basis core="call" file="styles.inc" pageindex="[##cms.cms.pageindex##]" />    
  <link rel="stylesheet" href="[##cms.cms.cdn##]/css/leaflet.css">
-<style>
-.ContactUs-C .Section-1 {
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex
-;
-    justify-content: space-between;
-    width: 90%;
-}
-.Box{
-    /* opacity: 0; */
-}
-</style>
 </head>
 <body>
     <main class="ContactUs-C w-full overflow-hidden" dir="rtl">
@@ -40,7 +26,7 @@
       <div class="bgg absolute w-[40%] left-[-100%] duration-[.8s] top-[2.5em]  my-auto h-[68%] bg-mainBlue "></div>
         <section class="Section-1 w-full grid grid-cols-[45%,60%]  mb-[5em]">
          
-            <div class="RightSec gap-[1em] pt-[1em] w-full flex flex-col justify-start items-start">
+            <div class="RightSec relative gap-[1em] pt-[1em] w-full flex flex-col justify-start items-start">
                 <div class="Title-main mr-auto flex-col relative overflow-hidden w-full
                 flex justify-start gap-4 items-start ">
     
@@ -54,8 +40,9 @@
                   </h1>
               
               </div>
+              <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
               <div class="Form-container flex-col  mr-auto w-full flex">
-                <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+              
                 <div class="text w-full flex justify-start">
                         <p class="font-IRANSansWeb300 duration-700 translate-y-[100%] font-light text-sm leading-21.91 text-darkBlue w-[46%] mt-[.5em]">
                                 لطفا پیام مورد نظر خود را برای ما ثبت و  ارسال بفرمایید.
@@ -89,15 +76,15 @@
                           
                                 <script type="text/template">
                                    <div class="captchaBox">
-                                       <input type="hidden" name="captchaid" value="@captcha@" />
+                                       <input type="hidden" name="captchaid" value="@captcha@"  aria-label="captchaid" />
                                          <!-- <input type="hidden" name="captcha" value="@captcha@" /> -->
-                                      <input type="text" class="codeinputm" name="captcha" placeholder="کد امنیتی را وارد فرمایید  "  /> 
+                                      <input type="text" class="codeinputm" name="captcha" aria-label="captcha" placeholder="کد امنیتی را وارد فرمایید  "   /> 
                         
                                       <svg class="refresh" alt="" bc-triggers="click" 
                                       name="refresh.captcha" bc-value="true" width="28" height="23" viewBox="0 0 28 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                                        <path d="M14.0645 22.0212C11.2728 22.0212 8.89779 20.9742 6.93945 18.8801C4.98112 16.786 4.00195 14.2303 4.00195 11.213V10.9766L2.00195 13.1382L0.251953 11.2468L5.25195 5.84267L10.252 11.2468L8.50195 13.1382L6.50195 10.9766V11.213C6.50195 13.4647 7.23633 15.3787 8.70508 16.9549C10.1738 18.5311 11.9603 19.3192 14.0645 19.3192C14.6061 19.3192 15.1374 19.2516 15.6582 19.1165C16.179 18.9814 16.6895 18.7788 17.1895 18.5086L19.0645 20.5351C18.2728 21.0305 17.4603 21.402 16.627 21.6497C15.7936 21.8974 14.9395 22.0212 14.0645 22.0212ZM22.752 16.5833L17.752 11.1792L19.502 9.28779L21.502 11.4494V11.213C21.502 8.96129 20.7676 7.04734 19.2988 5.47114C17.8301 3.89494 16.0436 3.10684 13.9395 3.10684C13.3978 3.10684 12.8665 3.17439 12.3457 3.30949C11.8249 3.4446 11.3145 3.64725 10.8145 3.91746L8.93945 1.89092C9.73112 1.39554 10.5436 1.02401 11.377 0.776318C12.2103 0.528629 13.0645 0.404785 13.9395 0.404785C16.7311 0.404785 19.1061 1.45183 21.0645 3.54592C23.0228 5.64002 24.002 8.19571 24.002 11.213V11.4494L26.002 9.28779L27.752 11.1792L22.752 16.5833Z" fill="#194A96" fill-opacity="0.49"/>
                                        </svg>
-                                       <img src="@captcha@" alt="captcha"  title="captcha" class="capcha"/>
+                                       <img src="[##cms.cms.cdn##]/@captcha@" alt="captcha"  title="captcha" class="capcha"/>
                                       
                                    
                                  
@@ -219,7 +206,8 @@
                                 </layout>
                 
                                 <face filter="RowNumber in (1,2)">
-                            <a  href="https://www.instagram.com/@largetext" class="font-IRANSansWeb500 duration-700 translate-y-[100%] font-medium text-sm leading-21.91 text-darkBlue">
+                            <a  href="https://www.instagram.com/@largetext" class="font-IRANSansWeb500 duration-700 translate-y-[100%] font-medium text-sm leading-21.91 text-darkBlue"
+aria-label="@largetext" rel="noopener">
                                 @largetext
 
                             </a>
@@ -239,7 +227,8 @@
                                 </layout>
                 
                                 <face filter="RowNumber in (3)">
-                            <a href="https://www.linkedin.com/@largetext" class="font-IRANSansWeb500  duration-700 translate-y-[100%] font-medium text-sm leading-21.91 text-darkBlue">
+                            <a href="https://www.linkedin.com/@largetext" class="font-IRANSansWeb500  duration-700 translate-y-[100%] font-medium text-sm leading-21.91 text-darkBlue"
+aria-label="@largetext" rel="noopener">
                                 @largetext
                             </a>
                                 </face>
@@ -260,17 +249,18 @@
                        <div class="row w-90p mx-auto flex flex-col overflow-hidden gap-[2em]">
                         
                            <span class="Answer w-full flex duration-700 translate-y-[100%] flex-col justify-center items-center">
-                            <a  href="http://a112tl.undertest.ir" alt="retailShow" title="retailShow" class="font-IRANSansWeb500 font-medium text-sm leading-21.91 text-darkBlue">
+                            <a  href="http://a112tl.undertest.ir" alt="retailShow" title="retailShow" class="font-IRANSansWeb500 font-medium text-sm leading-21.91 text-darkBlue"
+aria-label="   هلدینگ تجارت طلایی" rel="noopener" alt="   هلدینگ تجارت طلایی" title="   هلدینگ تجارت طلایی">
                                 www.gbm.ir
                              </a>
                            </span>
                            <span class="Answer w-full flex overflow-hidden flex-col justify-center items-center">
-                            <a href="http://www.ZpPs.UnderTest.ir"  alt="retailShow" title="retailShow" class="font-IRANSansWeb500 duration-700 translate-y-[100%] font-medium text-sm leading-21.91 text-darkBlue">
+                            <a href="http://www.ZpPs.UnderTest.ir"  alt="retailShow" title="retailShow" class="font-IRANSansWeb500 duration-700 translate-y-[100%] font-medium text-sm leading-21.91 text-darkBlue" aria-label="ایران ریتل اواردز" rel="noopener" alt="ایران ریتل اواردز" title="ایران ریتل اواردز">
                                 www.iranretailawards.com
                             </a>
                           </span>
                           <span class="Answer w-full flex flex-col overflow-hidden justify-center items-center">
-                            <a href="http://A112Tl.UnderTest.ir" alt="retailShow" title="retailShow" class="font-IRANSansWeb500 duration-700 translate-y-[100%] font-medium text-sm leading-21.91 text-darkBlue">
+                            <a href="http://A112Tl.UnderTest.ir" alt="retailShow" title="retailShow" class="font-IRANSansWeb500 duration-700 translate-y-[100%] font-medium text-sm leading-21.91 text-darkBlue" aria-label="  پایگاه خبری" rel="noopener" alt="  پایگاه خبری" title="  پایگاه خبری">
                                 www.gbmnews.ir
                             </a>
                           </span>
@@ -281,7 +271,7 @@
              </div>
          </section>
          <section class="Section-3 w-full flex"> 
-            <img src="images/وکتور-نمایشگاه-x 4.png" alt="ritailshow" title="ritailshow" class="w-full object-cover">
+            <img src="[##cms.cms.cdn##]/images/وکتور-نمایشگاه-x 4.png" alt="ritailshow" title="ritailshow" class="w-full object-cover">
          </section>
        </div>
        <basis core="call" file="footer.inc" />
