@@ -1249,6 +1249,11 @@ video {
   height: auto;
 }
 
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .h-full {
   height: 100%;
 }
@@ -1350,6 +1355,10 @@ video {
   width: 47%;
 }
 
+.w-\[513px\] {
+  width: 513px;
+}
+
 .w-\[55\%\] {
   width: 55%;
 }
@@ -1444,8 +1453,20 @@ video {
   width: 100svw;
 }
 
+.min-w-0 {
+  min-width: 0px;
+}
+
+.min-w-\[513px\] {
+  min-width: 513px;
+}
+
 .min-w-\[545px\] {
   min-width: 545px;
+}
+
+.min-w-\[900px\] {
+  min-width: 900px;
 }
 
 .max-w-max {
@@ -1505,11 +1526,6 @@ video {
 
 .translate-x-\[-50\%\] {
   --tw-translate-x: -50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-x-\[4px\] {
-  --tw-translate-x: 4px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -2117,6 +2133,10 @@ video {
 
 .gap-9 {
   gap: 2.25rem;
+}
+
+.gap-\[\.4em\] {
+  gap: .4em;
 }
 
 .gap-\[1\.5em\] {
@@ -3941,7 +3961,6 @@ video {
   src: url("../_fonts/IRANSansWeb(FaNum)_Medium.eot?#iefix")
       format("embedded-opentype"),
     url("../_fonts/IRANSansWeb(FaNum)_Medium.woff") format("woff"),
-    url("../_fonts/IRANSansWeb(FaNum)_Light.woff2") format("woff2"),
     url("../_fonts/IRANSansWeb(FaNum)_Medium.ttf") format("truetype");
 
   font-weight: 400;
@@ -3976,7 +3995,6 @@ video {
   src: url("../_fonts/IRANSansWeb(FaNum)_Medium.eot?#iefix")
       format("embedded-opentype"),
     url("../_fonts/IRANSansWeb(FaNum)_Medium.woff") format("woff"),
-    url("../_fonts/IRANSansWeb(FaNum)_Light.woff2") format("woff2"),
     url("../_fonts/IRANSansWeb(FaNum)_Medium.ttf") format("truetype");
 
   font-weight: 500;
@@ -4168,84 +4186,6 @@ video {
   font-display: swap;
 }
 
-@font-face {
-  font-family: "IRANSansWeb400";
-
-  src: url("../_fonts/IRANSansWeb(FaNum)_Medium.eot");
-
-  src: url("../_fonts/IRANSansWeb(FaNum)_Medium.eot?#iefix")
-      format("embedded-opentype"),
-    url("../_fonts/IRANSansWeb(FaNum)_Medium.woff") format("woff"),
-    url("../_fonts/IRANSansWeb(FaNum)_Light.woff2") format("woff2"),
-    url("../_fonts/IRANSansWeb(FaNum)_Medium.ttf") format("truetype");
-
-  font-weight: 400;
-
-  font-style: normal;
-
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "IRANSansWeb500";
-
-  src: url("../_fonts/IRANSansWeb(FaNum)_Medium.eot");
-
-  src: url("../_fonts/IRANSansWeb(FaNum)_Medium.eot?#iefix")
-      format("embedded-opentype"),
-    url("../_fonts/IRANSansWeb(FaNum)_Medium.woff") format("woff"),
-    url("../_fonts/IRANSansWeb(FaNum)_Light.woff2") format("woff2"),
-    url("../_fonts/IRANSansWeb(FaNum)_Medium.ttf") format("truetype");
-
-  font-weight: 500;
-
-  font-style: normal;
-
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "IRANSansWeb700";
-
-  font-family: "IRANSansWeb(FaNum)700";
-
-  src: url("../_fonts/IRANSansWeb(FaNum)_Bold.eot");
-
-  src: url("../_fonts/IRANSansWeb(FaNum)_Bold.eot?#iefix")
-      format("embedded-opentype"),
-    url("../_fonts/IRANSansWeb(FaNum)_Bold.woff") format("woff"),
-    url("../_fonts/IRANSansWeb(FaNum)_Bold.woff2") format("woff2"),
-    url("../_fonts/IRANSansWeb(FaNum)_Bold.ttf") format("truetype");
-
-  font-weight: 700;
-
-  font-style: normal;
-
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "IRANSansWeb(FaNum)700";
-
-  src: url("../_fonts/IRANSansWeb(FaNum)_Bold.eot");
-
-  src: url("../_fonts/IRANSansWeb(FaNum)_Bold.eot?#iefix")
-      format("embedded-opentype"),
-    url("../_fonts/IRANSansWeb(FaNum)_Bold.woff") format("woff"),
-    url("../_fonts/IRANSansWeb(FaNum)_Bold.woff2") format("woff2"),
-    url("../_fonts/IRANSansWeb(FaNum)_Bold.ttf") format("truetype");
-
-  font-weight: 700;
-
-  font-style: normal;
-
-  font-display: swap;
-}
-
-.faNum {
-  font-family: "IRANSansWeb300";
-}
-
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
@@ -4292,13 +4232,13 @@ video {
 @font-face {
   font-family: "IRANSansWeb400";
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Medium.eot");
+  src: url("../_fonts/IRANSansWeb(FaNum)_Medium.eot");
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Medium.eot?#iefix")
+  src: url("../_fonts/IRANSansWeb(FaNum)_Medium.eot?#iefix")
       format("embedded-opentype"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Medium.woff") format("woff"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Light.woff2") format("woff2"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Medium.ttf") format("truetype");
+    url("../_fonts/IRANSansWeb(FaNum)_Medium.woff") format("woff"),
+    url("../_fonts/IRANSansWeb(FaNum)_Light.woff2") format("woff2"),
+    url("../_fonts/IRANSansWeb(FaNum)_Medium.ttf") format("truetype");
 
   font-weight: 400;
 
@@ -4310,13 +4250,13 @@ video {
 @font-face {
   font-family: "IRANSansWeb500";
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Medium.eot");
+  src: url("../_fonts/IRANSansWeb(FaNum)_Medium.eot");
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Medium.eot?#iefix")
+  src: url("../_fonts/IRANSansWeb(FaNum)_Medium.eot?#iefix")
       format("embedded-opentype"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Medium.woff") format("woff"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Light.woff2") format("woff2"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Medium.ttf") format("truetype");
+    url("../_fonts/IRANSansWeb(FaNum)_Medium.woff") format("woff"),
+    url("../_fonts/IRANSansWeb(FaNum)_Light.woff2") format("woff2"),
+    url("../_fonts/IRANSansWeb(FaNum)_Medium.ttf") format("truetype");
 
   font-weight: 500;
 
@@ -4330,13 +4270,13 @@ video {
 
   font-family: "IRANSansWeb(FaNum)700";
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Bold.eot");
+  src: url("../_fonts/IRANSansWeb(FaNum)_Bold.eot");
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Bold.eot?#iefix")
+  src: url("../_fonts/IRANSansWeb(FaNum)_Bold.eot?#iefix")
       format("embedded-opentype"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Bold.woff") format("woff"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Bold.woff2") format("woff2"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Bold.ttf") format("truetype");
+    url("../_fonts/IRANSansWeb(FaNum)_Bold.woff") format("woff"),
+    url("../_fonts/IRANSansWeb(FaNum)_Bold.woff2") format("woff2"),
+    url("../_fonts/IRANSansWeb(FaNum)_Bold.ttf") format("truetype");
 
   font-weight: 700;
 
@@ -4348,13 +4288,13 @@ video {
 @font-face {
   font-family: "IRANSansWeb(FaNum)700";
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Bold.eot");
+  src: url("../_fonts/IRANSansWeb(FaNum)_Bold.eot");
 
-  src: url("../../_fonts/IRANSansWeb(FaNum)_Bold.eot?#iefix")
+  src: url("../_fonts/IRANSansWeb(FaNum)_Bold.eot?#iefix")
       format("embedded-opentype"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Bold.woff") format("woff"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Bold.woff2") format("woff2"),
-    url("../../_fonts/IRANSansWeb(FaNum)_Bold.ttf") format("truetype");
+    url("../_fonts/IRANSansWeb(FaNum)_Bold.woff") format("woff"),
+    url("../_fonts/IRANSansWeb(FaNum)_Bold.woff2") format("woff2"),
+    url("../_fonts/IRANSansWeb(FaNum)_Bold.ttf") format("truetype");
 
   font-weight: 700;
 
@@ -4787,13 +4727,13 @@ input[type="text"]:focus,
   gap: 0.5em;
 }
 
-.ContactUs-C .col,
-.ContactUs-C .captchaBox {
+.ContactUs-C .Section-1 .col,
+.ContactUs-C .Section-1 .captchaBox {
   width: 100%;
   display: flex;
 }
 
-.ContactUs-C .captchaBox {
+.ContactUs-C .Section-1 .captchaBox {
   border: 1px solid #d7d7d7;
   height: 40px;
   display: flex;
@@ -4802,7 +4742,7 @@ input[type="text"]:focus,
   gap: 1em;
 }
 
-.ContactUs-C .captchaBox input {
+.ContactUs-C .Section-1 .captchaBox input {
   width: 100% !important;
   background-color: transparent !important;
   font-size: 14px !important;
@@ -4814,7 +4754,7 @@ input[type="text"]:focus,
   padding: 0 0.5em !important;
 }
 
-.ContactUs-C .captchaBox input::-moz-placeholder, [data-bc-answer-container] input[type="text"]::-moz-placeholder {
+.ContactUs-C .Section-1 .captchaBox input::-moz-placeholder, [data-bc-answer-container] input[type="text"]::-moz-placeholder {
   font-size: 14px !important;
   font-weight: 400 !important;
   line-height: 21.91px;
@@ -4822,7 +4762,7 @@ input[type="text"]:focus,
   font-family: "IRANSansWeb400" !important;
 }
 
-.ContactUs-C .captchaBox input::placeholder,
+.ContactUs-C .Section-1 .captchaBox input::placeholder,
 [data-bc-answer-container] input[type="text"]::placeholder {
   font-size: 14px !important;
   font-weight: 400 !important;
@@ -4831,7 +4771,7 @@ input[type="text"]:focus,
   font-family: "IRANSansWeb400" !important;
 }
 
-.ContactUs-C .captchaBox img {
+.ContactUs-C .Section-1 .captchaBox img {
   height: 40px;
 }
 
@@ -4840,7 +4780,7 @@ input[type="text"]:focus,
   margin: 0 !important;
 }
 
-.ContactUs-C .Box {
+.ContactUs-C .Section-1 .Box {
   margin-left: auto;
   width: 93%;
   display: flex;
@@ -4850,6 +4790,9 @@ input[type="text"]:focus,
 
 .ContactUs-C .Form-container {
   gap: 2em;
+  position: relative;
+  opacity: 0;
+  transition: all .4s ease;
 }
 
 .leaflet-container.leaflet-touch-drag.leaflet-touch-zoom {
@@ -5157,6 +5100,477 @@ a:hover{
   .Etelaei-C .Related-Etelaei{
     margin-right: 6%;
   }
+}
+
+/* loading */
+
+.lds-roller,
+.lds-roller div,
+.lds-roller div:after,
+.lds-roller2 ,
+.lds-roller2 div,
+.lds-roller2 div:after{
+  box-sizing: border-box;
+}
+
+.lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 5em auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.lds-roller2{
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  opacity: 0;
+  display: flex
+;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.lds-roller div,
+.lds-roller2 div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+
+.lds-roller div:after ,
+.lds-roller2 div:after{
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7.2px;
+  height: 7.2px;
+  border-radius: 50%;
+  background: #194A96;
+  margin: -3.6px 0 0 -3.6px;
+}
+
+.lds-roller div:nth-child(1) ,
+.lds-roller2 div:nth-child(1){
+  animation-delay: -0.036s;
+}
+
+.lds-roller div:nth-child(1):after,
+.lds-roller2 div:nth-child(1):after{
+  top: 62.62742px;
+  left: 62.62742px;
+}
+
+.lds-roller div:nth-child(2) ,
+.lds-roller2 div:nth-child(2){
+  animation-delay: -0.072s;
+}
+
+.lds-roller div:nth-child(2):after,
+.lds-roller2 div:nth-child(2):after{
+  top: 67.71281px;
+  left: 56px;
+}
+
+.lds-roller div:nth-child(3),
+.lds-roller2 div:nth-child(3){
+  animation-delay: -0.108s;
+}
+
+.lds-roller div:nth-child(3):after ,
+.lds-roller2 div:nth-child(3):after{
+  top: 70.90963px;
+  left: 48.28221px;
+}
+
+.lds-roller div:nth-child(4),
+.lds-roller2 div:nth-child(4){
+  animation-delay: -0.144s;
+}
+
+.lds-roller div:nth-child(4):after,
+.lds-roller2 div:nth-child(4):after{
+  top: 72px;
+  left: 40px;
+}
+
+.lds-roller div:nth-child(5),
+.lds-roller2 div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+
+.lds-roller div:nth-child(5):after,
+.lds-roller2 div:nth-child(5):after{
+  top: 70.90963px;
+  left: 31.71779px;
+}
+
+.lds-roller div:nth-child(6) ,
+.lds-roller2 div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+
+.lds-roller div:nth-child(6):after,
+.lds-roller2 div:nth-child(6):after{
+  top: 67.71281px;
+  left: 24px;
+}
+
+.lds-roller div:nth-child(7),
+.lds-roller2 div:nth-child(7){
+  animation-delay: -0.252s;
+}
+
+.lds-roller div:nth-child(7):after,
+.lds-roller2 div:nth-child(7):after{
+  top: 62.62742px;
+  left: 17.37258px;
+}
+
+.lds-roller div:nth-child(8) ,
+.lds-roller2 div:nth-child(8){
+  animation-delay: -0.288s;
+}
+
+.lds-roller div:nth-child(8):after,
+.lds-roller2 div:nth-child(8):after {
+  top: 56px;
+  left: 12.28719px;
+}
+
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.homePage .section1 .cta__slider-item img{
+  height: 100% !important;
+}
+
+.posterList ,
+.EtelaeiList-C,
+.brandList{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 1300px) {
+  .homePage .section1 .cta__slider-item img{
+    height: 100% !important;
+  }
+
+  footer .Socials {
+    width: 92% !important;
+  }
+
+  .etelaeiContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .DetailSec {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .Etelaei-C .Related-Etelaei {
+    margin-right: 6%;
+  }
+}
+
+@media only screen and (min-width: 1900px) and (min-height: 1000px) {
+  .Etelaei-C .Related-Etelaei {
+    margin-right: 13% !important;
+  }
+}
+
+@media only screen and (min-width: 2500px) and (min-height: 1400px) {
+  .Etelaei-C .Related-Etelaei {
+    margin-right: 23% !important;
+  }
+}
+
+@font-face {
+  font-family: "IRANSansWebBB400";
+
+  src: url("../_fonts/IRANSansWeb_Medium.eot");
+
+  src: url("../_fonts/IRANSansWeb_Medium.eot?#iefix") format("embedded-opentype"),
+   url("../_fonts/IRANSansWeb_Medium.woff") format("woff"), 
+   url("../_fonts/IRANSansWeb_Light.woff2") format("woff2")
+   , url("../_fonts/IRANSansWeb_Medium.ttf") format("truetype");
+
+  font-weight: 400;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+.homePage .section5 .lastCourse {
+  padding-left: 5% !important;
+  padding-right: 5% !important;
+}
+
+@media only screen and (min-width: 1700px) {
+  .homePage .section5 .lastCourse ,.supporter  {
+    padding-left: 9% !important;
+    padding-right: 9% !important;
+  }
+}
+
+@media only screen and (min-width: 1900px) {
+  .homePage .section5 .lastCourse,.supporter  {
+    padding-left: 15% !important;
+    padding-right: 15% !important;
+    max-width: unset;
+  }
+}
+
+.homePage .section1 .current{
+  font-family: "IRANSansWebBB400" !important;
+}
+
+.plyr {
+  position:relative;
+}
+
+.AboutUs-C .RightSec {
+  padding-top: 0;
+}
+
+.AboutUs-C .Boss-Container{
+  margin-top: 8em;
+  margin-bottom: 6em;
+}
+
+.AboutUs-C .Banner-Container .IMG{
+  position: relative;
+}
+
+.AboutUs-C .Banner-Container .IMG::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(3, 3, 3, 0.219);
+}
+
+.AboutUs-C .section-2 .Text p{
+  text-align: justify;
+}
+
+main.posterList .section2 .bg {
+  background: url('../images/bgdesk.png');
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 650px;
+  background-size: cover;
+  transform: translateY(40%);
+}
+
+main.posterList .section1 {
+  margin-top:9em;
+}
+
+.listt{
+  display: grid
+;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+main.EtelaeiList-C .EtelaeiLists{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: flex-start;
+}
+
+main.EtelaeiList-C .EtalaeiItem .title {
+  min-height: 35px;
+}
+
+@font-face {
+  font-family: "TeluguMN700";
+
+  src: url("../fonts/TeluguMN-Bold-02.ttf");
+
+  font-weight: 700;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+html {
+  font-size: unset;
+}
+
+iframe {
+  width: 100%;
+}
+
+.posterShow .thumbBox:hover img {
+  filter: brightness(0.6);
+}
+
+.posterShow .section1 .imgS::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(64.64% 64.64% at 50% 75.89%,
+          rgba(0, 0, 0, 0) 13.11%,
+          rgba(0, 0, 0, 0.24) 100%),
+      linear-gradient(180deg,
+          rgba(0, 0, 0, 0.42) 0%,
+          rgba(0, 0, 0, 0.0252) 18.94%);
+}
+
+.posterShow .popImgSliderFraction i,
+.posterShow .popImgSliderFraction span {
+  color: white !important;
+}
+
+.posterShow .openGalleryPop:hover span,
+.posterShow .openPopGallery:hover span {
+  color: white !important;
+}
+
+.posterShow .nextRight:hover path:first-child,
+.posterShow .nextImgPop:hover rect,
+.posterShow .nextTimePop:hover rect,
+.posterShow .prevTimePop:hover rect,
+.posterShow .nextShowPop:hover rect,
+.posterShow .prevShowPop:hover rect,
+.posterShow .prevImgPop:hover rect,
+.posterShow .prevRight:hover path:first-child {
+  fill: #002b43;
+}
+
+.posterShow .nextRight:hover path:last-child,
+.posterShow .prevImgPop:hover path,
+.posterShow .nextTimePop:hover path,
+.posterShow .nextShowPop:hover path,
+.posterShow .prevTimePop:hover path,
+.posterShow .prevShowPop:hover path,
+.posterShow .prevRight:hover path:last-child,
+.posterShow .nextImgPop:hover path {
+  fill: white;
+}
+
+.posterShow .popSliderFraction .current,
+.posterShow .popSliderFraction i,
+.posterShow .popSliderFraction span {
+  color: #febe1b !important;
+}
+
+.posterShow .imgSlider .swiper-slide {
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+
+.posterShow .swiper-paginationimgSlider .swiper-pagination-bullet {
+  opacity: 1;
+  border: 1px solid #002B43;
+  background: transparent;
+}
+
+.posterShow .swiper-paginationimgSlider .swiper-pagination-bullet-active {
+  background: #002B43 !important;
+}
+
+.posterShow .swiper-paginationimgSlider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+@media only screen and (max-width: 1700px) {
+  .posterShow .section5 {
+    width: auto;
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+}
+
+@media only screen and (min-width: 1700px) {
+  .posterShow .section5 {
+    width: auto;
+    width: 90%;
+  }
+}
+
+.posterShow .section7 .imgSlider {
+  padding-left: 5% !important;
+  padding-right: 5% !important;
+}
+
+@media only screen and (min-width: 1700px) {
+  .posterShow .videoSlider,
+  .posterShow .section7 .imgSlider,
+  .posterShow .planSlider {
+    padding-left: 9% !important;
+    padding-right: 9% !important;
+  }
+}
+
+@media only screen and (min-width: 1900px) {
+  .posterShow .videoSlider,
+  .posterShow .section7 .imgSlider,
+  .posterShow .planSlider {
+    padding-left: 15% !important;
+    padding-right: 15% !important;
+  }
+}
+
+.posterShow .section7 .imgSlider {
+  max-width: unset !important;
+}
+
+.posterShow .videoSlider .swiper-slide {
+  width: auto !important;
+}
+
+.posterShow .pagination1 .current{
+  font-family: "IRANSansWebBB400" !important;
+}
+
+.homePage {
+  min-height: 100vh;
+}
+
+.ContactUs-C .Section-1 {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex
+;
+  justify-content: space-between;
+  width: 90%;
 }
 
 @media (min-width: 480px) {

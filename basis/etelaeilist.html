@@ -21,7 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>اطلاعیه</title>
             <meta name="description" content="اطلاعیه" />
-    <link rel="stylesheet" href="/css/outputDesk.css">
+ <basis core="call" file="styles.inc" />
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 </head>
 <body>
@@ -52,10 +52,10 @@
                   <basis core="print" datamembername="db.list-etelaeyie">
                     <face>
 
-                    <a href="/@link" class="EtalaeiItem group/EtalaeiItem w-auto flex relative justify-center opacity-0 translate-y-[100%] duration-1000 flex-col gap-3 border-b border-pink pb-[.5em]
+                    <a href="/@link" class="EtalaeiItem w-full group/EtalaeiItem w-auto flex relative justify-center opacity-0 translate-y-[100%] duration-1000 flex-col gap-3 border-b border-pink pb-[.5em]
                      items-center overflow-hidden">
                      <div class="IMG w-full flex justify-center">
-                        <img src="/@00268X00268prp" alt="" class="w-full object-cover">
+                        <img src="[##cms.cms.cdn##]/@00268X00268prp" alt="@title" loading="lazy" class="w-full object-cover">
                      </div>
                       <div class="Date w-full flex justify-start">
                         <span class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-gray-middle">
@@ -87,7 +87,7 @@
                
                     <face filter="RowNumber in (1)">
                     <a href="/@link" class="w-full">
-                    <img  src="/@00365X00521prp"  alt="" class="w-full object-cover">
+                    <img  src="[##cms.cms.cdn##]/@00365X00521prp"  alt="@title" loading="lazy" class="w-full object-cover">
                 </a>
                 </face>
                 </basis>
@@ -103,49 +103,7 @@
  
     <basis core="call" file="script.inc" />
     <script src="[##cms.cms.cdn##]/js/headerDark.js"></script>
-<script>
-  ScrollTrigger.create({
-    trigger: '.pinSec',
-    start: 'top top',
-    endTrigger: ".listcontents",
-    end: "bottom 80%",
-    pin: true,
-    pinSpacing:false,
-  })
-  let titleMain = document.querySelectorAll('.Title-main')
-titleMain.forEach(t=>{
-    gsap.to(t.querySelector('h1'),{
-        y:0,
-        scrollTrigger:{
-          trigger:t,
-          start:'top 60%',
-          end:'bottom bottom'
-        }
-      })
-    gsap.to(t.querySelector('.line'),{
-      height:'60px',
-      scrollTrigger:{
-        trigger:t,
-        start:'top 60%',
-        end:'bottom bottom'
-      }
-    })
-})
-let EtalaeiItem = document.querySelectorAll('.EtalaeiItem')
-EtalaeiItem.forEach(e=>{
-    gsap.to(e,{
-      opacity:1,
-      y:0,
-      stagger: 0.5,
-        scrollTrigger:{
-          trigger:e,
-          start:'top 100%',
-          end:'bottom bottom',
-         
-        }
-      })
-})
-</script>
+    <script src="[##cms.cms.cdn##]/js/etelaeiList.js"></script>
 </body>
 
 </html>

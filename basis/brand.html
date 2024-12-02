@@ -6,18 +6,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لیست برندها</title>
-<meta name="description" content="لیست برندهای ریتیل شو">
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/outputDesk.css">
+    <title>حامیان</title>
+    <meta name="description" content="حامیان">
+ <basis core="call" file="styles.inc" />
 </head>
 <body>
     <main class="brandList" dir="rtl">
         <basis core="call" file="header1.inc" />
         <div class="filters w-90p mx-auto" style="padding-top: 260px;">
-            <div class="swiper filterSlider pb-[30px]">
+            <div class="swiper filterSlider pb-[30px]" dir="ltr">
                 <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
+                <div class="swiper-wrapper" style="border-bottom: 2px solid #d7d7d7;justify-content: end;">
                   <!-- Slides -->
 
                   <basis core="print" datamembername="db.filter">
@@ -51,6 +50,7 @@
 <basis core="call" file="script.inc" />
     <script src="[##cms.cms.cdn##]/_js/imageLoaded.js"></script>
     <script src="[##cms.cms.cdn##]/_js/swiper-bundle11.0.5.min.js"></script>
+ <script src="[##cms.cms.cdn##]/js/headerDark.js"></script>
     <script src="[##cms.cms.cdn##]/js/brandList.js"></script>
 </body>
 </html>

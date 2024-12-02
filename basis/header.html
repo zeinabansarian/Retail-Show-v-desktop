@@ -63,7 +63,7 @@
                       </li>
                     
                     </ul>
-                 <basis core="call" file="userIcon.inc" run="atclient" />
+                 <basis core="call" file="userIcon.inc" run="atclient"  />
                     <span class="headerSearchIcon w-auto flex justify-start items-start hover:cursor-pointer">
                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M19 19L15.5 15.5M15 8C15 8.91925 14.8189 9.82951 14.4672 10.6788C14.1154 11.5281 13.5998 12.2997 12.9497 12.9497C12.2997 13.5998 11.5281 14.1154 10.6788 14.4672C9.82951 14.8189 8.91925 15 8 15C7.08075 15 6.1705 14.8189 5.32122 14.4672C4.47194 14.1154 3.70026 13.5998 3.05025 12.9497C2.40024 12.2997 1.88463 11.5281 1.53284 10.6788C1.18106 9.82951 1 8.91925 1 8C1 6.14348 1.7375 4.36301 3.05025 3.05025C4.36301 1.7375 6.14348 1 8 1C9.85652 1 11.637 1.7375 12.9497 3.05025C14.2625 4.36301 15 6.14348 15 8Z" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
@@ -120,7 +120,7 @@ flex justify-center flex-col items-center py-[1em]  rounded-[15px]">
     </basis />
 
 
-    <div class="loaded w-full flex flex-col live-search-list" id="searchContainer">
+    <div class="loaded w-full flex flex-col live-search-list" id="searchContainer" tabindex="0">
         <div class="Nores w-full  justify-center items-end py-[2em]" search="noResults">
             <p class="w-[13%] text-center mx-auto font-IRANSansWeb400 font-normal text-[13px] leading-[22.45px] text-black">
                 باعرض پوزش مطلبی پیدا نشد.
@@ -183,29 +183,6 @@ flex justify-center flex-col items-center py-[1em]  rounded-[15px]">
             
     </span>
     <div class="Container-pop">
-        <basis core="call" run="atclient" triggers="run.call" file="login.bc" />
+        <basis core="call" run="atclient" if="{##run.call.value|(false)##}" triggers="run.call" file="login.bc" />
     </div>
 </div>
-<script>
-// if (!'[##cms.cookie.rkey##]') {
-  
-//   let userIcon =document.querySelector('header .UserIcon')
-//   let loginPop = document.querySelector('.loginPop-C')
-//   let closeLoginPop = document.querySelector('.loginPop-C .closeLoginPop')
-//   userIcon.addEventListener('click',(e)=>{
-//         // e.preventDefault()
-      
-//       loginPop.classList.add('open')
-//       $bc.setSource('run.call',true)
-//       })
-//       closeLoginPop.addEventListener('click',()=>{
-//       loginPop.classList.remove('open')
-//       $bc.setSource('run.call',false)
-//       })
-// }
-// else{
-// //   console.log("not login");
-  
-//   document.querySelector(".UserIcon").setAttribute("href" , "/panel/company-registration.bc")
-// }
-</script>

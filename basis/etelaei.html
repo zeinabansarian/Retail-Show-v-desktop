@@ -20,27 +20,37 @@
   <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]">
     <member name="text" type="view" postsql="select * from [db.text] where TypeID=250"/>
   </basis>
-  
+  <basis core="dbsource" source="basiscore" name="json" lid="1" usedforid="[##cms.query.id##]">
+    <member request="json-ld" type="scalar" name="fq" />
+</basis>
   <!DOCTYPE html>
   <html lang="fa">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <basis core="print" datamembername="db.seolist">
-        <face>
-          <title>[##cms.seo.title|db.seolist.title##]</title>
-          <meta name="description" content="[##cms.seo.description|db.seolist.description##]" />
-        </face>
-      </basis>
-      <link rel="stylesheet" href="[##cms.cms.cdn##]/css/outputDesk.css">
-      <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
-      <link rel="stylesheet" href="[##cms.cms.cdn##]/css/plyr.css" />
-      <link rel="stylesheet" href="[##cms.cms.cdn##]/css/leaflet.css">>
+
+          <title>[##cms.seo.title##]</title>
+          <meta name="description" content="[##cms.seo.description##]" />
+
+    <basis core="call" file="styles.inc" />
+      <link rel="stylesheet" href="[##cms.cms.cdn##]/css/leaflet.css">
+      <style>
+        @media only screen and (min-width: 1600px) {
+    .Etelaei-C .Related-Etelaei {
+        margin-right: 6%;
+    }
+}
+@media only screen and (min-width: 1900px) {
+    .Etelaei-C .Related-Etelaei {
+        margin-right: 14% !important;
+    }
+}
+      </style>
   </head>
   <body>
-    <main class="Etelaei-C mt-[10em] w-full overflow-hidden" dir="rtl">
+    <main class="Etelaei-C  w-full overflow-hidden" dir="rtl">
         <basis core="call" file="header1.inc" pageindex="[##cms.cms.pageindex##]"/>
-        <div class="EtelaeiShow w-full mt-[2em] flex flex-col">
+        <div class="EtelaeiShow w-full mt-[10em] flex flex-col">
          <section class="Section-1 section w-90p mx-auto flex flex-col mt-[1.5em]">
             <div class="etelaeiContainer w-full gap-[5em] flex ">
               <div class="DetailSec w-full flex flex-col pt-[5em]">
@@ -254,6 +264,9 @@
     <script src="[##cms.cms.cdn##]/_js/swiper.js"></script>
     <script src="[##cms.cms.cdn##]/js/headerDark.js"></script>
     <script src="[##cms.cms.cdn##]/js/etelaei.js"></script>
+<script type="application/ld+json">
+    [##json.fq.column1##]
+  </script>
   </body>
   
   </html>
